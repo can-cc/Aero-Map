@@ -1,0 +1,10 @@
+{
+  "name": "APP",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.1"
+  },
+  "dependencies": {
+    "backbone": "~1.1.2"
+  }
+}
