@@ -1,17 +1,26 @@
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+   background: #fafafa;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#navigation {
-    weight: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    background: #000000;
-    color: #FFFFFF
+.navigation {
+   weight: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: #333333;
+   color: #FFFFFF;
 }
+
+.navigation li {
+   display: inline;
+}
+
+.navigation ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+} 
 
 footer {
     display: block;
