@@ -5,8 +5,12 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+
+<script src="js/lib/mapbox.js"></script>
+<link href="css/lib/mapbox.css" rel='stylesheet' />
+    
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -21,7 +25,7 @@
     <!-- your app's js -->
 
   </head>
-  <body ng-app="starter">
+  <body >
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
@@ -29,12 +33,18 @@
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
+    
+    <div id="map"></div>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
     <ion-nav-view></ion-nav-view>
-    <script src="js/main.js"></script>
+    <script>
+      L.mapbox.accessToken = 'pk.eyJ1IjoidnRjaDk5IiwiYSI6IlRFVlFoTkEifQ.YD7Rx4C15GrS25eAJcuZtQ';
+      // Create a map in the div #map
+      L.mapbox.map('map', 'vtch99.lea375p3');
+    </script>
   </body>
 </html>
