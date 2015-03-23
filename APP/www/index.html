@@ -20,6 +20,7 @@
     <script src="lib/foundation/js/vendor/jquery.cookie.js"></script>   
     <script src="lib/foundation/js/vendor/placeholder.js"></script>
     <script src="lib/foundation/js/foundation.min.js"></script>
+    <script src="lib/ejs/ejs.js"></script>
     <script src="lib/underscore/underscore.js"></script>
     <script src="lib/backbone/backbone.js"></script>
     <script src="js/lib/mapbox.js"></script>
@@ -30,10 +31,10 @@
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
         <nav class="tab-bar">
-            <section class="left-small"> <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a> </section>
+            <section class="left-small"> <a class="left-off-canvas-toggle" href="#"><span><i class="fi-map menu-font-icon-left"></i></span></a> </section>
             <section class="middle tab-bar-section">
                 <h1 class="title">Aero-Map</h1> </section>
-            <section class="right-small"> <a class="right-off-canvas-toggle" href="#"><span><i class="fi-map menu-font-icon"></i></span></a> </section>
+            <section class="right-small"> <a class="right-off-canvas-toggle" href="#"><span><i class="fi-results-demographics menu-font-icon-right"></i></span></a> </section>
         </nav>
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
@@ -57,20 +58,22 @@
                 </li>
             </ul>
         </aside>
-        <section class="main-section">
-            <i class="fi-map"></i>
-            <i class="fi-home"></i>
+        <section class="main-section am-main">
+          <div class="am-map" id="am-map"></div>
+          <div class="am-context"></div>
+          <div class="am-footer"><i class="fi-wrench">  </i>Tyan Project. crystal.tyan@hotmail.com All Rights Reserved.</div>
+          
         </section>
         <a class="exit-off-canvas"></a>
     </div>
 </div>
+<script src="js/main.js"></script>
 
- <script>
-    $(function() {
-        FastClick.attach(document.body);
-    });
-    $(document).foundation();
-</script>
+<!-- router -->
+<script src="js/routes/router.js"></script>
+<!-- views -->
+<script src="js/views/map.js"></script>
+
 </body>
 
 </html>
