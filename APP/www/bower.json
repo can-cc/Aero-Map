@@ -1,0 +1,20 @@
+{
+  "name": "www",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vtch99/Aero-Map",
+  "authors": [
+    "vtch99 <crystal.tyan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
