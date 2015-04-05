@@ -1,0 +1,35 @@
+create table return promise
+
+success:
+
+{ command: 'CREATE',
+  rowCount: NaN,
+  oid: null,
+  rows: [],
+  fields: [],
+  _parsers: [],
+  RowCtor: null,
+  rowAsArray: false,
+  _getTypeParser: [Function] }
+
+error:
+
+{ [error: relation "users" already exists]
+  name: 'error',
+  length: 92,
+  severity: 'ERROR',
+  code: '42P07',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'heap.c',
+  line: '1047',
+  routine: 'heap_create_with_catalog' }
