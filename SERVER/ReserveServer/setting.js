@@ -4,11 +4,12 @@ var AeroMap_Setting = {
     log_level: 'debug',
     db: {
         pg:{
-            datebase: 'Aero-Map',
+            database: 'Aero-Map',
             host: 'localhost',
             port: 'default',
             username: 'AeroAdmin',
-            passwd: 'aero123'
+            passwd: 'aero123',
+            charset: 'UTF-8'
         }
     }
 }

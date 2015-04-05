@@ -5,8 +5,15 @@ var express = require('express'),
     session = require('express-session'),
     setting = require('./setting'),
     RedisStore = require('connect-redis')(session),
-    setting = require('./setting')
+    setting = require('./setting'),
     app = express()
+
+
+//Warning: "Corss Damin" very dangerous
+//Only in Debug
+var cors = require('cores')
+app.use(cors())
+
 
 /***********************************************
  * Setting
@@ -28,7 +35,6 @@ var server = app.listen(3000, function () {
   var port = setting.port
   console.log('Aero-Map App Main Server listening at http://%s:%s', host, port)
 })
-
 
 
 
