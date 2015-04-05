@@ -1,5 +1,5 @@
 var orm = require('../db').orm
 
-var User = prm.Model.extend({
+var User = orm.Model.extend({
     tabelName: 'User'
 })

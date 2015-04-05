@@ -19,6 +19,7 @@
     "events": "^1.0.2",
     "express": "^4.12.3",
     "install": "^0.1.8",
+    "knex": "^0.7.6",
     "knex-postgis": "^0.1.5",
     "multer": "^0.1.8",
     "npm": "^2.7.4",

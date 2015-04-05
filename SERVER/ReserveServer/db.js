@@ -1,15 +1,29 @@
-var setting = require('./settting'),
-knex = require('knex')({
-    client: 'pg',
-    connection: {
-        host     : setting.db.pg.host,
-        user     : setting.db.pg.username,
-        password : setting.db.pg.passwd,
-        database : setting.db.pg.database
-    }
+var setting = require('./setting')
+
+var knex = require('knex')({
+        client: 'pg',
+        connection: {
+            host     : setting.db.production.host,
+            user     : setting.db.production.username,
+            password : setting.db.production.passwd,
+            database : setting.db.production.database
+        }
+})
+var knex_develop = require('knex')({
+        client: 'pg',
+        connection: {
+            host     : setting.db.development.host,
+            user     : setting.db.development.username,
+            password : setting.db.development.passwd,
+            database : setting.db.development.database
+        }
 })
 
-exports.knex = knex
+if(setting.development){
+    exports.knex = knex_develop
+} else {
+    exports.knex = knex    
+}
 
 var bookshelf = require('bookshelf')(knex)
 
