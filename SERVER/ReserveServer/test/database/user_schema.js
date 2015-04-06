@@ -6,10 +6,6 @@ var assert = require('assert'),
 
 describe('operation', function() {
 
-
-
-
-
     describe('#create User table', function() {
         it('should return promise and success', function(done) {
             user_schema.createUsers().then(
@@ -23,8 +19,6 @@ describe('operation', function() {
         })
     })
 
-
-
     describe('#create UsersDetail table', function() {
         it('should return promise and success', function(done) {
             user_schema.createUsersDetail().then(
@@ -36,11 +30,7 @@ describe('operation', function() {
                 })
         })
     })
-
-
 })
-
-
 
 describe('all_operation', function() {
     describe('#drop_all_table', function() {
@@ -77,6 +67,7 @@ describe('all_operation', function() {
                     done()
                 } else {
                     throw new Error()
+
                 }
             })
         })
