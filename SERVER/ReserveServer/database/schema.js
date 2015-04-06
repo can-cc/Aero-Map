@@ -1,4 +1,4 @@
-var logger = require('../logger'),
+var winston = require('winston'),
     user_schema = require('./schema/user'),
     async = require('async')
 
@@ -13,8 +13,12 @@ exports.create_all_tables = function(callback) {
     ], function(err, results) {
         if (err || !results.every(function(result) {
                 return result
-            }))
-            logger.log('error', 'Create all tables Error!')
+            })) {
+            winston.log('error', 'Create all tables Error!')
+            return callback(new Error(), false)
+        }
+        return callback(null, true)
+
     })
 }
 
@@ -29,18 +33,20 @@ exports.drop_all_tables = function(callback) {
     ], function(err, results) {
         if (err || !results.every(function(result) {
                 return result
-            }))
-            logger.log('error', 'drop all tables Error!')
-
+            })) {
+            winston.log('error', 'drop all tables Error!')
+            return callback(new Error(), false)
+        }
+        return callback(null, true)
     })
 }
 
-exports.truncate_all_table = function(callback) {
+exports.truncate_all_tables = function(callback) {
     async.series([
         function(call) {
             exports.drop_all_tables(function(err, result) {
                 if (err || !result) {
-                    logger.log('error', 'truncate: drop all table fail')
+                    winston.log('error', 'truncate: drop all table fail')
                     return call(new Error())
                 }
                 return call(null, true)
@@ -49,7 +55,7 @@ exports.truncate_all_table = function(callback) {
         function(call) {
             exports.create_all_tables(function(err, result) {
                 if (err || !result) {
-                    logger.log('error', 'truncate: create all table fail')
+                    winston.log('error', 'truncate: create all table fail')
                     return call(new Error())
                 }
                 return call(null, true)
@@ -58,8 +64,11 @@ exports.truncate_all_table = function(callback) {
     ], function(err, results) {
         if (err || !results.every(function(result) {
                 return result
-            }))
-            logger.log('error', 'drop all tables Error!')
+            })) {
+            winston.log('error', 'drop all tables Error!')
+            return callback(new Error(), false)
+        }
+        return callback(null, true)
     })
 }
 
@@ -70,29 +79,29 @@ function main() {
         case 'create':
             exports.create_all_tables(function(err, result) {
                 if (err || !result) {
-                    logger.log('error', 'Create all tables fail!')
+                    winston.log('error', 'Create all tables fail!')
                 } else {
-                    logger.log('info', 'Create all tables success!')
+                    winston.log('info', 'Create all tables success!')
                 }
             })
             break
-        
+
         case 'truncate':
             exports.truncate_all_tables(function(err, result) {
                 if (err || !result) {
-                    logger.log('error', 'Truncate all tables fail!')
+                    winston.log('error', 'Truncate all tables fail!')
                 } else {
-                    logger.log('info', 'Truncate all tables success!')
+                    winston.log('info', 'Truncate all tables success!')
                 }
             })
             break
-        
+
         case 'drop':
             exports.drop_all_tables(function(err, result) {
                 if (err || !result) {
-                    logger.log('error', 'Drop all tables fail!')
+                    winston.log('error', 'Drop all tables fail!')
                 } else {
-                    logger.log('info', 'Drop all tables success!')
+                    winston.log('info', 'Drop all tables success!')
                 }
             })
             break
