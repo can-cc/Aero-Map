@@ -18,6 +18,42 @@ exports.createUsers = function() {
     })
 }
 
+/*
+ * !!Because of dependence relation, truncate is diffcult to execute test
+ */
+
+// exports.truncateUsers = function(callback) {
+//       async.series([
+//           function(call){
+//               knex.schema.dropTableIfExists('Users').then(function(success) {
+//                 winston.info('drop Users table success', JSON.stringify(success))
+//                 call(null, true)
+//             }, function(error) {
+//                 winston.error('drop Users table fail', JSON.stringify(error))
+//                 call(new Error(), false)
+//             })
+//         },
+//           function(call){
+//               exports.createUsers().then(
+//                 function(success) {
+//                     winston.log('info', 'create Users table success', success)
+//                     call(null, true)
+//                 },
+//                 function(error) {
+//                     winston.info('error', 'create Users table', JSON.stringify(error))
+//                     call(new Error('create Users table error'), false)
+//                 })
+//         }
+//       ], function(err, results){
+//         winston.log('debug', err)
+//         winston.log('debug', results)
+//         if (err) return callback(err)
+//         return callback(null, results.every(function(flag) {
+//             return flag
+//         }))
+//     })
+// }
+
 exports.createUsersDetail = function() {
     return knex.schema.createTable('UsersDetail', function(table) {
         table.increments().unique()
@@ -45,11 +81,11 @@ exports.createUsersDetail = function() {
 
 
 exports.createUsersSetting = function() {
-
+    
 }
 
 exports.createUsersInfomation = function() {
-
+  
 }
 
 exports.drop_all_tables = function(callback) {
