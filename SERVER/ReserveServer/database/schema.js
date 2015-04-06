@@ -72,10 +72,9 @@ exports.truncate_all_tables = function(callback) {
     })
 }
 
-function main() {
-    if (process.argv.length != 3)
-        return console.log('Usage: node schema < create(all) | truncate(all) | drop(all) >')
-    switch (process.argv[3]) {
+function main(command) {
+
+    switch (command) {
         case 'create':
             exports.create_all_tables(function(err, result) {
                 if (err || !result) {
@@ -84,6 +83,7 @@ function main() {
                     winston.log('info', 'Create all tables success!')
                 }
             })
+
             break
 
         case 'truncate':
@@ -94,6 +94,7 @@ function main() {
                     winston.log('info', 'Truncate all tables success!')
                 }
             })
+
             break
 
         case 'drop':
@@ -104,6 +105,12 @@ function main() {
                     winston.log('info', 'Drop all tables success!')
                 }
             })
+
             break
     }
 }
+
+if (process.argv.length != 3)
+    console.log('Usage: node schema < create(all) | truncate(all) | drop(all) >')
+winston.log('info', process.argv[2])
+main(process.argv[2])
