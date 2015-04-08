@@ -1,5 +1,5 @@
 var assert = require('assert'),
-    User = require('../../models/users'),
+    User = require('../../models/user'),
     user_schema = require('../../database/schema/user'),
     randomstring = require("randomstring")
 

@@ -36,7 +36,7 @@ var User = orm.Model.extend({
 
   infomation: function(){
     return this.hasOne(UserInfomation);
-}
+},
 
     hasTimestamps: ['created_at', 'updated_at']
 })
