@@ -50,6 +50,9 @@ var UserService = {
         }).fetch({
             require: true
         }).tap(function(user) {
+          console.log('debug', password);
+          console.log('debug',  user.get('password'));
+          console.log('debug', bcrypt.compareAsync(password, user.get('password')));
           return bcrypt.compareAsync(password, user.get('password'));
         });
     }),
