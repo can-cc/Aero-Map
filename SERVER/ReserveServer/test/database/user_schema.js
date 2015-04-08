@@ -18,10 +18,9 @@ describe('operation', function() {
         })
     })
 
-
     describe('#create User table', function() {
         it('should return promise and success', function(done) {
-            user_schema.createUsers().then(
+            user_schema.createUser().then(
                 function() {
                     done()
                 },
@@ -34,7 +33,7 @@ describe('operation', function() {
 
     describe('#create UsersDetail table', function() {
         it('should return promise and success', function(done) {
-            user_schema.createUsersDetail().then(
+            user_schema.createUserDetail().then(
                 function() {
                     done()
                 },

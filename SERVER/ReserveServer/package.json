@@ -29,6 +29,7 @@
     "postgeo": "^0.1.2",
     "redis": "^0.12.1",
     "socket.io": "^1.3.5",
+    "underscore": "^1.8.3",
     "winston": "^0.9.0"
   }
 }

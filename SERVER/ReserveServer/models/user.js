@@ -1,10 +1,18 @@
 var orm = require('../db').orm,
     checkit = require('checkit'),
     Promise = require('bluebird'),
-    bcrypt = Promise.promisifyAll(require('bcrypt'))
+    bcrypt = Promise.promisifyAll(require('bcrypt')),
+    UserDetail = require('./userdetail'),
+    UserSetting = require('./usersetting'),
+    UserInfomation = require('./userinfomation');
 
 var User = orm.Model.extend({
-    tabelName: 'Users',
+    tableName: 'User',
+
+
+    // set: function(){
+    //   orm.Model.prototype.set.apply(this, arguments);
+    // },
 
     initialize: function() {
         this.on('saving', this.validateSave);
@@ -13,30 +21,24 @@ var User = orm.Model.extend({
     validateSave: function() {
         return checkit({
             username: 'required',
-            password: 'required',
+            password: ['required', 'minLength:6'],
             email: ['required', 'email']
         }).run(this.attributes)
-    }
-}, {
-    loginByUsername: Promise.method(function(username, password) {
-        if (!username || !password) throw new Error('Email and password are both required');
-        return new this({
-            email: username.toLowerCase().trim()
-        }).fetch({
-            require: true
-        }).tap(function(customer) {
-            return bcrypt.compareAsync(customer.get('password'), password);
-        });
-    }),
+    },
 
-    loginByEmail: Promise.method(function(email, password) {
-        if (!email || !password) throw new Error('Email and password are both required');
-        return new this({
-            email: email.toLowerCase().trim()
-        }).fetch({
-            require: true
-        }).tap(function(customer) {
-            return bcrypt.compareAsync(customer.get('password'), password);
-        });
-    })
+    detail: function() {
+        return this.hasOne(UserDetail);
+    },
+
+  settting: function(){
+    return this.hasOne(UserSetting);
+},
+
+  infomation: function(){
+    return this.hasOne(UserInfomation);
+}
+
+    hasTimestamps: ['created_at', 'updated_at']
 })
+
+module.exports = User

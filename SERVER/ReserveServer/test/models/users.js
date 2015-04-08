@@ -55,7 +55,7 @@ describe('User Model Test', function() {
             user.save(userData1).then(function(user) {
                 console.log('debug', JSON.stringify(user));
                 console.log('debug', JSON.stringify(userData1));
-              done();
+                done();
             });
         })
 
@@ -96,12 +96,37 @@ describe('User Model Test', function() {
         });
     })
 
-  describe('#fetch user', function() {
-    it('should success', function(done){
-      var user = new User({id: 25}).fetch().then(function(user){
-        console.log('debug', JSON.stringify(user));
-      });
+    //************************************************************
+    describe('#fetch user', function() {
+        it('should success', function(done) {
+            new User({
+                username: userData1.username
+            }).fetch().then(function(user) {
+                console.log('debug', JSON.stringify(user));
+                done();
+            });
+            // User.collection().fetch().then(function(users){
+            //   console.log(users);
+            // });
+        });
+    })
+
+    //************************************************************
+
+    describe('#update user', function() {
+        it('should success', function(done) {
+            var user = new User({
+                username: userData1.username
+            }).fetch().then(function(fetched_user) {
+                fetched_user.save({
+                  email: randomstring.generate(5) + '@qq.com'
+                }).then(function(updated_user) {
+                    console.log('debug', JSON.stringify(updated_user));
+                  done();
+                });
+            })
+        });
     });
-  })
+
 
 })
