@@ -30,13 +30,13 @@ var User = orm.Model.extend({
         return this.hasOne(UserDetail);
     },
 
-  settting: function(){
-    return this.hasOne(UserSetting);
-},
+    settting: function() {
+        return this.hasOne(UserSetting);
+    },
 
-  infomation: function(){
-    return this.hasOne(UserInfomation);
-},
+    infomation: function() {
+        return this.hasOne(UserInfomation);
+    },
 
     hasTimestamps: ['created_at', 'updated_at']
 })

@@ -57,7 +57,7 @@ exports.createUser = function() {
 exports.createUserDetail = function() {
     return knex.schema.createTable('UserDetail', function(table) {
         table.increments().unique();
-        table.integer('user_id')
+        table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
@@ -72,9 +72,9 @@ exports.createUserDetail = function() {
         table.text('self_description');
         table.integer('city');
         table.integer('school');
-        table.integer('interest');
-        table.string('public_mail');
-        table.string('phono_number');
+        table.string('interest');
+        table.string('public_email');
+        table.string('photo_number');
         table.string('qq');
         table.timestamps();
     });
@@ -84,7 +84,7 @@ exports.createUserDetail = function() {
 exports.createUserSetting = function() {
     return knex.schema.createTable('UserSetting', function(table) {
         table.increments().unique();
-        table.integer('user_id')
+        table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
@@ -102,7 +102,7 @@ exports.createUserSetting = function() {
 exports.createUserInfomation = function() {
     return knex.schema.createTable('UserInfomation', function(table) {
         table.increments().unique();
-        table.integer('user_id')
+        table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
@@ -198,8 +198,8 @@ exports.create_all_tables = function(callback) {
                     call(null, true);
                 },
                 function(error) {
-                  winston.log('error', 'create UserSetting table error', JSON.stringify(error));
-                  call(new Error('create UserSetting table error'), false);
+                    winston.log('error', 'create UserSetting table error', JSON.stringify(error));
+                    call(new Error('create UserSetting table error'), false);
                 });
         },
         function(call) {
@@ -210,7 +210,7 @@ exports.create_all_tables = function(callback) {
                 },
                 function(error) {
                     winston.log('error', 'create Infomation table error', JSON.stringify(error));
-                  call(new Error('create  Infomation table error'), false);
+                    call(new Error('create  Infomation table error'), false);
                 });
         }
     ], function(err, results) {

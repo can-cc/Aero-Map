@@ -1,7 +1,7 @@
 var logger = require('../logger'),
     User = require('../models/user'),
     UserDetail = require('../models/userdetail');
-    Promise = require('bluebird'),
+Promise = require('bluebird'),
     bcrypt = require('bcrypt');
 
 var UserService = {
@@ -16,22 +16,22 @@ var UserService = {
         });
     },
 
-  getUserDetail: function(userDetailId) {
-    new UserDetail({
-      id: userId
-    }).fetch(function(user) {
-      callback(null, user);
-    }, function(error) {
-      callback(error);
-    });
-  },
+    getUserDetail: function(userDetailId) {
+        new UserDetail({
+            id: userId
+        }).fetch(function(user) {
+            callback(null, user);
+        }, function(error) {
+            callback(error);
+        });
+    },
 
     signIn: function(data, callback) {
         bcrypt.genSalt(11, function(err, salt) {
             bcrypt.hash(data.password, salt, function(err, hash) {
                 //data.password = hash
                 new User(data).save({
-                  password: hash
+                    password: hash
                 }).then(function(user) {
                     callback(null, user);
                 }, function(error) {
@@ -43,30 +43,41 @@ var UserService = {
     },
 
 
-    loginByUserName: Promise.method(function(username, password) {
+    loginByUserName: function(username, password, callback) {
         if (!username || !password) throw new Error('Username and password are both required!');
-        return new User({
+        new User({
             username: username
         }).fetch({
             require: true
-        }).tap(function(user) {
-          console.log('debug', password);
-          console.log('debug',  user.get('password'));
-          console.log('debug', bcrypt.compareAsync(password, user.get('password')));
-          return bcrypt.compareAsync(password, user.get('password'));
+        }).then(function(user) {
+            bcrypt.compare(password, user.get('password'), function(err, res) {
+                if (err) callback(err);
+                if (res) return callback(null, user);
+                return callback(null, null);
+            });
+        }, function(err) {
+            callback(err);
         });
-    }),
+    },
 
-    loginByEmail: Promise.method(function(email, password) {
+    loginByEmail: function(email, password, callback) {
         if (!email || !password) throw new Error('Email and password are both required!');
-        return new User({
+        new User({
             email: email
         }).fetch({
             require: true
-        }).tap(function(user) {
-          return bcrypt.compareAsync(password, user.get('password'));
+        }).then(function(user) {
+            bcrypt.compare(password, user.get('password'), function(err, res) {
+                if (err) callback(err);
+                if (res) return callback(null, user);
+                return callback(null, null);
+            });
+        }, function(err) {
+            callback(err);
         });
-    })
+    }
+
+
 }
 
 module.exports = UserService;

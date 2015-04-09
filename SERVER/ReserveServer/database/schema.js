@@ -1,14 +1,27 @@
 var winston = require('winston'),
     user_schema = require('./schema/user'),
-    async = require('async')
+    markpost_schema = require('./schema/markpost'),
+    async = require('async');
 
 exports.create_all_tables = function(callback) {
     async.series([
+        /****************************************************
+         *Create User module table s
+         ****************************************************/
         function(call) {
             user_schema.create_all_tables(function(err, result) {
                 if (err || !result) return call(new Error(), null)
                 return call(null, true)
             })
+        },
+        /*
+         *Create MarkPost module tables
+         */
+        function(call) {
+          markpost_schema.create_all_tables(function(err, result){
+            if(err || !result) return call(new Error(), null);
+            return call(null, true);
+          });
         }
     ], function(err, results) {
         if (err || !results.every(function(result) {
@@ -24,12 +37,27 @@ exports.create_all_tables = function(callback) {
 
 exports.drop_all_tables = function(callback) {
     async.series([
+
+      /****************************************************
+       *Drop MarkPost module tables
+       ****************************************************/
+      function(call) {
+        markpost_schema.drop_all_tables(function(err, result) {
+          if (err || !result) return call(new Error(), null)
+          return call(null, true)
+        })
+      },
+      /****************************************************
+       *Drop User module tables
+       ****************************************************/
         function(call) {
             user_schema.drop_all_tables(function(err, result) {
                 if (err || !result) return call(new Error(), null)
                 return call(null, true)
             })
         }
+
+
     ], function(err, results) {
         if (err || !results.every(function(result) {
                 return result

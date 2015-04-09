@@ -1,7 +1,8 @@
 var orm = require('../db').orm,
     checkit = require('checkit'),
     Promise = require('bluebird'),
-    bcrypt = Promise.promisifyAll(require('bcrypt'))
+    User = require('./user');
+bcrypt = Promise.promisifyAll(require('bcrypt'));
 
 var UserDetail = orm.Model.extend({
     tableName: 'UserDetail',
@@ -13,8 +14,14 @@ var UserDetail = orm.Model.extend({
 
     validateSave: function() {
         return checkit({
-            nickname: 'required'
+            nickname: 'required',
+            public_email: 'email',
+            self_description: 'minLength:10'
         }).run(this.attributes)
+    },
+
+    user: function() {
+        return this.belongTo(User);
     },
 
     hasTimestamps: ['created_at', 'updated_at']
