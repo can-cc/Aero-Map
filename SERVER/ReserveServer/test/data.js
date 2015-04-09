@@ -1,3 +1,4 @@
+require('../utils/addDate');
 var today = new Date();
 var tomorrow = new Date(today);
 tomorrow.setDate(today.getDate() + 1);
@@ -16,10 +17,13 @@ console.log(today.getDate() + 1 );
  *              console.log(dat.toJSON())
  *
  */
+// Date.prototype.addDays = function(days)
+// {
+//   var date = new Date(this.valueOf());
+//   date.setDate(date.getDate() + days);
+//   return date;
+// }
 
-Date.prototype.addDays = function(days)
-{
-  var dat = new Date(this.valueOf());
-  dat.setDate(dat.getDate() + days);
-  return dat;
-}
+var testAddDate = new Date();
+console.log(testAddDate.addDays(3).toJSON());
+console.log(testAddDate.toJSON());
