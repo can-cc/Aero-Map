@@ -27,12 +27,13 @@ exports.createMarkPost = function() {
         table.text('context')
             .notNullable();
         table.string('images');
-      //long lat
+        //long lat
         table.specificType('location', 'GEOGRAPHY(POINT,4326)')
             .index()
             .notNullable();
         table.decimal('accuracy');
-        table.boolean('valid');
+        table.boolean('valid')
+            .defaultTo(true);
         table.dateTime('deadline');
         table.timestamps();
     })

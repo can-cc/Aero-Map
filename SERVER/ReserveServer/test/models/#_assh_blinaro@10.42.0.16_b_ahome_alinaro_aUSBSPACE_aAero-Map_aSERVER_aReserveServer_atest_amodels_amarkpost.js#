@@ -8,6 +8,7 @@ var markPostData1 = {
   type:1,
   User_id:1,
   title:
+  deadline
 };
 
 });

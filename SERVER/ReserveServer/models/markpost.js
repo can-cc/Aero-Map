@@ -13,7 +13,11 @@ var MarkPost = orm.Model.extend({
 
     validateSave: function() {
         returng checkit({
-            title: 'minLenght:5'
+            title: ['required', 'minLenght:5'],
+          context: ['required', 'minLenght:20'],
+          location: 'required',
+          valid: 'empty',
+          deadline: 'required' //default from route or control layer
         });
     },
 
