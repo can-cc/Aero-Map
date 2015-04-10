@@ -16,7 +16,6 @@ exports.createMarkPost = function() {
         table.increments();
         table.integer('type');
         table.integer('User_id')
-            .unique()
             .unsigned()
             .notNullable()
             .index()

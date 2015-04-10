@@ -166,7 +166,7 @@ describe('User Model Test', function() {
         school: 224,
         interest: 'baseball',
         public_email: randomstring.generate(8) + '@hotmail.com',
-        phono_number: '1302618435',
+        photo_number: '1302618435',
         qq: '32513251'
     };
 

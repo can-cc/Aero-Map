@@ -12,7 +12,7 @@ var MarkPost_Comment = orm.Model.extend({
     },
 
     validateSave: function() {
-        returng checkit({
+        return checkit({
             context: 'minLenght:10'
         });
     },
