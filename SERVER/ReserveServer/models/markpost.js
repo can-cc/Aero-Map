@@ -1,5 +1,5 @@
 var orm = require('../db').orm,
-    checkit = require('checkit'),
+    Checkit = require('checkit'),
     logger = require('../logger'),
     Promise = require('bluebird'),
     Comment = require('./markpost_comment'),
@@ -11,21 +11,48 @@ var MarkPost = orm.Model.extend({
     tableName: 'MarkPost',
 
     // initialize: function() {
-    //     this.on('saving', this.validateSave);
+    //      // this.on('saving', this.validateSave);
+    //   this.validate.bind(this);
+    //   },
+
+    // validate: function(){
+    //   return new Checkit({
+    //     title: ['required', 'minLenght:5'],
+    //     context: ['required', 'minLenght:20'],
+    //     location: 'required',
+    //     valid: 'empty',
+    //     deadline: 'required' //default from route or control layer
+    //   });
     // },
 
+    validate: new Checkit({
+        title: ['required', 'minLength:5'],
+        context: ['required', 'minLength:20'],
+        longitude: 'required',
+        latitude: 'required',
+        location: 'empty',
+        valid: 'empty',
+        deadline: 'required' //default from route or control layer
+    }),
+
     save: function(data) {
+        var checkit = this.validate;
+        var attributes = this.attributes;
+        var tableName = this.tableName;
         return new Promise(function(resolve, reject) {
-            this.validate.run(this.attributes).then(function(validated) {
-                    loggger.log('debug', 'validated', validated);
-                    logger.log('debug', this.attributes);
+            console.log('look this', attributes);
+            checkit.run(attributes).then(function(validated) {
+                    logger.log('debug', 'validated', validated);
+                    logger.log('debug', attributes);
                     logger.log('debug', data);
-                    var pointstr = this.attributes['location'];
-                    this.attributes['location'] = st.geomFromText('Point(' + pointstr + ')', 4326);
-                    var sql = knex.insert(this.attributes).into(this.tableName).toString();
+                    var pointstr = attributes['longitude'] + ' ' + attributes['latitude'];
+                    attributes['location'] = st.geomFromText('Point(' + pointstr + ')', 4326);
+                    var sql = knex.insert(attributes).into(tableName).toString();
                     logger.log('debug', sql);
                     knex.raw(sql).then(function(resp) {
                         logger.log('debug', 'saving', resp);
+
+                        resolve(resp);
                     });
                 },
                 function(error) {
@@ -34,17 +61,16 @@ var MarkPost = orm.Model.extend({
         });
     },
 
-    validate: new Checkit({
-        title: ['required', 'minLenght:5'],
-        context: ['required', 'minLenght:20'],
-        location: 'required',
-        valid: 'empty',
-        deadline: 'required' //default from route or control layer
-    }),
+  //note the query sql var location!!!!!!!!!!!!
+  distancePoints: function(coordinate, distance) {
+    return this.collection().query().where('ST_DWithin(location, ST_GeographyFromText(’SRID =4326;POINT(-110 29)’), 1000000)');
+    },
 
     comments: function() {
         return this.hasMany(Comment);
     },
+
+
 
     hasTimestamps: ['created_at', 'updated_at']
 

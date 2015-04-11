@@ -30,6 +30,10 @@ exports.createMarkPost = function() {
         table.specificType('location', 'GEOGRAPHY(POINT,4326)')
             .index()
             .notNullable();
+        table.decimal('longitude', 12, 8)
+            .notNullable();
+        table.decimal('latitude', 12, 8)
+            .notNullable();
         table.decimal('accuracy');
         table.boolean('valid')
             .defaultTo(true);
