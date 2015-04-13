@@ -18,12 +18,12 @@ var MarkPostService = {
         return knex.raw(sql).rows;
     },
 
-    getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
-
+  getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
+    
     },
 
     getAreaMarkPointsRawFilterByType: function(coordinate, userId) {
-
+      
     },
 
     getAreaMarkPointsObject: function(coordinate, distance) {
