@@ -1,7 +1,7 @@
 var logger = require('../logger'),
     User = require('../models/user'),
-    UserDetail = require('../models/userdetail');
-Promise = require('bluebird'),
+    UserDetail = require('../models/userdetail'),
+    Promise = require('bluebird'),
     bcrypt = require('bcrypt');
 
 var UserService = {

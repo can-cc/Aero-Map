@@ -59,7 +59,7 @@ describe('Mark Post Module Model Test', function() {
      ***********************************************************/
     describe('#create markpost object', function() {
         it('should return success promise', function(done) {
-            new MarkPost(markPostData1).save().then(function(markpost) {
+          new MarkPost(markPostData1).saveWithPoint().then(function(markpost) {
                 console.log('success', markpost);
                 done();
             }, function(error) {
@@ -69,7 +69,7 @@ describe('Mark Post Module Model Test', function() {
         });
 
         it('should return error promise(error data)', function(done) {
-            new MarkPost(markPostData2).save().then(function(markpost) {
+            new MarkPost(markPostData2).saveWithPoint().then(function(markpost) {
                 console.log('success', markpost);
 
             }, function(error) {
@@ -94,10 +94,27 @@ describe('Mark Post Module Model Test', function() {
         });
     });
 
-    describe('#fetch markpost object collection by distance', function() {
+    describe.skip('#fetch markpost object collection by distance', function() {
         it('should return success promise', function(done) {
-            //      new MarkPost
-          done();
+          var coordinate = {
+            longitude: 0.01,
+            latitude: 0.01
+          };
+          var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+          var distancekm = 1000 * 1000;
+          MarkPost.collection().query().where('ST_DWithin(location, ST_GeographyFromText(' +
+                                              '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch().then(function(markposts){
+                                                console.log('success', markposts);
+                                                done();
+                                              }, function(error){
+                                                console.log('error', error);
+                                              });
+           // new MarkPost().distancePoints(coordinate, 1000).then(function(markposts){
+           //   console.log('success', markposts);
+           //   done();
+           // }, function(error){
+           //   console.log('error', error);
+           // });
         });
     });
 

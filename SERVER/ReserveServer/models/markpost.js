@@ -35,7 +35,7 @@ var MarkPost = orm.Model.extend({
         deadline: 'required' //default from route or control layer
     }),
 
-    save: function(data) {
+    saveWithPoint: function(data) {
         var checkit = this.validate;
         var attributes = this.attributes;
         var tableName = this.tableName;
@@ -61,9 +61,14 @@ var MarkPost = orm.Model.extend({
         });
     },
 
-  //note the query sql var location!!!!!!!!!!!!
-  distancePoints: function(coordinate, distance) {
-    return this.collection().query().where('ST_DWithin(location, ST_GeographyFromText(’SRID =4326;POINT(-110 29)’), 1000000)');
+
+
+    //note the query sql var location!!!!!!!!!!!!
+    distancePoints: function(coordinate, distance) {
+        var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+        var distancekm = distance * 1000;
+        return this.collection().query().where('ST_DWithin(location, ST_GeographyFromText(' +
+                                               '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch();
     },
 
     comments: function() {
