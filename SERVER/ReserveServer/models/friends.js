@@ -9,17 +9,16 @@ var orm = require('../db').orm,
 var Friends = orm.Model.extend({
   tableName: 'Friends',
 
-  // initialize: function() {
-  //   this.on('saving', this.validateSave);
-  // },
+  initialize: function() {
+    this.on('saving', this.validateSave);
+  },
 
-  // validateSave: function() {
-  //   return checkit({
-  //     username: 'required',
-  //     password: ['required', 'minLength:6'],
-  //     email: ['required', 'email']
-  //   }).run(this.attributes)
-  // },
+  validateSave: function() {
+    return checkit({
+      User_id: 'required',
+      Friend_id: 'required',
+    }).run(this.attributes)
+  },
 
   hasTimestamps: ['created_at', 'updated_at']
 });

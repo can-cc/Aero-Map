@@ -30,111 +30,221 @@ var FriendService = {
     },
 
     acceptFriendRequest: function(requestId) {
+        return Bookshelf.transaction(function(transaction) {
+
+            return new Promise(function(resolve, reject) {
+                new FriendRequest({
+                    id: requestId
+                }).fetch().then(function(friendRequest) {
+                    logger.log('info', 'accept friend request success', friendRequest);
+
+                    var friendData = {
+                        User_id: friendRequest.get('RequestUser_id'),
+                        Friend_id: friendRequest.get('TarUser_id')
+                    };
+
+
+                    logger.log('info', 'friendData', friendData);
+
+                    var antiFriendData = {
+                        User_id: friendRequest.get('TarUser_id'),
+                        Friend_id: friendRequest.get('RequestUser_id')
+                    };
+
+
+                    async.series([
+                        function(callback) {
+                            friendRequest.save({
+                                status: 2
+                            }, {
+                                transacting: transaction
+                            }).then(function(resp) {
+                                callback(null, true);
+                            }, function(error) {
+                                transaction.rollback(error);
+                                callback(error);
+                            });
+                        },
+                        function(callback) {
+                            new Friends(friendData).save(null, {
+                                transacting: transaction
+                            }).then(function(friend) {
+                                callback(null, true);
+                            }, function(error) {
+                                logger.log('error', 'accept friend  request fail', 'create friend object fail', error);
+                                transaction.rollback(error);
+                                callback(error);
+                            });
+                        },
+                        function(callback) {
+                            new Friends(antiFriendData).save(null, {
+                                transacting: transaction
+                            }).then(function(friend) {
+                                callback(null, true);
+                            }, function(error) {
+                                logger.log('error', 'accept friend  request fail', 'create friend object fail', error);
+                                transaction.rollback(error);
+                                callback(error);
+                            });
+                        },
+
+                    ], function(error, results) {
+                        if (error) {
+                            logger.log('error', 'accept friends  transaction  Fail ', error);
+                            transaction.rollback(error);
+                            return reject(error)
+                        }
+                        return resolve(true);
+                    });
+                }, function(error) {
+
+                });
+
+            });
+
+        });
+    },
+
+
+    /**********************************************
+     * user requests which requested by other
+     **********************************************/
+    getRequests: function(userId) {
+        return FriendRequest.collection()
+            .query('where', 'TarUser_id', '=', userId)
+            .fetch();
+    },
+
+    /**********************************************
+     * user sended request
+     **********************************************/
+    seeRequests: function(userId) {
+        return FriendRequest.collection()
+            .query('where', 'RequestUser_id', '=', userId)
+            .fetch();
+    },
+
+    rejectFriendRequest: function(requestId) {
         return new Promise(function(resolve, reject) {
             new FriendRequest({
                 id: requestId
-            }).save({
-                //code 2 is accept
-                status: 2
-            }).then(function(friendRequest) {
-                logger.log('info', 'accept friend request success', friendRequest);
-
-                var friendData = {
-                    User_id: friendReques.RequestUser_id,
-                    Friedn_id: friendReques.TarUser_id
-                };
-
-                var antiFriendDate = {
-                    User_id: friendRequest.TarUser_id,
-                    Friend_id: friendRequest.RequestUser_id
-                };
-
-                /*
-                 * Transaction! create two friends rows
-                 */
-                Bookshelf.transaction(function(transaction) {
-                    return new Friends.collection([friendData, antiFriendDate]).save(null, {
-                        transaction: transaction
-                    });
-                }).then(function(friends) {
-                    logger.log('info', 'create friend relation success', friends);
-                    resolve(friends);
+            }).fetch().then(function(friendRequest) {
+                friendRequest.save({
+                    status: 3
+                }).then(function(resp) {
+                    logger.log('info', 'reject friends request success', resp);
+                    resolve(true);
                 }, function(error) {
-                    logger.log('error', 'create friend relation fail', error);
+                    logger.log('error', 'reject friends request fail', error);
                     reject(error);
                 });
-
             }, function(error) {
-                logger.log('error', 'accept friend request fail', error);
+                logger.log('error', 'reject friends request fail', error);
                 reject(error);
             });
         });
     },
 
-    getRequests: function(userId) {
-        return new FriendRequest.collection({
-            User_id: userId
-        }).fetch();
-    },
-
-    rejectFriendRequest: function(requestId) {
-        return new FriendRequest({
-            id: requestId
-        }).save({
-            status: 3
-        });
-    },
-
     getUserFriend: function(userId, page) {
+        logger.log('info', userId);
         var pagination = setting.Pagination.friendLoad,
             limit = pagination,
             offset = (page - 1) * pagination;
-        return Friends.collection({
-            User_id: userId
-        }).query('limit', limit).query('offset', offset).fetch();
+        return Friends.collection().query('where', 'User_id', '=', userId).query('limit', limit).query('offset', offset).fetch();
     },
 
     deleteFriend: function(userId, friendId) {
-        return new Promise(function(resolve, reject) {
-            Bookshelf.transaction(function(transaction) {
-                return new Promise(function(subresolve, subreject) {
-                    var friendsData = {
-                            User_id: userId,
-                            TarUser_id: friendId
-                        },
-                        antiFriendsData = {
-                            User_id: friendId,
-                            TarUser_id: userId
-                        };
+        return Bookshelf.transaction(function(transaction) {
+            return new Promise(function(resolve, reject) {
+                var friendsData = {
+                        User_id: userId,
+                        Friend_id: friendId
+                    },
+                    antiFriendsData = {
+                        User_id: friendId,
+                        Friend_id: userId
+                    };
 
-                    async.series([
-                        function(callback) {
-                          new Friends(friendsData).destroy().then(function(resp){
-                            callback(null, true);
-                          }, function(error){
+                async.series([
+                    function(callback) {
+                        new Friends(antiFriendsData).fetch().then(function(friend) {
+                            friend.destroy().then(function(resp) {
+                                callback(null, true);
+                            }, function(error) {
+                                transaction.rollback(error);
+                                callback(error);
+                            });
+                        }, function(error) {
+                            transaction.rollback(error);
                             callback(error);
-                          });
-                        },
-                        function(callback) {
-                          new Friends(antiFriendsData).destroy().then(function(resp){
-                            callback(null, true);
-                          }, function(error){
+                        });
+
+                    },
+                    function(callback) {
+                        new Friends(friendsData).fetch().then(function(friend) {
+                            friend.destroy().then(function(resp) {
+                                callback(null, true);
+                            }, function(error) {
+                                transaction.rollback(error);
+                                callback(error);
+                            });
+                        }, function(error) {
+                            transaction.rollback(error);
                             callback(error);
-                          });
-                        }
-                    ], function(error, results) {
-                        if (error) {
-                            logger.log('error', 'delete friends relation fail', error);
-                            return subreject(error)
-                        }
-                        return subresolve(true);
-                    });
+                        });
+                    }
+                ], function(error, results) {
+                    if (error) {
+                        logger.log('error', 'delete friends relation fail', error);
+                        transaction.rollback(error);
+                        return reject(error)
+                    }
+                    return resolve(true);
                 });
 
             });
         });
-
     }
+
+    // deleteFriend: function(userId, friendId) {
+    //     return new Promise(function(resolve, reject) {
+    //         Bookshelf.transaction(function(transaction) {
+    //             return new Promise(function(subresolve, subreject) {
+    //                 var friendsData = {
+    //                         User_id: userId,
+    //                         TarUser_id: friendId
+    //                     },
+    //                     antiFriendsData = {
+    //                         User_id: friendId,
+    //                         TarUser_id: userId
+    //                     };
+
+    //                 async.series([
+    //                     function(callback) {
+    //                         new Friends(friendsData).destroy().then(function(resp) {
+    //                             callback(null, true);
+    //                         }, function(error) {
+    //                             callback(error);
+    //                         });
+    //                     },
+    //                     function(callback) {
+    //                         new Friends(antiFriendsData).destroy().then(function(resp) {
+    //                             callback(null, true);
+    //                         }, function(error) {
+    //                             callback(error);
+    //                         });
+    //                     }
+    //                 ], function(error, results) {
+    //                     if (error) {
+    //                         logger.log('error', 'delete friends relation fail', error);
+    //                         return subreject(error)
+    //                     }
+    //                     return subresolve(true);
+    //                 });
+    //             });
+    //         });
+    //     });
+    // }
 
 
 };

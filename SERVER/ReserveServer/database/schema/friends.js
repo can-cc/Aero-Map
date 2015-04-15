@@ -5,6 +5,7 @@ var knex = require('../../db').knex,
 var createFriends = exports.createFriends = function() {
     return knex.schema.createTable('Friends', function(table) {
         table.increments().unique();
+      table.unique(['User_id', 'Friend_id']);
         table.integer('User_id')
             .unsigned()
             .notNullable()
