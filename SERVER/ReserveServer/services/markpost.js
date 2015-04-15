@@ -7,7 +7,7 @@ var logger = require('../logger'),
 var MarkPostService = {
 
 
-  //Todo: time!
+    //Todo: time!
     getAreaMarkPointsRaw: function(coordinate, distance) {
         var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
         var distancekm = distance * 1000;
@@ -15,17 +15,28 @@ var MarkPostService = {
             'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
             'and valid=true;';
 
-        return knex.raw(sql).rows;
+        return knex.raw(sql);
     },
 
     getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
 
     },
 
-    getAreaMarkPointsRawFilterByType: function(coordinate, userId) {
+  getAreaMarkPointsRawFilterByType: function(coordinate, distance, type) {
+        var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+        var distancekm = distance * 1000;
+        var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
+            'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+            'and valid=true ' +
+            'and type =' + type + ';';
 
+        return knex.raw(sql);
     },
 
+
+  /*
+   * Bookshelf not supported
+   */
     getAreaMarkPointsObject: function(coordinate, distance) {
 
     },
@@ -58,8 +69,10 @@ var MarkPostService = {
         return new MarkPost(data).saveWithPoint();
     },
 
-    //just is edit
-    //return markpost object
+  /***********************************************************
+   * Fix(edit) Markpost only support user fix context , title,  pic
+   *  return bookshelf object
+   ***********************************************************/
     fixMarkPost: function(data) {
         return new Promise(function(resolve, reject) {
             new MarkPost({

@@ -59,7 +59,7 @@ describe('Mark Post Module Model Test', function() {
      ***********************************************************/
     describe('#create markpost object', function() {
         it('should return success promise', function(done) {
-          new MarkPost(markPostData1).saveWithPoint().then(function(markpost) {
+            new MarkPost(markPostData1).saveWithPoint().then(function(markpost) {
                 console.log('success', markpost);
                 done();
             }, function(error) {
@@ -96,26 +96,54 @@ describe('Mark Post Module Model Test', function() {
 
     describe.skip('#fetch markpost object collection by distance', function() {
         it('should return success promise', function(done) {
-          var coordinate = {
-            longitude: 0.01,
-            latitude: 0.01
-          };
-          var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
-          var distancekm = 1000 * 1000;
-          MarkPost.collection().query().where('ST_DWithin(location, ST_GeographyFromText(' +
-                                              '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch().then(function(markposts){
-                                                console.log('success', markposts);
-                                                done();
-                                              }, function(error){
-                                                console.log('error', error);
-                                              });
-           // new MarkPost().distancePoints(coordinate, 1000).then(function(markposts){
-           //   console.log('success', markposts);
-           //   done();
-           // }, function(error){
-           //   console.log('error', error);
-           // });
+            var coordinate = {
+                longitude: 0.01,
+                latitude: 0.01
+            };
+            var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+            var distancekm = 1000 * 1000;
+            MarkPost.collection().query().where('ST_DWithin(location, ST_GeographyFromText(' +
+                '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch().then(function(markposts) {
+                console.log('success', markposts);
+                done();
+            }, function(error) {
+                console.log('error', error);
+            });
+            // new MarkPost().distancePoints(coordinate, 1000).then(function(markposts){
+            //   console.log('success', markposts);
+            //   done();
+            // }, function(error){
+            //   console.log('error', error);
+            // });
         });
     });
+
+    /**********************************************************
+     * DELETE MARKPODT TEST
+     ***********************************************************/
+    describe('#Delete markpost', function() {
+        it('should return success promise', function(done) {
+
+            var id = 1;
+
+            // new  MarkPost({
+            //     id: id
+            // }).fetch().then(function(model) {
+            //     model.destroy().then(function(resp) {
+            //         console.log('info', resp);
+            //         done();
+            //     });
+            // })
+
+          new  MarkPost({
+            id: id
+          }).destroy().then(function(resp){
+            done();
+          });
+
+        });
+    });
+
+
 
 });

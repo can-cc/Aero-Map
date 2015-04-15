@@ -19,7 +19,10 @@ var AeroMap_Setting = {
             username: 'AeroAdmin',
             passwd: 'aero123',
             charset: 'UTF-8'
-        }   
+        }
+    },
+    Pagination: {
+        friendLoad: 10
     }
 }
 

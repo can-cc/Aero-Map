@@ -23,8 +23,9 @@ var MarkPost_Comment = orm.Model.extend({
 
     markpost: function() {
       return this.belongTo(MarkPost);
-    }
+    },
 
+  hasTimestamps: ['created_at', 'updated_at']
 });
 
 module.exports = MarkPost_Comment;
