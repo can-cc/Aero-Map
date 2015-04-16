@@ -74,7 +74,7 @@ router.post('/signin', function(req, res, next) {
  *User Avatar Router
  *************************************************/
 router.get('/user/:id/avatar', function(req, res, next) {
-
+  
 });
 
 router.post('/user/avatar', function(req, res, next) {
