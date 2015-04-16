@@ -6,7 +6,8 @@ var express = require('express'),
     setting = require('./setting'),
     RedisStore = require('connect-redis')(session),
     setting = require('./setting'),
-    app = express()
+    app = express(),
+    logger = require('./logger');
 
 
 //Warning: "Corss Damin" very dangerous
@@ -24,17 +25,33 @@ app.use(cors())
  * Route
  ***********************************************/
 //var middleware = require('./routes/middleware')
-var post = require('./routes/post')
+var UserRouter = require('./routes/user');
+var MarkPost = require('./routes/markpost');
+
+
+/***********************************************
+ * Error Trace
+ ***********************************************/
+
+logger.log('info', 'current env =  ', app.get('env'));
+
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.send({error: 'unknown!'});
+    logger.log('error', err.message);
+  });
+};
 
 
 /***********************************************
  * Run
  ***********************************************/
 var server = app.listen(3000, function () {
-  var host = setting.host
-  var port = setting.port
+  var host = setting.host;
+  var port = setting.port;
   console.log('Aero-Map App Main Server listening at http://%s:%s', host, port)
-})
+});
 
 
 
