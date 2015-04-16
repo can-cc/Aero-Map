@@ -33,9 +33,11 @@ var UserService = {
                 new User(data).save({
                     password: hash
                 }).then(function(user) {
+                  logger.log('debug', user);
                     callback(null, user);
                 }, function(error) {
-                    callback(error);
+                  logger.log('error', error);
+                  callback(error);
                 });
             });
         });

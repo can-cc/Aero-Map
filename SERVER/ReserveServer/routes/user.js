@@ -2,12 +2,14 @@ var express = require('express'),
     router = express.Router(),
     setting = require('../setting'),
     UserService = require('../services/user'),
-    FriendService = require('../services/friends');
+    FriendService = require('../services/friend');
 
 
 router.post('/logout', function(req, res, next) {
     req.session.destroy(function() {
-        res.send(success: 'logout success!');
+        res.send({
+            success: 'logout success!'
+        });
     });
 });
 /*************************************
@@ -39,7 +41,7 @@ router.post('/login', function(req, res, next) {
         });
     } else {
         res.send({
-            error: "login type error!";
+            error: "login type error!"
         });
     }
 });
@@ -48,19 +50,23 @@ router.post('/signin', function(req, res, next) {
     var userdata = {
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
     };
+
 
     UserService.signIn(userdata, function(error, user) {
         if (error || user === null) {
             /***********************************
              * Todo: specifically  error message
              ***********************************/
+            res.status(500);
             res.send({
                 error: 'sign in error!'
             });
+        } else {
+            res.send(user.omit('password'));
         };
-        res.send(user.omit('password'));
+
     });
 });
 

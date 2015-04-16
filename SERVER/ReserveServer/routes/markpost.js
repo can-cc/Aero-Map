@@ -4,7 +4,7 @@ var express = require('express'),
 
 router.get('/api/markpost/:id', function(req, res, next){
   var id = req.params.id;
-  MarkPostService.get
-})
 
-router.
+});
+
+

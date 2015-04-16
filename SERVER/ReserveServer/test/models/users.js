@@ -2,7 +2,7 @@ var assert = require('assert'),
     User = require('../../models/user'),
     UserDetail = require('../../models/userdetail'),
     user_schema = require('../../database/schema/user'),
-    randomstring = require("randomstring")
+    randomstring = require("randomstring");
 
 describe('User Model Test', function() {
     //correct user data

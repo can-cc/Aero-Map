@@ -10,16 +10,19 @@ var express = require('express'),
     logger = require('./logger');
 
 
-//Warning: "Corss Damin" very dangerous
-//Only in Debug
-var cors = require('cores')
+/*
+ * Warning: "Corss Damin" very dangerous
+ * Must only in develpment env
+ */
+var cors = require('cors')
 app.use(cors())
 
 
 /***********************************************
  * Setting
  ***********************************************/
-
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 /***********************************************
  * Route
@@ -28,7 +31,11 @@ app.use(cors())
 var UserRouter = require('./routes/user');
 var MarkPost = require('./routes/markpost');
 
+var TestRouter = require('./routes/test');
 
+
+app.use(UserRouter);
+app.use(TestRouter);
 /***********************************************
  * Error Trace
  ***********************************************/
@@ -40,6 +47,7 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.send({error: 'unknown!'});
     logger.log('error', err.message);
+    logger.log('error', err);
   });
 };
 

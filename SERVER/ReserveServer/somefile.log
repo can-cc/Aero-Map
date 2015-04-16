@@ -95,3 +95,90 @@
 {"level":"info","message":"1","timestamp":"2015-04-15T07:10:23.785Z"}
 {"name":"error","length":109,"severity":"ERROR","code":"42703","position":"70","file":"parse_relation.c","line":"2639","routine":"errorMissingColumn","level":"error","timestamp":"2015-04-15T07:10:23.866Z"}
 {"level":"info","message":"1","timestamp":"2015-04-15T07:11:05.763Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T05:02:19.630Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T05:20:18.318Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:03:55.472Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:39:47.184Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:41:08.944Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:46:38.644Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:46:43.223Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:46:52.136Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:47:30.682Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:47:34.660Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:47:38.736Z"}
+{"level":"error","timestamp":"2015-04-16T07:47:38.744Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:48:44.724Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:48:48.519Z"}
+{"level":"error","timestamp":"2015-04-16T07:48:48.527Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:49:21.704Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:49:26.781Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:49:29.737Z"}
+{"level":"error","timestamp":"2015-04-16T07:49:29.745Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:50:09.717Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:50:27.801Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:08.726Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:22.000Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:39.108Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:48.801Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:51.783Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:52:42.833Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:52:54.762Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:24.105Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:53:24.925Z"}
+{"level":"error","timestamp":"2015-04-16T07:53:24.932Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:54.779Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:59.980Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:54:01.630Z"}
+{"level":"error","timestamp":"2015-04-16T07:54:01.651Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:54:51.795Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:55:22.846Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:55:27.451Z"}
+{"level":"error","timestamp":"2015-04-16T07:55:27.459Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:55:39.029Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:55:40.644Z"}
+{"level":"error","timestamp":"2015-04-16T07:55:40.653Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:56:55.788Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:57:19.800Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:00:32.858Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:00:43.843Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:00:48.719Z"}
+{"level":"error","timestamp":"2015-04-16T08:00:48.735Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:01:25.850Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:01:51.849Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:01:57.164Z"}
+{"level":"error","timestamp":"2015-04-16T08:01:57.173Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:02:16.510Z"}
+{"level":"error","timestamp":"2015-04-16T08:02:16.542Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:04:48.974Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:08:09.315Z"}
+{"level":"error","timestamp":"2015-04-16T08:08:09.332Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:08:59.001Z"}
+{"level":"error","timestamp":"2015-04-16T08:08:59.028Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:06.031Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:06.085Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:14.270Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:14.294Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:20.847Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:20.874Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:32.003Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:32.068Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:14:54.236Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:15:12.270Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:19:02.302Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:20:46.342Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:23:14.451Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:03.422Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:52.439Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:56.409Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:25:59.414Z"}
+{"email":["The email is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:27:47.779Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:27:54.675Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:28:13.542Z"}
+{"email":["The email is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:03.511Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:11.506Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:14.490Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:23.570Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:42:54.036Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T09:01:08.803Z"}
