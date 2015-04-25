@@ -1,6 +1,6 @@
 /*global Author:Tyan*/
 
-AeroMap.Routers = AeroMap.Routers || {}
+AeroMap.Routers = AeroMap.Routers || {};
 
 AeroMap.Routers.AppRouter = Backbone.Router.extend({
     routes: {
@@ -11,16 +11,16 @@ AeroMap.Routers.AppRouter = Backbone.Router.extend({
     },
 
     route_map: function () {
-        AeroMap.Map = AeroMap.Map || new AeroMap.Views.MapView()
-        AeroMap.Map.show()
+        AeroMap.Map = AeroMap.Map || new AeroMap.Views.MapView();
+        AeroMap.Map.show();
     },
 
     route_profile: function () {
-        AeroMap.ProfileView = AeroMap.ProfileView || new AeroMap.Views.ProfileView()
-        AeroMap.ProfileView.render()
-        AeroMap.ProfileView.show()
+        AeroMap.ProfileView = AeroMap.ProfileView || new AeroMap.Views.ProfileView();
+        AeroMap.ProfileView.render();
+        AeroMap.ProfileView.show();
     }
-})
+});
     
 
 

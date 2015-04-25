@@ -38,6 +38,8 @@ window.AeroMap = {
 $(document).ready(function() {
     'use strict';
 
+  if(Cookies.get('name'));
+
 
     AeroMap.init();
 });
