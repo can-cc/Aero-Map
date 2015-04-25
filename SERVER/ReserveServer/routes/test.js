@@ -1,7 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     setting = require('../setting'),
-    UserService = require('../ser vices/user'),
+    UserService = require('../services/user'),
     FriendService = require('../services/friend');
 
 

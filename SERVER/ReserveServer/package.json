@@ -37,6 +37,7 @@
     "winston": "^0.9.0"
   },
   "devDependencies": {
+    "ccap": "^0.6.0",
     "connect-redis": "^2.2.0"
   }
 }

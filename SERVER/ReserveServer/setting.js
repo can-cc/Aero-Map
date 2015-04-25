@@ -1,4 +1,4 @@
-var AeroMap_Setting = {
+var AeroMapSetting = {
     development: true,
     port: 3000,
     host: '0.0.0.0',
@@ -23,7 +23,11 @@ var AeroMap_Setting = {
     },
     Pagination: {
         friendLoad: 10
-    }
-}
+    },
+  redis_session: {
+    host: 0.0.0.0,
+    port: 6379
+  }
+};
 
-module.exports = AeroMap_Setting
+module.exports = AeroMapSetting;
