@@ -115,9 +115,26 @@ exports.createUserInfomation = function() {
     });
 };
 
+
+exports.createUserLimit = function(){
+  return knex.schema.createTable('UserLimit', function(table){
+    table.integer('User_id').unique().primary();
+    table.integer('limitCode');
+  });
+};
+
 exports.drop_all_tables = function(callback) {
     async.series([
 
+      function(next) {
+        knex.schema.dropTableIfExists('UserLimit').then(function(success) {
+          winston.info('drop UserLimit table success ', JSON.stringify(success));
+          next(null, true);
+        }, function(error) {
+          winston.error('drop UserLimit table error', JSON.stringify(error));
+          next(new Error('drop UserLimit error error'), false);
+        });
+      },
         function(next) {
             knex.schema.dropTableIfExists('UserDetail').then(function(success) {
                 winston.info('drop UserDetail table success ', JSON.stringify(success));
@@ -212,7 +229,20 @@ exports.create_all_tables = function(callback) {
                     winston.log('error', 'create Infomation table error', JSON.stringify(error));
                     call(new Error('create  Infomation table error'), false);
                 });
-        }
+        },
+      function(call) {
+        exports.createUserLimit().then(
+          function(success) {
+            winston.log('info', 'create UserLimit table success', success);
+            call(null, true);
+          },
+          function(error) {
+            winston.log('error', 'create UserLimit table error', JSON.stringify(error));
+            call(new Error('create  UserLimit table error'), false);
+          });
+      }
+
+
     ], function(err, results) {
         winston.log('debug', err);
         winston.log('debug', results);
