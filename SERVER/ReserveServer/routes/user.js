@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     setting = require('../setting'),
     UserService = require('../services/user'),
-    FriendService = require('../services/friend');
+    FriendService = require('../services/friend'),
+    passport = require('../auth/passport');
 
 
 router.post('/logout', function(req, res, next) {
@@ -12,6 +13,7 @@ router.post('/logout', function(req, res, next) {
         });
     });
 });
+
 /*************************************
  * Login:
  * type  { 1:username, 2:email }
@@ -27,7 +29,7 @@ router.post('/login', function(req, res, next) {
                 res.send({
                     error: 'username or password error!'
                 });
-            };
+            }
             res.send(user.omit('password'));
         });
     } else if (type === 2) {
@@ -36,7 +38,7 @@ router.post('/login', function(req, res, next) {
                 res.send({
                     error: 'username or password error!'
                 });
-            };
+            }
             res.send(user.omit('password'));
         });
     } else {
@@ -45,6 +47,20 @@ router.post('/login', function(req, res, next) {
         });
     }
 });
+
+/****************************************************
+ * Login by Passport local Strategy
+ ****************************************************/
+router.post('/loginbypp',
+    passport.authenticate('local', {
+        failureFlash: true
+    }),
+    function(req, res) {
+        res.send(req.user);
+    }
+);
+
+
 
 router.post('/signin', function(req, res, next) {
     var userdata = {
@@ -65,7 +81,7 @@ router.post('/signin', function(req, res, next) {
             });
         } else {
             res.send(user.omit('password'));
-        };
+        }
 
     });
 });
@@ -74,7 +90,7 @@ router.post('/signin', function(req, res, next) {
  *User Avatar Router
  *************************************************/
 router.get('/user/:id/avatar', function(req, res, next) {
-  
+
 });
 
 router.post('/user/avatar', function(req, res, next) {

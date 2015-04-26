@@ -1,4 +1,5 @@
 var express = require('express'),
+    morgan = require('morgan'),
     fs = require('fs'),
     https = require('https'),
     path = require('path'),
@@ -10,21 +11,27 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     csrf = require('csurf'),
     setting = require('./setting'),
+    flash = require('connect-flash'),
+    passport = require('./auth/passport'),
     app = express(),
+    captcha = require('captcha'),
     logger = require('./logger');
 
 
-/*
+
+/***********************************************
+ * Important Note:!
  * Warning: "Corss Damin" very dangerous
  * Must only in develpment env
- */
+ ***********************************************/
 var cors = require('cors');
 app.use(cors());
 
 
 /***********************************************
- * Setting
+ * Configure
  ***********************************************/
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -41,9 +48,16 @@ app.set('parseForm', bodyParser.urlencoded({
 //session
 app.use(session({
     store: new RedisStore(setting.redis_session),
-    secret: 'keyboard cat',
+    secret: 'LoveRaspberryPi',
     name: 'aero-session',
 }));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+//captcha
+app.use(captcha({ url: '/captcha.jpg', color:'#0064cd', background: 'rgb(20,30,200)' })); // captcha params
 
 
 /***********************************************
@@ -81,8 +95,8 @@ if (app.get('env') === 'development') {
 
 /***********************************************
  * Run
+ * Choose https or http by setting.https(boolean)
  ***********************************************/
-
 if (setting.https) {
     https.createServer({
         key: fs.readFileSync('cert/test/server.key'),

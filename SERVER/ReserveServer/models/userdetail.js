@@ -7,6 +7,7 @@ bcrypt = Promise.promisifyAll(require('bcrypt'));
 var UserDetail = orm.Model.extend({
     tableName: 'UserDetail',
 
+  idAttribute: 'User_id',
 
     initialize: function() {
         this.on('saving', this.validateSave);
@@ -17,7 +18,7 @@ var UserDetail = orm.Model.extend({
             nickname: 'required',
             public_email: 'email',
             self_description: 'minLength:10'
-        }).run(this.attributes)
+        }).run(this.attributes);
     },
 
     user: function() {

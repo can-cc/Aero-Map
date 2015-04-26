@@ -14,6 +14,9 @@ exports.createUser = function() {
         table.string('email')
             .unique()
             .notNullable();
+      table.integer('limit')
+        .notNullable()
+        .defaultTo(1);
         table.timestamps();
     });
 };
@@ -56,14 +59,15 @@ exports.createUser = function() {
 
 exports.createUserDetail = function() {
     return knex.schema.createTable('UserDetail', function(table) {
-        table.increments().unique();
+
         table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
             .index()
             .references('id')
-            .inTable('User');
+            .inTable('User')
+            .primary();
         table.string('nickname')
             .unique()
             .notNullable();
@@ -78,19 +82,19 @@ exports.createUserDetail = function() {
         table.string('qq');
         table.timestamps();
     });
-}
+};
 
 
 exports.createUserSetting = function() {
     return knex.schema.createTable('UserSetting', function(table) {
-        table.increments().unique();
         table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
             .index()
             .references('id')
-            .inTable('User');
+            .inTable('User')
+            .primary();
         table.string('defaultMapView');
         table.string('defaultMapZoom');
         table.boolean('seePaperPlane');
@@ -101,14 +105,14 @@ exports.createUserSetting = function() {
 
 exports.createUserInfomation = function() {
     return knex.schema.createTable('UserInfomation', function(table) {
-        table.increments().unique();
         table.integer('User_id')
             .unique()
             .unsigned()
             .notNullable()
             .index()
             .references('id')
-            .inTable('User');
+            .inTable('User')
+            .primary();
         table.boolean('isVIP');
         table.time('lastlogin');
         table.timestamps();
@@ -116,25 +120,25 @@ exports.createUserInfomation = function() {
 };
 
 
-exports.createUserLimit = function(){
-  return knex.schema.createTable('UserLimit', function(table){
-    table.integer('User_id').unique().primary();
-    table.integer('limitCode');
-  });
+exports.createUserLimit = function() {
+    return knex.schema.createTable('UserLimit', function(table) {
+        table.integer('User_id').unique().primary();
+        table.integer('limitCode');
+    });
 };
 
 exports.drop_all_tables = function(callback) {
     async.series([
 
-      function(next) {
-        knex.schema.dropTableIfExists('UserLimit').then(function(success) {
-          winston.info('drop UserLimit table success ', JSON.stringify(success));
-          next(null, true);
-        }, function(error) {
-          winston.error('drop UserLimit table error', JSON.stringify(error));
-          next(new Error('drop UserLimit error error'), false);
-        });
-      },
+        function(next) {
+            knex.schema.dropTableIfExists('UserLimit').then(function(success) {
+                winston.info('drop UserLimit table success ', JSON.stringify(success));
+                next(null, true);
+            }, function(error) {
+                winston.error('drop UserLimit table error', JSON.stringify(error));
+                next(new Error('drop UserLimit error error'), false);
+            });
+        },
         function(next) {
             knex.schema.dropTableIfExists('UserDetail').then(function(success) {
                 winston.info('drop UserDetail table success ', JSON.stringify(success));
@@ -230,17 +234,17 @@ exports.create_all_tables = function(callback) {
                     call(new Error('create  Infomation table error'), false);
                 });
         },
-      function(call) {
-        exports.createUserLimit().then(
-          function(success) {
-            winston.log('info', 'create UserLimit table success', success);
-            call(null, true);
-          },
-          function(error) {
-            winston.log('error', 'create UserLimit table error', JSON.stringify(error));
-            call(new Error('create  UserLimit table error'), false);
-          });
-      }
+        function(call) {
+            exports.createUserLimit().then(
+                function(success) {
+                    winston.log('info', 'create UserLimit table success', success);
+                    call(null, true);
+                },
+                function(error) {
+                    winston.log('error', 'create UserLimit table error', JSON.stringify(error));
+                    call(new Error('create  UserLimit table error'), false);
+                });
+        }
 
 
     ], function(err, results) {

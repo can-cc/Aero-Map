@@ -12,7 +12,7 @@ describe('User Model Test', function() {
         email: randomstring.generate(5) + '@hotmail.com',
         // created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    }
+    };
 
     //password toot short
     var userData2 = {
@@ -21,7 +21,7 @@ describe('User Model Test', function() {
         email: randomstring.generate(5) + '@hotmail.com',
         // created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    }
+    };
 
     //email format error
     var userData3 = {
@@ -38,7 +38,7 @@ describe('User Model Test', function() {
         email: randomstring.generate(5) + '@hotmail.com',
         //   created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    }
+    };
 
     //have empty
     var userData5 = {
@@ -47,7 +47,7 @@ describe('User Model Test', function() {
         email: randomstring.generate(5) + '@hotmail.com',
         // created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    }
+    };
 
     var userData6 = {
         username: randomstring.generate(5),
@@ -55,7 +55,7 @@ describe('User Model Test', function() {
         email: randomstring.generate(5) + '@hotmail.com',
         // created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    }
+    };
 
     //********************************************************
     //create
@@ -132,7 +132,7 @@ describe('User Model Test', function() {
             //   console.log(users);
             // });
         });
-    })
+    });
 
     //************************************************************
     //update
@@ -148,7 +148,7 @@ describe('User Model Test', function() {
                     console.log('debug', JSON.stringify(updated_user));
                     done();
                 });
-            })
+            });
         });
     });
 
@@ -256,5 +256,15 @@ describe('User Model Test', function() {
         });
     });
 
+  describe('#has one UserLimit', function() {
+    it('should return success promise', function(done) {
+      new User({
+        username: userData1.username
+      }).related('limit').fetch().then(function(userLimit) {
+        console.log('debug', userLimit);
+        done();
+      });
+    });
+  });
 
-})
+});

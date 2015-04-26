@@ -4,7 +4,22 @@ var orm = require('../db').orm,
     bcrypt = Promise.promisifyAll(require('bcrypt')),
     UserDetail = require('./userdetail'),
     UserSetting = require('./usersetting'),
+    UserLimit = require('./userlimit'),
     UserInfomation = require('./userinfomation');
+
+
+/****************************************************
+ * @@Model User
+ * id
+ * username
+ * password
+ * email
+ * created_at
+ * updated_at
+ * limit {
+ * 1: have not detail
+ * }
+ ****************************************************/
 
 var User = orm.Model.extend({
     tableName: 'User',
@@ -23,7 +38,7 @@ var User = orm.Model.extend({
             username: 'required',
             password: ['required', 'minLength:6'],
             email: ['required', 'email']
-        }).run(this.attributes)
+        }).run(this.attributes);
     },
 
     detail: function() {
@@ -38,7 +53,14 @@ var User = orm.Model.extend({
         return this.hasOne(UserInfomation);
     },
 
-    hasTimestamps: ['created_at', 'updated_at']
-})
+  /****************************************************
+   * @deprecated relation!
+   ****************************************************/
+  limit: function(){
+    return this.hasOne(UserLimit);
+  },
 
-module.exports = User
+  hasTimestamps: ['created_at', 'updated_at']
+});
+
+module.exports = User;

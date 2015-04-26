@@ -2,6 +2,7 @@ var logger = require('../logger'),
     User = require('../models/user'),
     UserDetail = require('../models/userdetail'),
     Promise = require('bluebird'),
+    async = require("async"),
     bcrypt = require('bcrypt');
 
 var UserService = {
@@ -26,6 +27,12 @@ var UserService = {
         });
     },
 
+
+
+  /**************************************************
+   * @deprecated!
+   *
+   **************************************************/
     signIn: function(data, callback) {
         bcrypt.genSalt(11, function(err, salt) {
             bcrypt.hash(data.password, salt, function(err, hash) {
@@ -41,8 +48,52 @@ var UserService = {
                 });
             });
         });
-
     },
+
+  createUser : function(data, outCallback){
+    return Bookshelf.transaction(function(transaction){
+      return new Promise(function(resolve, reject){
+        async.waterfall([
+          //create user
+          function(callback){
+            bcrypt.genSalt(11, function(err, salt) {
+              bcrypt.hash(data.password, salt, function(err, hash) {
+                //data.password = hash
+                new User(data).save({
+                  password: hash
+                }).then(function(user) {
+                  logger.log('debug', user);
+                  callback(null, user);
+                }, function(error) {
+                  logger.log('error', error);
+                  callback(error);
+                });
+              });
+            });
+          },
+          //create user setting(default)
+          function(callback){
+
+          },
+          //create user infomation(default)
+          function(callback){
+
+          },
+          //create user setting(default)
+          function(callback){
+
+          },
+          //create user friendinfo(default)
+          function(callback){
+
+          }
+        ], function(error, result){
+
+        });
+      });
+    });
+
+  },
 
 
     loginByUserName: function(username, password, callback) {
@@ -80,6 +131,6 @@ var UserService = {
     }
 
 
-}
+};
 
 module.exports = UserService;

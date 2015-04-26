@@ -12,4 +12,14 @@ router.get('/test', function(req, res, next){
   });
 });
 
+router.get('/test/captcha', function(req, res){
+  res.type('html');
+  res.end('<img src="/captcha.jpg"/><form action="/test/login" method="post"><input type="text" name="digits"/></form>'); // captcha render
+});
+
+router.post('/test/login', function(req, res){
+  res.type('html');
+  res.end('CONFIRM: ' + (req.body.digits == req.session.captcha)); // captcha verify
+});
+
 module.exports = router;

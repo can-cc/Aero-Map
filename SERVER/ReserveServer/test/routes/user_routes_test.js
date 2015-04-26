@@ -28,13 +28,13 @@ describe('User Router Test', function() {
 
                     console.log('debug', res.status);
                     assert.equal(res.status, 200);
-                    done()
+                    done();
                 });
 
         });
     });
 
-    describe('#user login by username', function() {
+    describe.skip('#user login by username', function() {
         it('should return user json', function(done) {
             var loginData = {
                 username: testData.username,
@@ -54,10 +54,10 @@ describe('User Router Test', function() {
         });
     });
 
-    describe('#user login by email', function() {
+    describe.skip('#user login by email', function() {
         it('should return user json', function(done) {
             var loginData = {
-                username: testData.username,
+                username: testData.email,
                 password: testData.password,
                 type: 2
             };
@@ -74,9 +74,24 @@ describe('User Router Test', function() {
         });
     });
 
+  describe('user login by passport whatever username or email', function(){
+    it('should return user json without password', function(done){
+      var loginData = {
+        username: testData.email,
+        password: testData.password,
+      };
+      request(domain)
+        .post('/loginbypp')
+        .send(loginData)
+        .end(function(err, res) {
+          console.log('debug', res.status);
+          console.log('debug', res.body);
+          assert.equal(res.status, 200);
+          done();
+        });
 
-  describe('#user post detail', function(){
-
+    });
   });
+
 
 });
