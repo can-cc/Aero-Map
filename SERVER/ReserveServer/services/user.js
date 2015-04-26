@@ -63,7 +63,7 @@ var UserService = {
                   password: hash
                 }).then(function(user) {
                   logger.log('debug', user);
-                  callback(null, user);
+                  callback(null, user.get('id'));
                 }, function(error) {
                   logger.log('error', error);
                   callback(error);
@@ -72,7 +72,7 @@ var UserService = {
             });
           },
           //create user setting(default)
-          function(callback){
+          function(user,callback){
 
           },
           //create user infomation(default)
