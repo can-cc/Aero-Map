@@ -1,14 +1,17 @@
-AeroMap.Views = AeroMap.Views || {}
+AeroMap.Views = AeroMap.Views || {};
 
 AeroMap.Views.LoginView = Backbone.View.extend({
-    el: '.am-context',
+    el: '.main-container',
     
     initialize: function () {
-        
+      this.render();
     },
     
     render: function() {
-        
+      var self = this;
+      $.get('/templates/login.html', function(data){
+        $(self.el).html(data);
+      });
     },
 
     show: function() {
@@ -18,4 +21,4 @@ AeroMap.Views.LoginView = Backbone.View.extend({
     clean: function() {
         
     }
-})
+});

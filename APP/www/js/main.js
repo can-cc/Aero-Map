@@ -33,11 +33,14 @@ window.AeroMap = {
     }
 };
 
-
-
 $(document).ready(function() {
     'use strict';
+  AeroMap.init();
 
-
-    AeroMap.init();
+  if(Cookies.get('aero-session') || window.location.hash === '#register'){
+    window.location = '/#map';
+  }else{
+    window.location = '/#login';
+  }
+   
 });

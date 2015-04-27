@@ -1,5 +1,5 @@
 
-AeroMap.Views = AeroMap.Views || {}
+AeroMap.Views = AeroMap.Views || {};
 
 AeroMap.Views.ProfileView = Backbone.View.extend({
     el: '.am-context',
@@ -21,4 +21,4 @@ AeroMap.Views.ProfileView = Backbone.View.extend({
     clean: function () {
         
     }
-})
+});

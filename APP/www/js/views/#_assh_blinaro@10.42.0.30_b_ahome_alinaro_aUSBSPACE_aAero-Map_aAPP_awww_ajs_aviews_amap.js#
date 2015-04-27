@@ -22,7 +22,7 @@ AeroMap.Views.MapView = Backbone.View.extend({
         $(this.other_el).hide();
         this.$el.show();
         this.location(this.position);
-    },
+      },
 
     foot_record: function (position) {
 
