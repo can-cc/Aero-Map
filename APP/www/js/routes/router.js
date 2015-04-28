@@ -3,8 +3,9 @@
 AeroMap.Routers = AeroMap.Routers || {};
 
 AeroMap.Routers.AppRouter = Backbone.Router.extend({
-  
+
     routes: {
+
         'register': 'route_register',
         'login': 'route_login',
         'logout': 'route_logout',
@@ -13,7 +14,6 @@ AeroMap.Routers.AppRouter = Backbone.Router.extend({
         'profile': 'route_profile'
     },
 
-  
 
     route_map: function() {
         AeroMap.Map = AeroMap.Map || new AeroMap.Views.MapView();
@@ -26,17 +26,26 @@ AeroMap.Routers.AppRouter = Backbone.Router.extend({
         AeroMap.ProfileView.show();
     },
 
-  route_login: function(){
-    new AeroMap.Views.LoginView();
-  },
+    route_login: function() {
+        if (AeroMap.LoginView) {
+            AeroMap.LoginView.initialize();
+        }
+        AeroMap.LoginView = new AeroMap.Views.LoginView();
+    },
 
-  route_register: function(){
-    console.log('f');
-    new AeroMap.Views.RegisterView();
-  },
+    route_register: function() {
+        if (AeroMap.RegisterView) {
+            AeroMap.RegisterView.initialize();
+        }
+        AeroMap.RegisterView = new AeroMap.Views.RegisterView();
+    },
 
-  route_logout: function(){
+    route_logout: function() {
 
-  }
+    },
+
+    clean_all: function() {
+
+    }
 
 });

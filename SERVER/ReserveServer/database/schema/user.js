@@ -14,9 +14,9 @@ exports.createUser = function() {
         table.string('email')
             .unique()
             .notNullable();
-      table.integer('limit')
-        .notNullable()
-        .defaultTo(1);
+        table.integer('limit')
+            .notNullable()
+            .defaultTo(1);
         table.timestamps();
     });
 };
@@ -95,10 +95,14 @@ exports.createUserSetting = function() {
             .references('id')
             .inTable('User')
             .primary();
-        table.string('defaultMapView');
-        table.string('defaultMapZoom');
-        table.boolean('seePaperPlane');
-        table.boolean('receiveFriendRequest');
+        table.integer('defaultMapView')
+            .defaultTo(1);
+        table.string('defaultMapZoom')
+            .defaultTo(13);
+        table.boolean('seePaperPlane')
+            .defaultTo(true);
+        table.boolean('receiveFriendRequest')
+            .defaultTo(true);
         table.timestamps();
     });
 };
@@ -113,7 +117,8 @@ exports.createUserInfomation = function() {
             .references('id')
             .inTable('User')
             .primary();
-        table.boolean('isVIP');
+        table.boolean('isVIP')
+            .defaultTo(false);
         table.time('lastlogin');
         table.timestamps();
     });
@@ -123,7 +128,8 @@ exports.createUserInfomation = function() {
 exports.createUserLimit = function() {
     return knex.schema.createTable('UserLimit', function(table) {
         table.integer('User_id').unique().primary();
-        table.integer('limitCode');
+        table.integer('limitCode')
+            .defaultTo(1);
     });
 };
 

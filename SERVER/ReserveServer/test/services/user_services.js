@@ -11,7 +11,14 @@ describe('User Services', function() {
         email: randomstring.generate(9) + '@hotmail.com'
     };
 
-    describe('#user sign in', function() {
+  var userData2 = {
+    username: randomstring.generate(5),
+    password: 'sdsd1234567',
+    email: randomstring.generate(9) + '@hotmail.com'
+  };
+
+
+    describe.skip('#user sign in', function() {
         it('should return true, mean sign in success', function(done) {
             UserService.signIn(userData1, function(err, user) {
                 if (err) throw err;
@@ -21,7 +28,7 @@ describe('User Services', function() {
         });
     });
 
-    describe('#user login', function() {
+    describe.skip('#user login', function() {
         it('login by username, should return success promise, mean login success', function(done) {
             UserService.loginByUserName(userData1.username, userData1.password, function(err, user){
               console.log('debug', err);
@@ -59,8 +66,16 @@ describe('User Services', function() {
               done();
             });
         });
-
-
-
     });
+
+  describe('create user and other table col', function(){
+    it('should return success promise', function(done){
+      UserService.createUser(userData2).then(function(user){
+        console.log('debug', user);
+        done();
+      }, function(error){
+        throw error;
+      });
+    });
+  });
 });

@@ -1,8 +1,13 @@
 var logger = require('../logger'),
     User = require('../models/user'),
     UserDetail = require('../models/userdetail'),
+    UserSetting = require('../models/usersetting'),
+    UserInfomation = require('../models/userinfomation'),
+    UserFriendsInfo = require('../models/userfriendinfo'),
+    UserLimit = require('../models/userlimit'),
     Promise = require('bluebird'),
     async = require("async"),
+    Bookshelf = require('../db').orm,
     bcrypt = require('bcrypt');
 
 var UserService = {
@@ -50,7 +55,7 @@ var UserService = {
         });
     },
 
-  createUser : function(data, outCallback){
+  createUser : function(data){
     return Bookshelf.transaction(function(transaction){
       return new Promise(function(resolve, reject){
         async.waterfall([
@@ -63,7 +68,7 @@ var UserService = {
                   password: hash
                 }).then(function(user) {
                   logger.log('debug', user);
-                  callback(null, user.get('id'));
+                  callback(null, user);
                 }, function(error) {
                   logger.log('error', error);
                   callback(error);
@@ -73,26 +78,49 @@ var UserService = {
           },
           //create user setting(default)
           function(user,callback){
-
+            new UserSetting({
+              User_id: user.get('id')
+            }).save(null, {method: "insert"}).then(function(usersetting){
+              callback(null, user);
+            }, function(error){
+              logger.log('error', error);
+              callback(error);
+            });
           },
           //create user infomation(default)
-          function(callback){
-
-          },
-          //create user setting(default)
-          function(callback){
-
+          function(user, callback){
+            new UserInfomation({
+              User_id: user.get('id')
+            }).save(null, {method: "insert"}).then(function(userinfomation){
+              callback(null, user);
+            }, function(error){
+              logger.log('error', error);
+              callback(error);
+            });
           },
           //create user friendinfo(default)
-          function(callback){
-
+          function(user, callback){
+            new UserFriendsInfo({
+              User_id: user.get('id')
+            }).save(null, {method: "insert"}).then(function(userfriendinfo){
+              callback(null, user);
+            }, function(error){
+              logger.log('error', error);
+              callback(error);
+            });
           }
         ], function(error, result){
-
+          if(error){
+            transaction.rollback(error);
+          }
+          if(result){
+            //@Todo instanceof user
+            resolve(result);
+          }
+          return reject(new Error('unknown error!'));
         });
       });
     });
-
   },
 
 

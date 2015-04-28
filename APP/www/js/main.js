@@ -1,5 +1,6 @@
 //main.js Anthor: Tyan 2015.3.22
 
+
 $(function() {
     FastClick.attach(document.body);
 });
@@ -29,6 +30,9 @@ window.AeroMap = {
         'use strict';
         Backbone.emulateJSON = true;
         AeroMap.Router = new AeroMap.Routers.AppRouter();
+      AeroMap.setting = {
+        serverDomain: 'http://10.42.0.30:3000',
+      };
         Backbone.history.start();
     }
 };
@@ -36,11 +40,11 @@ window.AeroMap = {
 $(document).ready(function() {
     'use strict';
   AeroMap.init();
-
+  alert(AeroMap.setting.serverDomain);
   if(Cookies.get('aero-session') || window.location.hash === '#register'){
-    window.location = '/#map';
+    window.location = '#map';
   }else{
-    window.location = '/#login';
+     window.location.hash = '#login';
   }
-   
+
 });

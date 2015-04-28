@@ -198,3 +198,5 @@
 {"level":"info","message":"current env =   development","timestamp":"2015-04-26T11:59:24.183Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-04-26T12:00:32.028Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-04-26T12:01:22.482Z"}
+{"level":"error","timestamp":"2015-04-27T08:27:30.177Z"}
+{"name":"error","length":218,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\")=(1) already exists.","schema":"public","table":"UserSetting","constraint":"usersetting_user_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-27T08:33:36.573Z"}

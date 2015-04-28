@@ -92,7 +92,7 @@ var FriendService = {
                         if (error) {
                             logger.log('error', 'accept friends  transaction  Fail ', error);
                             transaction.rollback(error);
-                            return reject(error)
+                            return reject(error);
                         }
                         return resolve(true);
                     });
