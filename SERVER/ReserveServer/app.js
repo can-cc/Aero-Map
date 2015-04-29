@@ -32,18 +32,21 @@ app.use(cors());
  * Configure
  ***********************************************/
 app.use(morgan('combined'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser());
+// app.use(bodyParser.urlencoded({
+//     extended: true
+// }));
+app.use(cookieParser());
 
 //csrf
 app.set('csrfProtection', csrf({
-    cookie: true
+  cookie: true,
+  value: function(req){return req.body._csrf}
 }));
 app.set('parseForm', bodyParser.urlencoded({
     extended: false
 }));
+
 
 //session
 app.use(session({
@@ -58,7 +61,8 @@ app.use(passport.session());
 
 //captcha
 app.use(captcha({ url: '/captcha.jpg', color:'#0064cd', background: 'rgb(20,30,200)' })); // captcha params
-
+app.use('/templates',express.static('templates'));
+module.exports = app;
 
 /***********************************************
  * Route
@@ -111,6 +115,3 @@ if (setting.https) {
     });
 }
 
-
-
-module.exports = app;

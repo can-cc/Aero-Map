@@ -3,7 +3,8 @@ var express = require('express'),
     setting = require('../setting'),
     UserService = require('../services/user'),
     FriendService = require('../services/friend'),
-    passport = require('../auth/passport');
+    passport = require('../auth/passport'),
+    logger = require('../logger');
 
 
 router.post('/logout', function(req, res, next) {
@@ -61,6 +62,9 @@ router.post('/loginbypp',
 );
 
 
+/****************************************************
+ * @Sign in
+ ****************************************************/
 
 router.post('/signin', function(req, res, next) {
     var userdata = {
@@ -68,23 +72,39 @@ router.post('/signin', function(req, res, next) {
         password: req.body.password,
         email: req.body.email,
     };
-
-
-    UserService.signIn(userdata, function(error, user) {
-        if (error || user === null) {
-            /***********************************
-             * Todo: specifically  error message
-             ***********************************/
+  logger.log('info', userdata);
+    // UserService.signIn(userdata, function(error, user) {
+    //     if (error || user === null) {
+    //         /***********************************
+    //          * Todo: specifically  error message
+    //          ***********************************/
+    //         res.status(500);
+    //         res.send({
+    //             error: 'sign in error!(unknown)'
+    //         });
+    //     } else {
+    //         res.send(user.omit('password'));
+    //     }
+    // });
+    UserService.createUser(userdata).then(function(user) {
+        if (user) {
+            res.send(user.omit('password'));
+        } else {
             res.status(500);
             res.send({
-                error: 'sign in error!'
+                error: 'sign in error!(unknown)'
             });
-        } else {
-            res.send(user.omit('password'));
         }
-
+    }, function(error) {
+        res.status(500);
+        res.send({
+            error: 'sign in error!(unknown)'
+        });
     });
 });
+
+
+
 
 /*************************************************
  *User Avatar Router
@@ -162,5 +182,7 @@ router.post('/user/friends', function(req, res, next) {
 router.delete('/user/:id/friends/:friendId', function(req, res, next) {
 
 });
+
+
 
 module.exports = router;
