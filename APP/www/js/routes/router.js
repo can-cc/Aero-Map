@@ -3,6 +3,7 @@
 AeroMap.Routers = AeroMap.Routers || {};
 
 AeroMap.Routers.AppRouter = Backbone.Router.extend({
+    hasSkeleton: false,
 
     routes: {
 
@@ -14,6 +15,15 @@ AeroMap.Routers.AppRouter = Backbone.Router.extend({
         'profile': 'route_profile'
     },
 
+    loadskeleton: function(callback) {
+        AeroMap.Skeleton = AeroMap.Skeleton || new AeroMap.Views.Skeleton();
+        AeroMap.Skeleton.render(callback);
+        hasSkeleton = true;
+    },
+
+  isLogin: function(callback) {
+
+    },
 
     route_map: function() {
         AeroMap.Map = AeroMap.Map || new AeroMap.Views.MapView();

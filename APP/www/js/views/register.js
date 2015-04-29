@@ -1,7 +1,7 @@
 AeroMap.Views = AeroMap.Views || {};
 
 AeroMap.Views.RegisterView = Backbone.View.extend({
-    el: '.panel',
+    el: '.am-panel',
 
     events: {
         'click #r_ok': 'register'

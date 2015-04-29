@@ -1,5 +1,6 @@
 //main.js Anthor: Tyan 2015.3.22
 
+$('.skeleton').hide();
 
 $(function() {
     FastClick.attach(document.body);
@@ -41,6 +42,7 @@ $(document).ready(function() {
     'use strict';
   AeroMap.init();
   alert(AeroMap.setting.serverDomain);
+
   if(Cookies.get('aero-session') || window.location.hash === '#register'){
     window.location = '#map';
   }else{

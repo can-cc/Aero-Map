@@ -14,6 +14,7 @@
     <link href="lib/foundation-icon-fonts/foundation-icons.css" rel="stylesheet" />
     <link href="css/lib/mapbox.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
     <link href="css/log-reg.css" rel="stylesheet" />
 
     <script src="lib/foundation/js/vendor/modernizr.js"></script>
@@ -33,10 +34,51 @@
 </head>
 
 <body>
-  <div class="main"></div>
-  <div class="panel">
-  </div>
-    
+
+    <div class="main-container">
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <nav class="tab-bar">
+                    <section class="left-small"> <a class="left-off-canvas-toggle" href="#"><span><i class="fi-map menu-font-icon-left"></i></span></a> </section>
+                    <section class="middle tab-bar-section">
+                        <h1 class="title">Aero-Map</h1> </section>
+                    <section class="right-small"> <a class="right-off-canvas-toggle" href="#"><span><i class="fi-results-demographics menu-font-icon-right"></i></span></a> </section>
+                </nav>
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li>
+                            <label>Foundation</label>
+                        </li>
+                        <li><a href="#">The Psychohistorians</a>
+                        </li>
+                        <li><a href="#">...</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside class="right-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li>
+                            <label>Users</label>
+                        </li>
+                        <li><a href="#profile">Hari Seldon</a>
+                        </li>
+                        <li><a href="#">...</a>
+                        </li>
+                    </ul>
+                </aside>
+                <section class="main-section am-main">
+                    <div class="am-map" id="am-map"></div>
+                    <div class="am-panel">
+
+                    </div>
+                    <div class="am-footer"><i class="fi-wrench">  </i>Tyan Project. crystal.tyan@hotmail.com All Rights Reserved.</div>
+
+                </section>
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+    </div>
+   
     <!-- <script src="js/helper.js"></script> -->
     <script src="js/main.js"></script>
 

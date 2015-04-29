@@ -1,13 +1,44 @@
 AeroMap.Views = AeroMap.Views || {};
 
 AeroMap.Views.LoginView = Backbone.View.extend({
-    el: '.panel',
+    el: '.am-panel',
 
     events: {
-        'click #l_ok': 'login'
+      'click #l_ok': 'login',
+      'click #l_test': 'test',
     },
-    login: function() {
 
+  test: function(){
+    $.ajax({
+      method: 'GET',
+      url: AeroMap.setting.serverDomain + '/user/test',
+      success: function(data){
+        alert(data);
+      },
+      error: function(error){
+        alert(JSON.stringify(error));
+      }
+    });
+  },
+
+    login: function(event) {
+      event.preventDefault();
+      var username = $('#l_username'),
+          password = $('#l_password');
+      $.ajax({
+        method: 'POST',
+        url: AeroMap.setting.serverDomain + '/loginbypp',
+        data: {
+          username: username,
+          password: password
+        },
+        success: function(data){
+          alert(data);
+        },
+        error: function(error){
+          alert(JSON.stringify(error));
+        }
+      });
     },
 
     initialize: function() {
