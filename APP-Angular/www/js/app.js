@@ -2,10 +2,11 @@ angular.module('Aero', [
         'ui.router',
         'leaflet-directive',
         'Aero.controllers',
+        'mm.foundation',
         'Aero.config'
     ])
     .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/map');
         $stateProvider
         // .state('app', {
         //   url: '/app',
@@ -22,6 +23,12 @@ angular.module('Aero', [
                 url: '/register',
                 templateUrl: 'templates/register.html',
                 controller: 'RegCtrl'
+            })
+            .state('map', {
+                url: '/map',
+                templateUrl: 'templates/map.html',
+                controller: 'MapCtrl'
             });
+
 
     });

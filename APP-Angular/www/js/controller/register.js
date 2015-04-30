@@ -2,7 +2,7 @@ angular.module('Aero.controllers')
   .controller('RegCtrl', ['$scope', '$http', 'AeroConfig', function($scope, $http, AeroConfig){
 
     $scope.register = function(){
-      $http.post('http://10.42.0.30:3000/signin', {
+      $http.post(AeroConfig.backend + '/signin', {
         username: $scope.username,
         email: $scope.email,
         password: $scope.password
@@ -11,9 +11,9 @@ angular.module('Aero.controllers')
           if(data.error){
 
           }
-          localStorage.setItem('username', data.username);
-          localStorage.setItem('email', data.email);
-          localStorage.setItem('id', data.id);
+          // localStorage.setItem('username', data.username);
+          // localStorage.setItem('email', data.email);
+          // localStorage.setItem('id', data.id);
           window.location.hash = "#login";
         }).
         error(function(data, status, headers, config) {
