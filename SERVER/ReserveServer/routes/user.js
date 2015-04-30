@@ -57,11 +57,27 @@ router.post('/loginbypp',
         failureFlash: true
     }),
     function(req, res) {
-        res.send(req.user);
+      logger.log('debug', JSON.stringify(req.body));
+      req.session.user = req.user;
+      res.send(req.user);
     }
 );
 
-
+// router.post('/loginbypp', function (req, res, next) {
+//   passport.authenticate('local', function (err, user) {
+//     if (err) {
+//       /* something */
+//     }
+//     if (user) {
+//       req.logIn(user, function (err) {
+//       req.session.user = user;
+//         /* something */
+//       });
+//     }
+//     req.session.user = user;
+//     res.json({ state: req.isAuthenticated() });
+//   })(req, res, next);
+// });
 /****************************************************
  * @Sign in
  ****************************************************/
@@ -183,6 +199,20 @@ router.delete('/user/:id/friends/:friendId', function(req, res, next) {
 
 });
 
+/****************************************************
+ * Test
+ ****************************************************/
+router.get('/some-form2', function(req, res) {
+  res.send('<form action="/loginbypp" method="POST">' +
+           'Favorite color: <input type="text" name="username">' +
+           'Favorite color: <input type="text" name="password">' +
+           '<button type="submit">Submit</button>' +
+           '</form>');
+});
 
+router.get('/user/test', function(req, res){
+  //res.send(req.session.user);
+  res.send(req.isAuthenticated());
+});
 
 module.exports = router;

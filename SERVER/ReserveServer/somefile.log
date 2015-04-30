@@ -436,3 +436,113 @@
 >>>>>>> e0eb59d87d87079aee44a621aa3b0ca21364be27
 =======
 >>>>>>> e0eb59d87d87079aee44a621aa3b0ca21364be27
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T05:10:45.114Z"}
+{"username":"tyanbb2","password":"123456","email":"ccc@gmail.com","level":"info","message":"","timestamp":"2015-04-29T06:37:41.753Z"}
+{"username":"tyanbbbc2","password":"123456","email":"ccccs@gmai.com","level":"info","message":"","timestamp":"2015-04-29T06:38:27.415Z"}
+{"username":"tyanbbbc2","password":"123456","email":"ccccs@gmai.com","level":"info","message":"","timestamp":"2015-04-29T06:38:27.448Z"}
+{"name":"error","length":206,"severity":"ERROR","code":"23505","detail":"Key (username)=(tyanbbbc2) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T06:38:28.029Z"}
+{"username":"vtch99","password":"12345678","email":"sss@gsdsd.com","level":"info","message":"","timestamp":"2015-04-29T06:39:13.062Z"}
+{"username":"vtch99","password":"12345678","email":"sss@gsdsd.com","level":"info","message":"","timestamp":"2015-04-29T06:39:13.078Z"}
+{"username":"vtch99","password":"12345678","email":"sss@gsdsd.com","level":"info","message":"","timestamp":"2015-04-29T06:39:13.131Z"}
+{"name":"error","length":203,"severity":"ERROR","code":"23505","detail":"Key (username)=(vtch99) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T06:39:13.653Z"}
+{"name":"error","length":203,"severity":"ERROR","code":"23505","detail":"Key (username)=(vtch99) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T06:39:13.663Z"}
+{"username":"vvvvvtch","password":"","email":"crystal.tyan","level":"info","message":"","timestamp":"2015-04-29T06:41:31.930Z"}
+{"username":"vvvvvtch","password":"","email":"crystal.tyan","level":"info","message":"","timestamp":"2015-04-29T06:41:31.958Z"}
+{"username":"vvvvvtch","password":"","email":"crystal.tyan","level":"info","message":"","timestamp":"2015-04-29T06:41:31.987Z"}
+{"username":"vvvvvtch","password":"","email":"crystal.tyan","level":"info","message":"","timestamp":"2015-04-29T06:41:32.015Z"}
+{"email":["The email must be a valid email address"]}
+{"email":["The email must be a valid email address"]}
+{"email":["The email must be a valid email address"]}
+{"email":["The email must be a valid email address"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T08:02:22.779Z"}
+{"level":"info","message":"","timestamp":"2015-04-29T11:54:36.094Z"}
+{"username":["The username is required"],"password":["The password is required"],"email":["The email is required"]}
+{"level":"info","message":"","timestamp":"2015-04-29T12:30:13.756Z"}
+{"username":["The username is required"],"password":["The password is required"],"email":["The email is required"]}
+{"level":"info","message":"","timestamp":"2015-04-29T12:31:52.193Z"}
+{"username":["The username is required"],"password":["The password is required"],"email":["The email is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T12:49:55.227Z"}
+{"level":"info","message":"","timestamp":"2015-04-29T12:51:33.009Z"}
+{"username":["The username is required"],"password":["The password is required"],"email":["The email is required"]}
+{"level":"info","message":"","timestamp":"2015-04-29T12:51:58.914Z"}
+{"username":["The username is required"],"password":["The password is required"],"email":["The email is required"]}
+{"username":"sdadsas","password":"asdasdasdasd","email":"sadasd@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:07:53.886Z"}
+{"username":"tyan","password":"123456","email":"sadasd@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:08:14.673Z"}
+{"name":"error","length":201,"severity":"ERROR","code":"23505","detail":"Key (username)=(tyan) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T13:08:15.202Z"}
+{"username":"tyan","password":"12345678","email":"sadasd@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:08:19.458Z"}
+{"name":"error","length":201,"severity":"ERROR","code":"23505","detail":"Key (username)=(tyan) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T13:08:19.930Z"}
+{"username":"tyan1","password":"12345678","email":"sadasd@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:08:43.834Z"}
+{"name":"error","length":204,"severity":"ERROR","code":"23505","detail":"Key (email)=(sadasd@gmail.com) already exists.","schema":"public","table":"User","constraint":"user_email_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T13:08:44.389Z"}
+{"username":"tyanbbc1","password":"12345678","email":"sadasd@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:08:49.091Z"}
+{"name":"error","length":204,"severity":"ERROR","code":"23505","detail":"Key (email)=(sadasd@gmail.com) already exists.","schema":"public","table":"User","constraint":"user_email_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T13:08:49.586Z"}
+{"username":"tyan","password":"12345678","email":"sadasdss@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:08:57.438Z"}
+{"name":"error","length":201,"severity":"ERROR","code":"23505","detail":"Key (username)=(tyan) already exists.","schema":"public","table":"User","constraint":"user_username_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-29T13:08:57.937Z"}
+{"username":"tyan1","password":"12345678","email":"sadasdss@gmail.com","level":"info","message":"","timestamp":"2015-04-29T13:09:03.403Z"}
+{"level":"error","message":"EmptyResponse","timestamp":"2015-04-29T13:28:40.455Z"}
+{"message":"EmptyResponse","level":"error","timestamp":"2015-04-29T13:28:40.470Z"}
+{"level":"error","message":"EmptyResponse","timestamp":"2015-04-29T13:29:08.014Z"}
+{"message":"EmptyResponse","level":"error","timestamp":"2015-04-29T13:29:08.037Z"}
+{"level":"error","message":"EmptyResponse","timestamp":"2015-04-29T13:29:21.422Z"}
+{"message":"EmptyResponse","level":"error","timestamp":"2015-04-29T13:29:21.444Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:32:15.942Z"}
+{"level":"error","message":"EmptyResponse","timestamp":"2015-04-29T13:32:30.046Z"}
+{"message":"EmptyResponse","level":"error","timestamp":"2015-04-29T13:32:30.051Z"}
+{"username":"PETWMb","password":"123456acx","email":"67yiN@hotmail.com","level":"info","message":"","timestamp":"2015-04-29T13:33:18.226Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:33:50.139Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:33:57.138Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:34:10.315Z"}
+{"username":"KOOPnb","password":"123456acx","email":"uerv7@hotmail.com","level":"info","message":"","timestamp":"2015-04-29T13:34:12.192Z"}
+{"level":"error","message":"EmptyResponse","timestamp":"2015-04-29T13:34:12.939Z"}
+{"message":"EmptyResponse","level":"error","timestamp":"2015-04-29T13:34:12.945Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:36:19.143Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:36:35.146Z"}
+{"username":"QhT9Td","password":"123456acx","email":"ASm7h@hotmail.com","level":"info","message":"","timestamp":"2015-04-29T13:36:48.123Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T13:37:33.146Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:02:40.486Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:06:30.315Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:06:46.555Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:07:03.476Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:13:19.547Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:13:24.551Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:13:46.551Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:14:06.557Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:15:22.617Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:15:48.648Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:15:54.566Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:16:33.543Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:17:11.570Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:17:25.578Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:17:36.594Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:17:42.558Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:17:48.686Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:18:19.605Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:21:25.525Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:26:20.249Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:51:07.653Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:54:39.804Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:55:58.776Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:56:33.835Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:56:55.835Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T14:58:33.551Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:05:29.376Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:09:00.553Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:14:13.580Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:14:19.625Z"}
+{"level":"error","message":"Unexpected token G","timestamp":"2015-04-29T15:16:39.569Z"}
+{"body":"{\"username\":\"tyan\",\"password\":\"12345678\"}\n\nGET http://10.42.0.30:3000/user/test","status":400,"level":"error","timestamp":"2015-04-29T15:16:39.583Z"}
+{"level":"error","message":"Unexpected token G","timestamp":"2015-04-29T15:16:45.082Z"}
+{"body":"{\"username\":\"tyan\",\"password\":\"12345678\"}\n\nGET http://10.42.0.30:3000/user/test","status":400,"level":"error","timestamp":"2015-04-29T15:16:45.108Z"}
+{"level":"error","message":"Unexpected token G","timestamp":"2015-04-29T15:16:47.321Z"}
+{"body":"{\"username\":\"tyan\",\"password\":\"12345678\"}\n\nGET http://10.42.0.30:3000/user/test","status":400,"level":"error","timestamp":"2015-04-29T15:16:47.343Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:18:23.724Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:19:26.732Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:19:41.786Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:22:15.763Z"}
+{"level":"error","message":"undefined is not a function","timestamp":"2015-04-29T15:22:17.807Z"}
+{"level":"error","timestamp":"2015-04-29T15:22:17.814Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:22:38.393Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:22:41.799Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:23:26.888Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:23:31.848Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:24:21.810Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T15:24:29.937Z"}
