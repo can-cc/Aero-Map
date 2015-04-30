@@ -25,8 +25,22 @@ var express = require('express'),
  * Must only in develpment env
  ***********************************************/
 var cors = require('cors');
-app.use(cors());
+app.use(cors({
+  // origin:  'http://localhost:4400',
+  credentials: true
+}));
 
+// app.use(function(req, res, next) {
+//   res.header('Access-Control-Allow-Credentials', true);
+//   res.header('Access-Control-Allow-Origin', req.headers.origin);
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+//   if ('OPTIONS' == req.method) {
+//     res.send(200);
+//   } else {
+//     next();
+//   }
+// });
 
 /***********************************************
  * Configure
@@ -41,7 +55,9 @@ app.use(cookieParser());
 //csrf
 app.set('csrfProtection', csrf({
   cookie: true,
-  value: function(req){return req.body._csrf}
+  value: function(req){
+    return req.body._csrf;
+  }
 }));
 app.set('parseForm', bodyParser.urlencoded({
     extended: false
@@ -52,7 +68,6 @@ app.set('parseForm', bodyParser.urlencoded({
 app.use(session({
     store: new RedisStore(setting.redis_session),
     secret: 'LoveRaspberryPi',
-    name: 'aero-session',
 }));
 
 app.use(flash());

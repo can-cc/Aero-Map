@@ -6,7 +6,7 @@ var AeroMapSetting = {
     https_options: {
       port: 4432
     },
-    log_level: 'debug',
+    log_level: 'verbose',
     db: {
         production: {
             database: 'Aero-Map',

@@ -22,7 +22,7 @@ passport.use(new LocalStrategy(
       // indicate failure and set a flash message. Otherwise, return the
       // authenticated `user`.
 
-      if(nameOrEmail.indexOf('@')){
+      if(nameOrEmail.indexOf('@') > 0){
         var email = nameOrEmail;
         UserService.loginByEmail(email, password, function(error, user) {
           if (error || user === null) {
@@ -30,7 +30,7 @@ passport.use(new LocalStrategy(
           }
           return done(null, user.omit('password'));
         });
-      } else{
+      } else {
         var username = nameOrEmail;
         UserService.loginByUserName(username, password, function(error, user) {
           if (error || user === null) {

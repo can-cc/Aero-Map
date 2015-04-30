@@ -40,7 +40,7 @@ describe('User Router Test', function() {
     it('should return user json with password',  function(done){
       request(domain)
         .post('/signin')
-        .send(testData2)
+        .send(testData)
         .end(function(err, res) {
           console.log('debug', res.status);
           assert.equal(res.status, 200);
@@ -90,10 +90,10 @@ describe('User Router Test', function() {
         });
     });
 
-  describe.skip('user login by passport whatever username or email', function(){
+  describe('user login by passport whatever username or email', function(){
     it('should return user json without password', function(done){
       var loginData = {
-        username: testData.email,
+        username: testData.username,
         password: testData.password,
       };
       request(domain)

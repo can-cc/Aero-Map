@@ -6,10 +6,10 @@ var logger = new (winston.Logger)({
         new (winston.transports.Console)(),
         new (winston.transports.File)({ filename: 'somefile.log' })
     ]
-})
-logger.level = setting.log_level
+});
+logger.level = setting.log_level;
 
-module.exports = logger
+module.exports = logger;
 
 
 
