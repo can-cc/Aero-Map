@@ -26,7 +26,7 @@ var express = require('express'),
  ***********************************************/
 var cors = require('cors');
 app.use(cors({
-  // origin:  'http://localhost:4400',
+   origin:  'http://localhost:4400',
   credentials: true
 }));
 
@@ -46,10 +46,10 @@ app.use(cors({
  * Configure
  ***********************************************/
 app.use(morgan('combined'));
-app.use(bodyParser());
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cookieParser());
 
 //csrf
@@ -63,20 +63,44 @@ app.set('parseForm', bodyParser.urlencoded({
     extended: false
 }));
 
+app.use(multer({
+  dest: './upload',
+
+  changeDest:  function(dest, req, res) {
+    if ( req.url === '/markpost/uploadimg' ) {
+      return dest  + '/temp';
+    }
+    return dest;
+  },
+
+  rename: function (fieldname, filename, req, res) {
+    return filename +  new Date().toString().slice(0, 24).replace(/\s+/g, '');
+  },
+  onFileUploadStart: function(file, req, res) {
+    //Todo:
+    //should use Debug
+    //console.log(file.fieldname + ' uploaded to  ' + file.path)
+  },
+  onFileUploadComplete: function(file, req, res) {
+    //console.log(file.fieldname + ' uploaded to  ' + file.path)
+  }
+}));
 
 //session
 app.use(session({
-    store: new RedisStore(setting.redis_session),
-    secret: 'LoveRaspberryPi',
+  store: new RedisStore(setting.redis_session),
+  secret: 'LoveRaspberryPi',
+  name: 'sessionid22'
 }));
 
-app.use(flash());
+//app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
 //captcha
 app.use(captcha({ url: '/captcha.jpg', color:'#0064cd', background: 'rgb(20,30,200)' })); // captcha params
 app.use('/templates',express.static('templates'));
+app.use('/upload',express.static('upload'));
 module.exports = app;
 
 /***********************************************
@@ -84,13 +108,13 @@ module.exports = app;
  ***********************************************/
 //var middleware = require('./routes/middleware')
 var UserRouter = require('./routes/user');
-var MarkPost = require('./routes/markpost');
+var MarkPostRouter = require('./routes/markpost');
 
 //only for development test
 var TestRouter = require('./routes/test');
 
 app.use(UserRouter);
-
+app.use(MarkPostRouter);
 app.use(TestRouter);
 
 

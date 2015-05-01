@@ -4,13 +4,11 @@ var passport = require('passport'),
     UserService = require('../services/user');
 
 passport.serializeUser(function(user, done){
-  done(null, user.id);
+  done(null, user);
 });
 
-passport.deserializeUser(function(id, done){
-  UserService.getUser(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(function(user, done){
+    done(null, user);
 });
 
 passport.use(new LocalStrategy(
