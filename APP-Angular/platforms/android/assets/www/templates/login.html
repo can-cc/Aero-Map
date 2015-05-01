@@ -23,15 +23,16 @@
           <br />
           <div class="small-11 small-centered  columns">
 
-            <input type="text" class="top-input" placeholder="Username" id="l_username" />
-            <input type="password" class="bottom-input" placeholder="Password" id="l_password "/>
+            <input type="text" class="top-input" placeholder="Username"  ng-model="username"/>
+            <input type="password" class="bottom-input" placeholder="Password" ng-model="password"/>
           </div>
         </div>
       </form>
     </div>
 
     <div class="center-link">
-      <a  class="button radius" id="l_ok">Ok</a>
+      <a  class="button radius" id="ok" ng-click="login()">Ok</a>
+
       <br />
       <a  href="#register">
         Create an account

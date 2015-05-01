@@ -1,0 +1,53 @@
+<div ng-controller="PostCtrl">
+
+<form>
+<br />
+  <div class="row">
+    <div class="large-12 columns">
+        <input type="text" placeholder="Title" ng-model="title" />
+
+    </div>
+  </div>
+
+<div class="row">
+  <div class="large-12 columns">
+   
+    <div class="button expand" ngf-select ng-model="files" ngf-multiple="false">Select File</div>
+</div>
+</div>
+
+<div class="row" ng-hide="imgHide">
+  <div class="large-12 columns">
+    <img ng-src="{{src}}"  alt="Description" class="center-img">
+
+  </div>
+</div>
+ 
+
+
+  <div class="row">
+    <div class="large-12 columns post-text">
+        <textarea placeholder="Text" ng-model="text"></textarea>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns post-day">
+      <p>Effective day:</p>
+      <input type="number" min="1" max="3" step="1" value="1" size="3" ng-model="days"/>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="large-12 columns">
+      
+      <div class="button expand"  ng-click="post()">Post</div>
+    </div>
+  </div>
+
+</form>
+</div>

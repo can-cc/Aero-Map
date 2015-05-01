@@ -121,4 +121,37 @@ margin-bottom: 0;
     border-radius: 4rem;
 }
 
+.post-trigger {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
 
+  i{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 400%;
+    }
+  }
+
+.center-img{
+ display: block;
+ margin-left: auto;
+ margin-right: auto
+  }
+
+.post-text {
+  textarea{
+    height: 160px;
+    }
+
+  }
+
+.post-day{
+  p{
+    display: inline;
+    width: auto;
+    }
+      input[type]{
+        display: inline;
+        }
+  }

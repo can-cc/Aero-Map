@@ -28,7 +28,12 @@ angular.module('Aero', [
                 url: '/map',
                 templateUrl: 'templates/map.html',
                 controller: 'MapCtrl'
-            });
+            })
+        .state('post', {
+          url: '/post',
+          templateUrl: 'templates/post.html',
+          controller: 'PostCtrl'
+        });
 
 
     });

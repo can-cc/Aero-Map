@@ -1,1 +1,3 @@
-angular.module('Aero.controllers', []);
+angular.module('Aero.controllers', [
+  'ngFileUpload'
+]);

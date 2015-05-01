@@ -4,12 +4,14 @@ angular.module('Aero.controllers')
         '$http',
         'leafletEvents',
         'leafletData',
+        '$modal',
         'AeroConfig',
         function(
             $scope,
             $http,
             leafletEvents,
             leafletData,
+            $modal,
             AeroConfig) {
             angular.extend($scope, {
                 center: {
@@ -32,10 +34,11 @@ angular.module('Aero.controllers')
                 controls: {
                     custom: []
                 }
-
-
             });
 
+          var getMarks = function(){
+
+          };
 
             $scope.$on('leafletDirectiveMap.moveend', function(event) {
                 //alert(JSON.stringify($scope.center));
@@ -45,27 +48,6 @@ angular.module('Aero.controllers')
             /**************************************************
              *  Post Control
              **************************************************/
-
-            // leafletData.getMap().then(function(map) {
-            //   var MyControl = L.Control.extend({
-            //     options: {
-            //       position: 'topright'
-            //     },
-
-            //     onAdd: function (map) {
-            //       // create the control container with a particular class name
-            //       var container = L.DomUtil.create('div', 'my-custom-control');
-
-            //       // ... initialize other DOM elements, add listeners, etc.
-
-            //       return container;
-            //     }
-            //   });
-            //   map.addControl(
-            //     new MyControl()
-            //   );
-            // });
-            //$scope.controls.custom.push(postControl);
 
             var MyControl = L.Control.extend({
                 options: {
@@ -77,9 +59,9 @@ angular.module('Aero.controllers')
                     var container = L.DomUtil.create('div', 'post-trigger');
 
                     // ... initialize other DOM elements, add listeners, etc.
-                  angular.element(container).append('<i class="fi-pencil"></i>' );
+                    angular.element(container).append('<i class="fi-pencil"></i>');
                     L.DomEvent.addListener(container, 'click', function(e) {
-                      openPostModal();
+                        window.location.hash = '#post';
                     });
                     return container;
                 }
@@ -87,23 +69,6 @@ angular.module('Aero.controllers')
 
             $scope.controls.custom.push(new MyControl());
 
-          var openPostModal = function(){
-            var modalInstance = $modal.open({
-              templateUrl: 'templates/post_modal.html',
-              controller: 'PostModalCtrl',
-              resolve: {
-                items: function () {
-                  return $scope.items;
-                }
-              }
-            });
-
-            modalInstance.result.then(function (selectedItem) {
-              $scope.selected = selectedItem;
-            }, function () {
-              $log.info('Modal dismissed at: ' + new Date());
-            });
-          };
 
         }
     ]);
