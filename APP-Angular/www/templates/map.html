@@ -2,18 +2,7 @@
    center="center"
    defaults="defaults"
    controls="controls"
+   markers="markers"
    width="100%"
    height="100%">
 </leaflet>
-
-<script type="text/ng-template" id="myModalContent.html">
-  <h3>I'm a modal!</h3>
-  <ul>
-    <li ng-repeat="item in items">
-      <a ng-click="selected.item = item"></a>
-    </li>
-  </ul>
-  <p>Selected: <b></b></p>
-  <button class="button" ng-click="ok()">OK</button>
-  <a class="close-reveal-modal" ng-click="cancel()">&#215;</a>
-</script>

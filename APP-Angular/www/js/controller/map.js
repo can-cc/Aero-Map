@@ -33,15 +33,48 @@ angular.module('Aero.controllers')
                 },
                 controls: {
                     custom: []
-                }
+                },
+              markers: {}
             });
 
-          var getMarks = function(){
+            /****************************************************
+             * Get Geolocation!
+             ****************************************************/
 
-          };
+
+            var getMarks = function(longitude, latitude) {
+                $http({
+                  method: 'GET',
+                  url: AeroConfig.backend + '/markposts',
+                  params: {
+                        longitude: longitude,
+                        latitude: latitude
+                    },
+                  withCredentials: true
+                })
+                .success(function(data, status, headers, config) {
+                     //   alert(JSON.stringify(data));
+                  $scope.data = data;
+                  $scope.test = 'fuck';
+                  for(var i=0, max = data.length; i < max; i++){
+                    $scope.markers[data[i].id] = {
+                      lng: parseFloat(data[i].longitude),
+                      lat: parseFloat(data[i].latitude),
+                      compileMessage: true,
+                      getMessageScope: function () { return $scope; },
+                      message: '<div ng-include src="\'/templates/markpost.html\'" onload="i = '+i+'"></div>'
+                    };
+                  }
+                    })
+                    .error(function(data, status, headers, config) {
+                        alert(JSON.stringify(data));
+                    });
+            };
 
             $scope.$on('leafletDirectiveMap.moveend', function(event) {
                 //alert(JSON.stringify($scope.center));
+              console.log('log', JSON.stringify($scope.center));
+                getMarks($scope.center.lng, $scope.center.lat);
             });
 
 
