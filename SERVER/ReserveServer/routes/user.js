@@ -145,8 +145,16 @@ router.post('/user/avatar', function(req, res, next) {
     //I only want first element, may be can opti..
   var imgPath = req.files[keys[0]].path;
   var User_id = req.session.user.id;
+  logger.log('info', imgPath);
 
-  UserService.saveUserAvatar(User_id, imgPath);
+  UserService.saveUserAvatar(User_id, imgPath).then(function(resp){
+    logger.log('info', resp);
+    res.send({
+      avatar: resp
+    });
+  }, function(error){
+    next(error);
+  });
 
 
 });
@@ -160,7 +168,14 @@ router.put('/user/:id/avatar', function(req, res, next) {
  *************************************************/
 
 router.get('/user/:id/detail', function(req, res, next) {
-
+  var userId = req.params.id;
+  logger.log('info', userId);
+  UserService.getUserDetail(userId).then(function(userDetail){
+    logger.log('info', userDetail);
+    res.send(userDetail);
+  }, function(error){
+    next(error);
+  });
 });
 
 router.post('/user/detail', function(req, res, next) {

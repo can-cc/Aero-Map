@@ -22,14 +22,17 @@ var UserService = {
         });
     },
 
-    getUserDetail: function(userDetailId) {
+    getUserDetail: function(userId) {
+      return new Promise(function(resolve, reject){
         new UserDetail({
-            id: userId
-        }).fetch(function(user) {
-            callback(null, user);
+          User_id: userId
+        }).fetch().then(function(userDetail) {
+          logger.log('info', userDetail);
+          resolve(userDetail);
         }, function(error) {
-            callback(error);
+          reject(error);
         });
+      });
     },
 
 
@@ -184,7 +187,19 @@ var UserService = {
 
   saveUserAvatar: function(userId, imgPath){
     return new Promise(function(resolve, reject){
-
+      new UserDetail({
+        User_id: userId
+      }).fetch().then(function(userDetail){
+        userDetail.save({
+          avatar: imgPath
+        }).then(function(userDetail){
+          resolve(userDetail.get('avatar'));
+        }, function(error){
+          reject(error);
+        });
+      }, function(error){
+        reject(error);
+      });
     });
   }
 };

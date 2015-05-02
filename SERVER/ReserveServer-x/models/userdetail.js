@@ -1,13 +1,13 @@
 var orm = require('../db').orm,
     checkit = require('checkit'),
     Promise = require('bluebird'),
-    User = require('./user'),
-    bcrypt = Promise.promisifyAll(require('bcrypt'));
+    User = require('./user');
+bcrypt = Promise.promisifyAll(require('bcrypt'));
 
 var UserDetail = orm.Model.extend({
     tableName: 'UserDetail',
 
-    idAttribute: 'User_id',
+  idAttribute: 'User_id',
 
     initialize: function() {
         this.on('saving', this.validateSave);

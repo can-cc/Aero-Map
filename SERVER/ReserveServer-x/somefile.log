@@ -1,0 +1,203 @@
+{"level":"info","message":"hi","timestamp":"2015-04-06T07:38:15.601Z"}
+{"level":"error","timestamp":"2015-04-14T04:41:53.168Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-14T04:42:38.012Z","updated_at":"2015-04-14T04:42:38.012Z","id":1},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-14T04:42:38.012Z","updated_at":"2015-04-14T04:42:38.012Z","id":1},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":1,"level":"info","message":"create friends request success","timestamp":"2015-04-14T04:42:38.112Z"}
+{"name":"error","length":293,"severity":"ERROR","code":"23503","detail":"Key (RequestUser_id)=(1) is not present in table \"User\".","schema":"public","table":"FriendRequest","constraint":"friendrequest_requestuser_id_foreign","file":"ri_triggers.c","line":"3232","routine":"ri_ReportViolation","level":"error","timestamp":"2015-04-14T04:46:56.173Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-14T04:47:15.740Z","id":2},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-14T04:47:15.740Z","id":2},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":2,"level":"info","message":"create friends request success","timestamp":"2015-04-14T04:47:15.825Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:38:02.766Z","updated_at":"2015-04-15T01:38:02.766Z","id":3},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:38:02.766Z","updated_at":"2015-04-15T01:38:02.766Z","id":3},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":3,"level":"info","message":"create friends request success","timestamp":"2015-04-15T01:38:03.024Z"}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:40:01.833Z","updated_at":"2015-04-15T01:40:01.833Z","id":4},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:40:01.833Z","updated_at":"2015-04-15T01:40:01.833Z","id":4},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":4,"level":"info","message":"create friends request success","timestamp":"2015-04-15T01:40:01.919Z"}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T01:40:50.682Z","id":5},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T01:40:50.682Z","id":5},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":5,"level":"info","message":"create friends request success","timestamp":"2015-04-15T01:40:50.770Z"}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:43:57.863Z","updated_at":"2015-04-15T01:43:57.863Z","id":6},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:43:57.863Z","updated_at":"2015-04-15T01:43:57.863Z","id":6},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":6,"level":"info","message":"create friends request success","timestamp":"2015-04-15T01:43:57.963Z"}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:45:15.248Z","updated_at":"2015-04-15T01:45:15.248Z","id":7},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T01:45:15.248Z","updated_at":"2015-04-15T01:45:15.248Z","id":7},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":7,"level":"info","message":"create friends request success","timestamp":"2015-04-15T01:45:15.344Z"}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"RequestUser_id":["The RequestUser_id is required"],"TarUser_id":["The TarUser_id is required"]}
+{"attributes":{"id":2,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-15T01:48:58.153Z"},"_previousAttributes":{"id":2,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-15T01:48:58.153Z"},"changed":{},"relations":{},"cid":"c1","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T01:48:58.224Z"}
+{"attributes":{"id":2,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-15T01:49:19.856Z"},"_previousAttributes":{"id":2,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-14T04:47:15.740Z","updated_at":"2015-04-15T01:49:19.856Z"},"changed":{},"relations":{},"cid":"c1","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T01:49:19.928Z"}
+{"level":"error","timestamp":"2015-04-15T01:49:19.958Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-15T01:38:02.766Z","updated_at":"2015-04-15T02:37:36.375Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":2,"created_at":"2015-04-15T01:38:02.766Z","updated_at":"2015-04-15T02:37:36.375Z"},"changed":{},"relations":{},"cid":"c1","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:37:36.436Z"}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"attributes":{"id":4,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:01.833Z","updated_at":"2015-04-15T01:40:01.833Z"},"_previousAttributes":{"id":4,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:01.833Z","updated_at":"2015-04-15T01:40:01.833Z"},"changed":{},"relations":{},"cid":"c1","id":4,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:50:39.977Z"}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T01:40:50.682Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T01:40:50.682Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:52:52.955Z"}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:52:52.967Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:52:52.967Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:54:46.372Z"}
+{"level":"info","message":"friendData","timestamp":"2015-04-15T02:54:46.384Z"}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"User_id":["The User_id is required"],"Friend_id":["The Friend_id is required"]}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:54:46.389Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:54:46.389Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:56:08.391Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T02:56:08.401Z"}
+{"name":"error","length":123,"severity":"ERROR","code":"42703","position":"62","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-04-15T02:56:08.493Z"}
+{"name":"error","length":123,"severity":"ERROR","code":"42703","position":"62","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-04-15T02:56:08.496Z"}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:56:08.406Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:56:08.406Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:56:39.305Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T02:56:39.315Z"}
+{"name":"error","length":123,"severity":"ERROR","code":"42703","position":"62","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-04-15T02:56:39.408Z"}
+{"name":"error","length":123,"severity":"ERROR","code":"42703","position":"62","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-04-15T02:56:39.411Z"}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:56:39.320Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:56:39.320Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:58:08.711Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T02:58:08.722Z"}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:58:08.727Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T01:40:50.682Z","updated_at":"2015-04-15T02:58:08.727Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T02:58:43.774Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T02:58:43.786Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.389Z","id":1},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.389Z","id":1},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":1,"level":"info","message":"create friends request success","timestamp":"2015-04-15T03:03:48.489Z"}
+{"attributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.389Z"},"_previousAttributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.389Z"},"changed":{},"relations":{},"cid":"c2","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:03:48.581Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T03:03:48.585Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:03:51.938Z","updated_at":"2015-04-15T03:03:51.938Z","id":2},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:03:51.938Z","updated_at":"2015-04-15T03:03:51.938Z","id":2},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":2,"level":"info","message":"create friends request success","timestamp":"2015-04-15T03:03:52.028Z"}
+{"attributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.589Z"},"_previousAttributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.589Z"},"changed":{},"relations":{},"cid":"c2","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:03:52.112Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T03:03:52.115Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:03:52.164Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:03:52.167Z"}
+{"attributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.589Z"},"_previousAttributes":{"id":1,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:03:48.389Z","updated_at":"2015-04-15T03:03:48.589Z"},"changed":{},"relations":{},"cid":"c1","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:04:48.512Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T03:04:48.522Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:04:48.613Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:04:48.617Z"}
+{"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:05:50.934Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:06:05.878Z","id":3},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:06:05.878Z","id":3},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":3,"level":"info","message":"create friends request success","timestamp":"2015-04-15T03:06:05.993Z"}
+{"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:06:06.079Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:06:33.257Z","updated_at":"2015-04-15T03:06:33.257Z","id":4},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T03:06:33.257Z","updated_at":"2015-04-15T03:06:33.257Z","id":4},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":4,"level":"info","message":"create friends request success","timestamp":"2015-04-15T03:06:33.363Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:06:05.878Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:06:05.878Z"},"changed":{},"relations":{},"cid":"c1","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:07:01.578Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T03:07:01.590Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:07:01.595Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:07:01.595Z"},"changed":{},"relations":{},"cid":"c1","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T03:07:16.192Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T03:07:16.203Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:07:16.301Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T03:07:16.304Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:07:01.595Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"1","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T03:07:01.595Z"},"changed":{},"relations":{},"cid":"c1","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T04:07:44.444Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T04:07:44.454Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"changed":{},"relations":{},"cid":"c1","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T04:14:01.168Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T04:14:01.179Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:14:01.272Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:14:01.275Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"changed":{},"relations":{},"cid":"c3","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T04:14:03.166Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T04:14:03.173Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:14:03.239Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:14:03.249Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T04:16:35.113Z","updated_at":"2015-04-15T04:16:35.113Z","id":5},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T04:16:35.113Z","updated_at":"2015-04-15T04:16:35.113Z","id":5},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":5,"level":"info","message":"create friends request success","timestamp":"2015-04-15T04:16:35.213Z"}
+{"attributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"_previousAttributes":{"id":3,"RequestUser_id":1,"TarUser_id":2,"status":"2","created_at":"2015-04-15T03:06:05.878Z","updated_at":"2015-04-15T04:07:44.459Z"},"changed":{},"relations":{},"cid":"c2","id":3,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-04-15T04:16:35.292Z"}
+{"User_id":1,"Friend_id":2,"level":"info","message":"friendData","timestamp":"2015-04-15T04:16:35.296Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:16:35.352Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\", \"Friend_id\")=(1, 2) already exists.","schema":"public","table":"Friends","constraint":"friends_user_id_friend_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-15T04:16:35.355Z"}
+{"attributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T04:17:13.687Z","updated_at":"2015-04-15T04:17:13.687Z","id":6},"_previousAttributes":{"RequestUser_id":1,"TarUser_id":2,"created_at":"2015-04-15T04:17:13.687Z","updated_at":"2015-04-15T04:17:13.687Z","id":6},"changed":{},"relations":{},"cid":"c1","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":6,"level":"info","message":"create friends request success","timestamp":"2015-04-15T04:17:13.793Z"}
+{"attributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":3,"created_at":"2015-04-15T04:16:35.113Z","updated_at":"2015-04-15T04:30:59.925Z"},"_previousAttributes":{"id":5,"RequestUser_id":1,"TarUser_id":2,"status":3,"created_at":"2015-04-15T04:16:35.113Z","updated_at":"2015-04-15T04:30:59.925Z"},"changed":{},"relations":{},"cid":"c1","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"reject friends request success","timestamp":"2015-04-15T04:30:59.998Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:54:00.919Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:54:12.166Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:54:39.969Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:54:52.070Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:55:18.711Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:55:47.199Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:56:38.365Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:56:59.727Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T06:58:46.109Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T07:04:34.990Z"}
+{"level":"error","timestamp":"2015-04-15T07:04:35.050Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T07:10:23.785Z"}
+{"name":"error","length":109,"severity":"ERROR","code":"42703","position":"70","file":"parse_relation.c","line":"2639","routine":"errorMissingColumn","level":"error","timestamp":"2015-04-15T07:10:23.866Z"}
+{"level":"info","message":"1","timestamp":"2015-04-15T07:11:05.763Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T05:02:19.630Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T05:20:18.318Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:03:55.472Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:39:47.184Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:41:08.944Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:46:38.644Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:46:43.223Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:46:52.136Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:47:30.682Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:47:34.660Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:47:38.736Z"}
+{"level":"error","timestamp":"2015-04-16T07:47:38.744Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:48:44.724Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:48:48.519Z"}
+{"level":"error","timestamp":"2015-04-16T07:48:48.527Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:49:21.704Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:49:26.781Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:49:29.737Z"}
+{"level":"error","timestamp":"2015-04-16T07:49:29.745Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:50:09.717Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:50:27.801Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:08.726Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:22.000Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:39.108Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:48.801Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:51:51.783Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:52:42.833Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:52:54.762Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:24.105Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:53:24.925Z"}
+{"level":"error","timestamp":"2015-04-16T07:53:24.932Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:54.779Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:53:59.980Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:54:01.630Z"}
+{"level":"error","timestamp":"2015-04-16T07:54:01.651Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:54:51.795Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:55:22.846Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:55:27.451Z"}
+{"level":"error","timestamp":"2015-04-16T07:55:27.459Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:55:39.029Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T07:55:40.644Z"}
+{"level":"error","timestamp":"2015-04-16T07:55:40.653Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:56:55.788Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T07:57:19.800Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:00:32.858Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:00:43.843Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:00:48.719Z"}
+{"level":"error","timestamp":"2015-04-16T08:00:48.735Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:01:25.850Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:01:51.849Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:01:57.164Z"}
+{"level":"error","timestamp":"2015-04-16T08:01:57.173Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:02:16.510Z"}
+{"level":"error","timestamp":"2015-04-16T08:02:16.542Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:04:48.974Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:08:09.315Z"}
+{"level":"error","timestamp":"2015-04-16T08:08:09.332Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:08:59.001Z"}
+{"level":"error","timestamp":"2015-04-16T08:08:59.028Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:06.031Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:06.085Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:14.270Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:14.294Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:20.847Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:20.874Z"}
+{"level":"error","message":"Cannot read property 'username' of undefined","timestamp":"2015-04-16T08:09:32.003Z"}
+{"level":"error","timestamp":"2015-04-16T08:09:32.068Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:14:54.236Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:15:12.270Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:19:02.302Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:20:46.342Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:23:14.451Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:03.422Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:52.439Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:24:56.409Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:25:59.414Z"}
+{"email":["The email is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:27:47.779Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:27:54.675Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:28:13.542Z"}
+{"email":["The email is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:03.511Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:11.506Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:14.490Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:29:23.570Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T08:42:54.036Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-16T09:01:08.803Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-25T11:34:24.002Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T04:55:48.495Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:07:19.368Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:33:16.359Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:34:06.723Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:34:28.259Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:36:12.538Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:48:22.646Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T05:49:46.648Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T10:17:47.347Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T10:22:55.200Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T10:27:55.705Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T11:59:08.589Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T11:59:24.183Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T12:00:32.028Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-26T12:01:22.482Z"}
+{"level":"error","timestamp":"2015-04-27T08:27:30.177Z"}
+{"name":"error","length":218,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\")=(1) already exists.","schema":"public","table":"UserSetting","constraint":"usersetting_user_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-04-27T08:33:36.573Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-04-29T04:31:27.407Z"}

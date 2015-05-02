@@ -834,3 +834,52 @@
 {"level":"info","message":"current env =   development","timestamp":"2015-05-02T07:57:53.307Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-02T07:58:20.325Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-02T07:58:24.332Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:00:31.506Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:03:13.597Z"}
+{"level":"info","message":"","timestamp":"2015-05-02T08:04:27.884Z"}
+{"level":"info","message":"","timestamp":"2015-05-02T08:05:22.387Z"}
+{"level":"info","message":"","timestamp":"2015-05-02T08:12:05.285Z"}
+{"level":"error","message":"1 invalid values","timestamp":"2015-05-02T08:12:07.968Z"}
+{"nickname":["The nickname is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:12:45.048Z"}
+{"level":"error","message":"1 invalid values","timestamp":"2015-05-02T08:12:49.523Z"}
+{"nickname":["The nickname is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:13:57.056Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:13:57.png","timestamp":"2015-05-02T08:13:57.315Z"}
+{"level":"error","message":"1 invalid values","timestamp":"2015-05-02T08:13:57.391Z"}
+{"nickname":["The nickname is required"]}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:18:04.268Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T08:19:10.266Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:19:11.png","timestamp":"2015-05-02T08:19:12.012Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:19:11.png","timestamp":"2015-05-02T08:19:12.168Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:19:11.png","timestamp":"2015-05-02T08:19:16.680Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:19:19.png","timestamp":"2015-05-02T08:19:19.911Z"}
+{"level":"info","message":"upload/241f95cad1c8a786f6d105f86609c93d71cf5048.jpgSatMay02201516:19:19.png","timestamp":"2015-05-02T08:19:19.962Z"}
+{"level":"info","message":"upload/ds1SatMay02201516:19:51.JPG","timestamp":"2015-05-02T08:19:52.082Z"}
+{"level":"info","message":"upload/ds1SatMay02201516:19:51.JPG","timestamp":"2015-05-02T08:19:52.152Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:20:08.png","timestamp":"2015-05-02T08:20:08.063Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:20:08.png","timestamp":"2015-05-02T08:20:08.122Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:20:08.png","timestamp":"2015-05-02T08:20:59.856Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:21:05.png","timestamp":"2015-05-02T08:21:05.671Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:21:05.png","timestamp":"2015-05-02T08:21:05.779Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:21:05.png","timestamp":"2015-05-02T08:21:13.494Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:21:05.png","timestamp":"2015-05-02T08:21:47.406Z"}
+{"level":"info","message":"upload/images (1)SatMay02201516:21:05.png","timestamp":"2015-05-02T08:21:52.108Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:44:45.514Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:48:58.713Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:49:19.715Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:49:41.695Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:50:30.752Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T14:50:50.805Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T15:00:59.268Z"}
+{"level":"info","message":"10","timestamp":"2015-05-02T15:01:02.390Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T15:02:26.213Z"}
+{"level":"info","message":"10","timestamp":"2015-05-02T15:02:27.694Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T15:03:47.353Z"}
+{"level":"info","message":"10","timestamp":"2015-05-02T15:03:49.135Z"}
+{"level":"info","message":"10","timestamp":"2015-05-02T15:04:31.495Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T15:06:06.472Z"}
+{"level":"info","message":"10","timestamp":"2015-05-02T15:06:10.162Z"}
+{"attributes":{"User_id":10,"nickname":"sdsdsd","sex":"male","self_description":"sdsdsdsdsdsdsd","city":3,"school":4,"interest":"sdsd","public_email":"ssdsd@gmail.com","photo_number":"15914670453","qq":"888888","created_at":"2015-05-02T07:00:05.424Z","updated_at":"2015-05-02T08:21:05.742Z","avatar":"upload/images (1)SatMay02201516:21:05.png"},"_previousAttributes":{"User_id":10,"nickname":"sdsdsd","sex":"male","self_description":"sdsdsdsdsdsdsd","city":3,"school":4,"interest":"sdsd","public_email":"ssdsd@gmail.com","photo_number":"15914670453","qq":"888888","created_at":"2015-05-02T07:00:05.424Z","updated_at":"2015-05-02T08:21:05.742Z","avatar":"upload/images (1)SatMay02201516:21:05.png"},"changed":{},"relations":{},"cid":"c1","id":10,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-02T15:06:10.248Z"}
+{"attributes":{"User_id":10,"nickname":"sdsdsd","sex":"male","self_description":"sdsdsdsdsdsdsd","city":3,"school":4,"interest":"sdsd","public_email":"ssdsd@gmail.com","photo_number":"15914670453","qq":"888888","created_at":"2015-05-02T07:00:05.424Z","updated_at":"2015-05-02T08:21:05.742Z","avatar":"upload/images (1)SatMay02201516:21:05.png"},"_previousAttributes":{"User_id":10,"nickname":"sdsdsd","sex":"male","self_description":"sdsdsdsdsdsdsd","city":3,"school":4,"interest":"sdsd","public_email":"ssdsd@gmail.com","photo_number":"15914670453","qq":"888888","created_at":"2015-05-02T07:00:05.424Z","updated_at":"2015-05-02T08:21:05.742Z","avatar":"upload/images (1)SatMay02201516:21:05.png"},"changed":{},"relations":{},"cid":"c1","id":10,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-02T15:06:10.260Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-02T15:06:21.533Z"}
