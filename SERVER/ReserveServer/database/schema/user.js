@@ -73,6 +73,7 @@ exports.createUserDetail = function() {
             .notNullable();
         table.enu('sex', ['male', 'female', 'secert'])
             .notNullable();
+      table.string('avatar');
         table.text('self_description');
         table.integer('city');
         table.integer('school');
