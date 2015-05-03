@@ -18,16 +18,6 @@ var MarkPostService = {
         return knex.raw(sql);
     },
 
-  getAreaMarkersRaw: function(coordinate, distance){
-    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
-    var distancekm = distance * 1000;
-    var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
-          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
-          'and valid=true;';
-
-    return knex.raw(sql);
-  },
-
     getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
 
     },

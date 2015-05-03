@@ -26,7 +26,6 @@ var MarkPost = orm.Model.extend({
     // },
 
     validate: new Checkit({
-        User_id: 'required',
         title: ['required', 'minLength:5'],
         context: ['required', 'minLength:20'],
         longitude: 'required',
@@ -46,9 +45,8 @@ var MarkPost = orm.Model.extend({
                     logger.log('debug', 'validated', validated);
                     logger.log('debug', attributes);
                     logger.log('debug', data);
-                    var pointstr = attributes.longitude + ' ' + attributes.latitude;
-                    attributes.location = st.geomFromText('Point(' + pointstr + ')', 4326);
-              attributes.created_at = new Data().toString();
+                    var pointstr = attributes['longitude'] + ' ' + attributes['latitude'];
+                    attributes['location'] = st.geomFromText('Point(' + pointstr + ')', 4326);
                     var sql = knex.insert(attributes).into(tableName).toString();
                     logger.log('debug', sql);
                     knex.raw(sql).then(function(resp) {
@@ -70,7 +68,7 @@ var MarkPost = orm.Model.extend({
         var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
         var distancekm = distance * 1000;
         return this.collection().query().where('ST_DWithin(location, ST_GeographyFromText(' +
-            '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch();
+                                               '"SRID =4326;POINT(' + pointstr + ')"), ' + distancekm + ')').fetch();
     },
 
     comments: function() {

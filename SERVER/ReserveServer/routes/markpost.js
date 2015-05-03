@@ -3,43 +3,82 @@ var express = require('express'),
     MarkPostService = require('../services/markpost'),
     logger = require('../logger');
 
-router.get('/markpost/:id', function(req, res, next){
-  var id = req.params.id;
-  MarkPostService.getMarkPointById(id).then(function(markpost){
-    res.json(markpost);
-    res.end();
+require('../utils/addDate');
+
+router.get('/markpost/:id', function(req, res, next) {
+    var id = req.params.id;
+    MarkPostService.getMarkPointById(id).then(function(markpost) {
+        res.json(markpost);
+        res.end();
+    }, function(error) {
+        next(error);
+    });
+});
+
+router.get('/markposts', function(req, res, next) {
+    var coords = {
+        longitude: req.query.longitude,
+        latitude: req.query.latitude
+    };
+  MarkPostService.getAreaMarkPointsRaw(coords, 5, 1)
+  .then(function(markposts){
+    res.send(markposts.rows);
   }, function(error){
     next(error);
   });
 });
 
-router.post('/markposts', function(req, res, next){
-
-});
-
-router.post('/markpost/uploadimg', function(req, res, next){
-  logger.log('info', JSON.stringify(req.cookies));
-  logger.log('info', JSON.stringify(req.session.user));
-  if(!req.session.user){
-    return res.send({error: 'not login!'});
-  } else {
-    var keys = [];
-    for (var key in req.files) {
-      keys.push(key);
+router.post('/markposts', function(req, res, next) {
+    if (!req.session.user) {
+        return res.send({
+            error: 'not login!'
+        });
     }
-    //I only want first element, may be can opti..
-    console.log('debug', req.session.user);
-    req.session.uploadPic = req.files[keys[0]].path;
-    console.log('debug', req.files[keys[0]]);
-    res.send({
-      src: req.files[keys[0]].path
-    } || {
-      Error: 'unkown!'
+    var data = {
+        type: req.body.type,
+        User_id: req.session.user.id,
+        title: req.body.title,
+        context: req.body.context,
+        images: req.body.images,
+        deadline: new Date().addDays(req.body.days),
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        accuracy: req.body.accuracy,
+    };
+    MarkPostService.saveMarkPost(data).then(function(markpost) {
+        res.send({
+            success: 'success!'
+        });
+    }, function(error) {
+        next(error);
     });
-    res.end();
-  }
-
 });
+
+router.post('/markpost/uploadimg', function(req, res, next) {
+    logger.log('info', JSON.stringify(req.cookies));
+    logger.log('info', JSON.stringify(req.session.user));
+    if (!req.session.user) {
+        return res.send({
+            error: 'not login!'
+        });
+    } else {
+        var keys = [];
+        for (var key in req.files) {
+            keys.push(key);
+        }
+        //I only want first element, may be can opti..
+        req.session.uploadPic = req.files[keys[0]].path;
+        res.send({
+            src: req.files[keys[0]].path
+        } || {
+            Error: 'unkown!'
+        });
+        res.end();
+    }
+});
+
+
+
+
 
 module.exports = router;
-

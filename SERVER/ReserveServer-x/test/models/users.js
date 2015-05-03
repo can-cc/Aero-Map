@@ -30,7 +30,7 @@ describe('User Model Test', function() {
         email: 'hihAhotmail.com',
         // created_at: new Date().toJSON(),
         // updated_at: new Date().toJSON()
-    };
+    }
 
     //have not password
     var userData4 = {
@@ -68,7 +68,7 @@ describe('User Model Test', function() {
                 console.log('debug', JSON.stringify(userData1));
                 done();
             });
-        });
+        })
 
         it('should return false', function(done) {
             var user = new User();
@@ -115,8 +115,8 @@ describe('User Model Test', function() {
                 console.log('debug', JSON.stringify(userData1));
                 done();
             });
-        });
-    });
+        })
+    })
 
     //************************************************************
     //fetch
