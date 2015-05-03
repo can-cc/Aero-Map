@@ -173,6 +173,13 @@ var UserService = {
         });
     },
 
+  updateUserDetail: function(data) {
+    return new UserDetail(data).save(null, {
+      method: 'update'
+    });
+  },
+
+
     getUserAvatar: function(userid) {
         return new Promise(function(resolve, reject) {
             new UserDetail({
@@ -201,7 +208,19 @@ var UserService = {
         reject(error);
       });
     });
+  },
+
+
+  /**************************************************
+   * Search Part
+   **************************************************/
+  searchUserByUsername: function(){
+    return new Promise(function(resolve, reject){
+
+    });
   }
+
+
 };
 
 module.exports = UserService;

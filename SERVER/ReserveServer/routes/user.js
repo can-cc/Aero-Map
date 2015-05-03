@@ -193,7 +193,17 @@ router.post('/user/detail', function(req, res, next) {
 });
 
 router.put('/user/:id/detail', function(req, res, next) {
-
+  if(!req.session.user){
+    return next(new Error('not Login'));
+  }
+  var data = req.body;
+  data.User_id = req.session.user.id;
+  UserService.updateUserDetail(data).then(function(userDetail){
+    logger.log('info', userDetail);
+    res.send(userDetail);
+  }, function(error){
+    next(error);
+  });
 });
 
 /*************************************************
@@ -241,6 +251,24 @@ router.post('/user/friends', function(req, res, next) {
 router.delete('/user/:id/friends/:friendId', function(req, res, next) {
 
 });
+
+
+
+/**************************************************
+ * Search User
+ **************************************************/
+router.get('/user/search', function(req, res, next){
+  var searchType = req.query.searchType,
+      searchStr = req.query.search;
+  if(searchType === 1){
+    UserService.searchUserByUsername();
+  } else if (searchType === 2){
+    UserService.searchUserByNickname();
+  } else{
+    next(new Error('search type error!'));
+  }
+});
+
 
 /****************************************************
  * Test
