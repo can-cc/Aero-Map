@@ -115,3 +115,44 @@ body, html {
   width: auto; }
 .post-day input[type] {
   display: inline; }
+
+/* leaflet-popup  */
+.leaflet-popup-content-wrapper {
+  width: 200px; }
+
+.popup {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px; }
+
+.marker-header {
+  display: inline; }
+  .marker-header img {
+    display: inherit; }
+  .marker-header a {
+    text-weight: bold;
+    font-size: 20px;
+    position: relative;
+    left: 5px;
+    display: inherit; }
+
+.marker-title {
+  word-break: break-all; }
+
+.marker-go {
+  font-size: 350%;
+  text-align: center;
+  display: block; }
+
+/*--------------markpost----------*/
+.markpost-top img {
+  display: inline;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px; }
+.markpost-top a {
+  display: inline;
+  font-size: 20px; }
+
+.markpost-context {
+  word-break: break-all; }

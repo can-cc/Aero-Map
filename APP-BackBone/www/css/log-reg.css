@@ -14,7 +14,7 @@ input[type] {
   font-family: "Open Sans Condensed";
   font-size: 150%; }
 
-.top-input[type="text"] {
+.top-input[type] {
   margin-bottom: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px; }
@@ -22,7 +22,7 @@ input[type] {
 .middle-input[type] {
   margin-bottom: 0; }
 
-.bottom-input[type="password"] {
+.bottom-input[type] {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px; }
 

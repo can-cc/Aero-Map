@@ -1,7 +1,152 @@
 <div>
   <br />
 <form>
+    <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">NickName</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <input type="text" id="right-label" ng-model="nickname">
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    <div class="row">
+      <div class="small-4 small-centered columns">
+        <img ng-src="{{avatar}}"  alt="Description" class="center-img" ng-click="goChangeAvatar()">
+      </div>
+    </div>
+
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">Sex</label>
+                    </div>
+                    <div class="small-10 columns">
+                      <input type="radio" ng-model="sex" value="male" id="pokemonRed">
+                        <label for="pokemonRed">male</label>
+                        <input type="radio" ng-model="sex" value="female" id="pokemonBlue">
+                        <label for="pokemonBlue">female</label>
+                        <input type="radio"  ng-model="sex" value="secert" id="pokemonBlue">
+                        <label for="pokemonBlue">secert</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">city</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <select ng-model="city">
+                            <option value="1">Wuhan</option>
+                            <option value="2">Beijing</option>
+                            <option value="3">Tianjing</option>
+                            <option value="4">Hangzhou</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">School</label>
+                    </div>
+                    <div class="small-10 columns">
+                      <select  ng-model="school">
+                            <option value="1">Frist School</option>
+                            <option value="2">Second School</option>
+                            <option value="3">3th School</option>
+                            <option value="4">4th school</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">Interest:</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <input type="text" id="right-label" ng-model="interest">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">email:</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <input type="text" id="right-label" ng-model="public_email">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label for="right-label" class="right inline">photo:</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <input type="text" id="right-label" ng-model="photo_number">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="row">
+              <div class="small-2 columns">
+                <label for="right-label" class="right inline">QQ:</label>
+              </div>
+              <div class="small-10 columns">
+                <input type="text" id="right-label" ng-model="qq">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="row">
+              <div class="small-2 columns">
+                <label for="right-label" class="right inline">Description:</label>
+              </div>
+              <div class="small-10 columns">
+                <textarea  ng-model="self_description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="small-12 columns">
+            <div class="button expand" ng-click="update()">update</div>
+          </div>
+        </div>
 </form>
 
 </div>

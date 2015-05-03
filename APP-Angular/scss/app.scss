@@ -60,8 +60,8 @@ html {
     height: 100%;
     width: 100%;
 }
-
 /* title */
+
 .mobile-title {
     font-size: 150%;
     font-weight: 500;
@@ -70,8 +70,8 @@ html {
     text-align: center;
     color: #777777;
 }
-
 /* input */
+
 .xinput[type] {
     height: 47px;
     text-align: center;
@@ -92,7 +92,7 @@ html {
 }
 
 .middle-input[type] {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .bottom-input[type] {
@@ -122,36 +122,89 @@ margin-bottom: 0;
 }
 
 .post-trigger {
-  height: 60px;
-  width: 60px;
-  border-radius: 30px;
-
-  i{
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 400%;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    i {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 400%;
     }
-  }
+}
 
-.center-img{
- display: block;
- margin-left: auto;
- margin-right: auto
-  }
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
 
 .post-text {
-  textarea{
-    height: 160px;
+    textarea {
+        height: 160px;
     }
+}
 
-  }
-
-.post-day{
-  p{
-    display: inline;
-    width: auto;
-    }
-      input[type]{
+.post-day {
+    p {
         display: inline;
+        width: auto;
+    }
+    input[type] {
+        display: inline;
+    }
+}
+/* leaflet-popup  */
+
+.leaflet-popup-content-wrapper {
+    width: 200px;
+}
+
+.popup {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.marker-header {
+    display: inline;
+    img {
+        display: inherit;
+    }
+    a {
+        text-weight: bold;
+        font-size: 20px;
+        position: relative;
+        left: 5px;
+        display: inherit;
+    }
+}
+
+.marker-title {
+    word-break: break-all;
+}
+
+.marker-go{
+    font-size: 350%;
+    text-align: center;
+display: block;
+}
+
+/*--------------markpost----------*/
+.markpost-top {
+    img{
+        display: inline;
+ width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    }
+    a{
+        display: inline;
+        font: {
+            size: 20px;
         }
-  }
+    }
+}
+
+.markpost-context {
+    word-break: break-all;
+}

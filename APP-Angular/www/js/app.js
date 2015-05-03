@@ -44,7 +44,32 @@ angular.module('Aero', [
                 url: '/post',
                 templateUrl: 'templates/post.html',
                 controller: 'PostCtrl'
-            });
+            })
+        .state('profile', {
+          url: '/profile',
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
+        })
+        .state('search_user', {
+          url: '/searchuser',
+          templateUrl: 'templates/searchuser.html',
+          controller: 'SearchUserCtrl'
+        })
+        .state('friends', {
+          url: '/friends',
+          templateUrl: 'templates/friends.html',
+          controller: 'FriendsCtrl'
+        })
+        .state('markpost', {
+          url: '/markpost/:markPostId',
+          templateUrl: 'templates/markpost.html',
+          controller: 'MarkPostCtrl'
+        })
+        .state('user', {
+          url: '/user/:userId',
+          templateUrl: 'templates/user.html',
+          controller: 'UserCtrl'
+        });
 
 
     });

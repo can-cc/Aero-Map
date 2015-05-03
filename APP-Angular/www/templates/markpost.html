@@ -1,7 +1,33 @@
-<div ng-controller="MarkCtrl" class="form-popup">
-  <p>{{data[i].title}}</p>
-  <form novalidate>
-    Name: <input type="text" ng-model="user.name" />
-    <button ng-click="greet(user)">GREET</button>
-  </form>
+<div>
+    <div class="row markpost-top">
+      <div class="small-12 columns">
+        <div class="small-3 columns">
+          <img ng-src="{{backend + '/' + markpost.user.detail.avatar}}" alt="Avatar" />
+        </div>
+        <div class="small-9 columns">
+          <br />
+          <a href="/#/user/{{markpost.user.id}}">{{markpost.user.detail.nickname}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row markpost-title">
+      <div class="small-12 columns">
+        <p>{{markpost.title}}</p>
+      </div>
+    </div>
+
+    <div class="row markpost-context">
+      <div class="small-12 columns">
+        <div class="panel">
+          <img ng-src="{{backend + '/' + markpost.images.slice(3, -3)}}" />
+          <p>{{markpost.context}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row markpost-footer">
+
+    </div>
+
 </div>

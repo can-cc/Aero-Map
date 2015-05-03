@@ -37,11 +37,11 @@ angular.module('Aero.controllers')
               markers: {}
             });
 
+          $scope.backend = AeroConfig.backend;
+
             /****************************************************
              * Get Geolocation!
              ****************************************************/
-
-
             var getMarks = function(longitude, latitude) {
                 $http({
                   method: 'GET',
@@ -53,7 +53,7 @@ angular.module('Aero.controllers')
                   withCredentials: true
                 })
                 .success(function(data, status, headers, config) {
-                     //   alert(JSON.stringify(data));
+                  console.log('debug', data);
                   $scope.data = data;
                   $scope.test = 'fuck';
                   for(var i=0, max = data.length; i < max; i++){
@@ -62,7 +62,7 @@ angular.module('Aero.controllers')
                       lat: parseFloat(data[i].latitude),
                       compileMessage: true,
                       getMessageScope: function () { return $scope; },
-                      message: '<div ng-include src="\'/templates/markpost.html\'" onload="i = '+i+'"></div>'
+                      message: '<div ng-include src="\'/templates/marker.html\'" onload="i = '+i+'"></div>'
                     };
                   }
                     })

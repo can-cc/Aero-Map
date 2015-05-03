@@ -1,0 +1,11 @@
+<div ng-controller="MarkerCtrl">
+<div class="marker-header">
+  <img ng-src="{{backend + '/' + data[i].avatar}}" class="popup">
+  <a>{{data[i].nickname}}</a>
+</div>
+<div class="marker-title">
+  <p>{{data[i].context}}</p>
+</div>
+
+<a href="/#/markpost/{{data[i].id}}" class="marker-go"><i class="fi-play-circle"></i></a>
+</div>
