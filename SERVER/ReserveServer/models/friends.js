@@ -17,7 +17,7 @@ var Friends = orm.Model.extend({
     return checkit({
       User_id: 'required',
       Friend_id: 'required',
-    }).run(this.attributes)
+    }).run(this.attributes);
   },
 
   hasTimestamps: ['created_at', 'updated_at']

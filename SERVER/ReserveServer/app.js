@@ -2,6 +2,7 @@ var express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'),
     https = require('https'),
+    http = require('http'),
     path = require('path'),
     bodyParser = require('body-parser'),
     multer = require('multer'),
@@ -15,7 +16,8 @@ var express = require('express'),
     passport = require('./auth/passport'),
     app = express(),
     captcha = require('captcha'),
-    logger = require('./logger');
+    logger = require('./logger'),
+    chatsocket = require('./socket/chat');
 
 
 
@@ -26,8 +28,8 @@ var express = require('express'),
  ***********************************************/
 var cors = require('cors');
 app.use(cors({
-   origin:  'http://localhost:4400',
-  credentials: true
+    origin: 'http://localhost:4400',
+    credentials: true
 }));
 
 // app.use(function(req, res, next) {
@@ -54,43 +56,43 @@ app.use(cookieParser());
 
 //csrf
 app.set('csrfProtection', csrf({
-  cookie: true,
-  value: function(req){
-    return req.body._csrf;
-  }
+    cookie: true,
+    value: function(req) {
+        return req.body._csrf;
+    }
 }));
 app.set('parseForm', bodyParser.urlencoded({
     extended: false
 }));
 
 app.use(multer({
-  dest: './upload',
+    dest: './upload',
 
-  changeDest:  function(dest, req, res) {
-    if ( req.url === '/markpost/uploadimg' ) {
-      return dest  + '/temp';
+    changeDest: function(dest, req, res) {
+        if (req.url === '/markpost/uploadimg') {
+            return dest + '/temp';
+        }
+        return dest;
+    },
+
+    rename: function(fieldname, filename, req, res) {
+        return filename + new Date().toString().slice(0, 24).replace(/\s+/g, '');
+    },
+    onFileUploadStart: function(file, req, res) {
+        //Todo:
+        //should use Debug
+        //console.log(file.fieldname + ' uploaded to  ' + file.path)
+    },
+    onFileUploadComplete: function(file, req, res) {
+        //console.log(file.fieldname + ' uploaded to  ' + file.path)
     }
-    return dest;
-  },
-
-  rename: function (fieldname, filename, req, res) {
-    return filename +  new Date().toString().slice(0, 24).replace(/\s+/g, '');
-  },
-  onFileUploadStart: function(file, req, res) {
-    //Todo:
-    //should use Debug
-    //console.log(file.fieldname + ' uploaded to  ' + file.path)
-  },
-  onFileUploadComplete: function(file, req, res) {
-    //console.log(file.fieldname + ' uploaded to  ' + file.path)
-  }
 }));
 
 //session
 app.use(session({
-  store: new RedisStore(setting.redis_session),
-  secret: 'LoveRaspberryPi',
-  name: 'sessionid22'
+    store: new RedisStore(setting.redis_session),
+    secret: 'LoveRaspberryPi',
+    name: 'sessionid22'
 }));
 
 //app.use(flash());
@@ -98,9 +100,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //captcha
-app.use(captcha({ url: '/captcha.jpg', color:'#0064cd', background: 'rgb(20,30,200)' })); // captcha params
-app.use('/templates',express.static('templates'));
-app.use('/upload',express.static('upload'));
+app.use(captcha({
+    url: '/captcha.jpg',
+    color: '#0064cd',
+    background: 'rgb(20,30,200)'
+})); // captcha params
+app.use('/templates', express.static('templates'));
+app.use('/upload', express.static('upload'));
 module.exports = app;
 
 /***********************************************
@@ -109,12 +115,14 @@ module.exports = app;
 //var middleware = require('./routes/middleware')
 var UserRouter = require('./routes/user');
 var MarkPostRouter = require('./routes/markpost');
+var FriendRouter = require('./routes/friend');
 
 //only for development test
 var TestRouter = require('./routes/test');
 
 app.use(UserRouter);
 app.use(MarkPostRouter);
+app.use(FriendRouter);
 app.use(TestRouter);
 
 
@@ -147,10 +155,7 @@ if (setting.https) {
         passphrase: '123456'
     }, app).listen(setting.https_options.port);
 } else {
-    var server = app.listen(3000, function() {
-        var host = setting.host;
-        var port = setting.port;
-        console.log('Aero-Map App Main Server listening at http://%s:%s', host, port);
-    });
+    var server = http.createServer(app);
+    server.listen(setting.port);
+    console.log('Aero-Map App Main Server listening at http://%s:%s', setting.host, setting.port);
 }
-

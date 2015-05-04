@@ -21,7 +21,7 @@ var MarkPostService = {
   getAreaMarkersRaw: function(coordinate, distance){
     var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
     var distancekm = distance * 1000;
-    var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
+    var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
           'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
           'and valid=true;';
 
@@ -65,6 +65,24 @@ var MarkPostService = {
             });
         });
     },
+
+  getMarkPointWithUserDetailById: function(id) {
+    return new Promise(function(resolve, reject) {
+      logger.log('info', 'query markpost by id:', id, 'start');
+      new MarkPost({
+        id: id,
+      }).fetch({
+        withRelated: ['user.detail']
+      }).then(function(markpost) {
+        logger.log('info', 'query markpost by id:', id, 'success');
+        resolve(markpost);
+      }, function(error) {
+        logger.log('error', 'query markpost by id:', id, 'fail!');
+        reject(error);
+      });
+    });
+  },
+
 
     deleteMarkPointById: function(id) {
         // return new Promise(function(resolve, reject){

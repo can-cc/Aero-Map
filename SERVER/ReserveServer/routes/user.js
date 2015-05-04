@@ -259,10 +259,13 @@ router.delete('/user/:id/friends/:friendId', function(req, res, next) {
  **************************************************/
 router.get('/user/search', function(req, res, next){
   var searchType = req.query.searchType,
-      searchStr = req.query.search;
-  if(searchType === 1){
-    UserService.searchUserByUsername();
-  } else if (searchType === 2){
+      searchStr = req.query.searchStr;
+  logger.log('info', searchType, searchStr);
+  if(searchType === '1'){
+    UserService.searchUserByUsername(searchStr).then(function(users){
+      res.send(users);
+    });
+  } else if (searchType === '2'){
     UserService.searchUserByNickname();
   } else{
     next(new Error('search type error!'));
