@@ -208,3 +208,93 @@ display: block;
 .markpost-context {
     word-break: break-all;
 }
+
+
+/*------------     user.html      ---------------*/
+
+.user-operation {
+  word-break: break-all;
+
+  .button {
+     margin: 0;
+     padding: 10px;
+    }
+  }
+
+
+
+/*-------chat-------------*/
+.chat-footer {
+  clear: both;
+  position: absolute;
+  bottom: 0px;
+  height: 8%;
+  margin: 0 5px;
+  width: 100%;
+
+  .chat-input{
+    position: absolute;
+    width: 75%;
+    }
+
+  .button {
+    position: absolute;
+    right: 3%;
+    border-radius: 5px;
+    padding: 3px 10px;
+    }
+  }
+
+.chat-content{
+  margin: 5px 5px 5px 5px;
+  height: 90%;
+  width: 97%;
+  overflow-y: scroll;
+  border-radius: 9px;
+  }
+
+.chat-cc {
+    text-align: left;
+    position: relative;
+  }
+
+.chat-fother {
+   text-align: left;
+  }
+
+ .chat-fother p{
+   display: inline-block;
+   min-height: 16px;
+   max-width: 50%;
+   background: linear-gradient(#8ecdd3, #5493e7) repeat scroll 0% 0% transparent;
+   border-radius: 5px;
+   padding: 5px 7px;
+   word-break: break-all;
+   box-shadow: 1px 1px 3px #000;
+   line-height: 1;
+ }
+
+.chat-fself {
+    text-align: right;
+  }
+
+.chat-fself p{
+   display: inline-block;
+   min-height: 16px;
+   max-width: 50%;
+   background: linear-gradient(#8ecdd3, #5493e7) repeat scroll 0% 0% transparent;
+   border-radius: 5px;
+   padding: 5px 7px;
+   word-break: break-all;
+   box-shadow: 1px 1px 3px #000;
+   line-height: 1;
+  }
+
+/*post*/
+.post-main{
+
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  }
+

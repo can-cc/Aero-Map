@@ -1,0 +1,20 @@
+<div>
+  <div class="row" ng-repeat="request in requests">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="small-3 columns">
+          <img ng-src="{{backend + '/' + request.requester.avatar}}" alt="avatar"/>
+        </div>
+        <div class="small-3 columns">
+          <p>{{request.requester.nickname}}</p>
+        </div>
+        <div class="small-3 columns">
+          <div class="button" ng-click="accept(request.id)">accept</div>
+        </div>
+        <div class="small-3 columns">
+          <div class="button" ng-click="reject()">reject</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

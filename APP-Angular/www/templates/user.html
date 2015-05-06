@@ -1,3 +1,46 @@
 <div>
+    <from>
 
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="small-3 columns">
+                    <img ng-src="{{backend + '/' + userdetail.avatar}}" alt="Avatar" />
+                </div>
+                <div class="small-9 columns">
+                    <br />
+                    <a href="/#/user/{{userdetail.User_id}}">{{userdetail.nickname}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <lable>self_description</lable>
+                <div class="panel">
+                    {{userdetail.self_description}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row user-operation">
+          <div class="small-12 columns">
+            <div class="small-4 columns">
+              <div class="button" ng-click="request()">
+                Req Friend
+              </div>
+            </div>
+            <div class="small-4 columns" ng-click="dontsee()">
+              <div class="button">
+                Follow him
+              </div>
+            </div>
+            <div class="small-4 columns" ng-click="follow()">
+              <div class="button">
+                Don't see
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </from>
 </div>

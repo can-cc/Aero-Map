@@ -22,6 +22,7 @@
         <link href="bower_components/foundation-icon-fonts/foundation-icons.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/app.css">
 
+
         <title>Aero-Map</title>
     </head>
     <body ng-app="Aero">
@@ -52,7 +53,7 @@
                     </li>
                     <li><a href="#profile">Hari Seldon</a>
                     </li>
-                    <li><a href="#">...</a>
+                    <li><a href="#"><div ng-controller="MessageCtrl">{{bb}}</div></a>
                     </li>
                 </ul>
             </aside>
@@ -60,10 +61,11 @@
                 <div class="am-map" id="am-map"></div>
                 <div class="am-context" ui-view>
 
+                  <div class="am-footer">
+                    <i class="fi-wrench">  </i>Tyan Project. crystal.tyan@hotmail.com All Rights Reserved.
+                  </div>
                 </div>
-                <div class="am-footer">
-                  <i class="fi-wrench">  </i>Tyan Project. crystal.tyan@hotmail.com All Rights Reserved.
-                </div>
+
 
             </section>
             <a class="exit-off-canvas"></a>
@@ -80,19 +82,28 @@
       <script src="bower_components/foundation/js/vendor/placeholder.js"></script>
       <script src="bower_components/foundation/js/foundation.min.js"></script>
 
+      <!-- <script src="js/main.js"></script> -->
+
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
       <script src="bower_components/ng-img-crop/compile/unminified/ng-img-crop.js"></script>
       <script src="bower_components/leaflet/dist/leaflet.js"></script>
       <script src="bower_components/angular-foundation/mm-foundation.js"></script>
+      <script src="bower_components/ngstorage/ngStorage.js"></script>
       <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/socket.io-client/socket.io.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
       <link href="bower_components/leaflet/dist/leaflet.css" rel="stylesheet" />
 
-      <script src="js/main.js"></script>
+
       <script src="js/app.js"></script>
       <script src="js/config.js"></script>
       <script src="js/controller/controllers.js"></script>
+
+      <script src="js/factory/chatsocket.js"></script>
+      <script src="js/factory/message.js"></script>
+
       <script src="js/controller/register.js"></script>
       <script src="js/controller/login.js"></script>
       <script src="js/controller/map.js"></script>
@@ -104,6 +115,10 @@
       <script src="js/controller/profile.js"></script>
       <script src="js/controller/searchuser.js"></script>
       <script src="js/controller/user.js"></script>
+      <script src="js/controller/reqmsg.js"></script>
+      <script src="js/controller/friends.js"></script>
+      <script src="js/controller/chat.js"></script>
+      <script src="js/controller/message.js"></script>
 
     </body>
 </html>
