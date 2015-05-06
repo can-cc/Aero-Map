@@ -23,16 +23,16 @@ var UserService = {
     },
 
     getUserDetail: function(userId) {
-      return new Promise(function(resolve, reject){
-        new UserDetail({
-          User_id: userId
-        }).fetch().then(function(userDetail) {
-          logger.log('info', userDetail);
-          resolve(userDetail);
-        }, function(error) {
-          reject(error);
+        return new Promise(function(resolve, reject) {
+            new UserDetail({
+                User_id: userId
+            }).fetch().then(function(userDetail) {
+                logger.log('info', userDetail);
+                resolve(userDetail);
+            }, function(error) {
+                reject(error);
+            });
         });
-      });
     },
 
 
@@ -173,11 +173,11 @@ var UserService = {
         });
     },
 
-  updateUserDetail: function(data) {
-    return new UserDetail(data).save(null, {
-      method: 'update'
-    });
-  },
+    updateUserDetail: function(data) {
+        return new UserDetail(data).save(null, {
+            method: 'update'
+        });
+    },
 
 
     getUserAvatar: function(userid) {
@@ -192,33 +192,45 @@ var UserService = {
         });
     },
 
-  saveUserAvatar: function(userId, imgPath){
-    return new Promise(function(resolve, reject){
-      new UserDetail({
-        User_id: userId
-      }).fetch().then(function(userDetail){
-        userDetail.save({
-          avatar: imgPath
-        }).then(function(userDetail){
-          resolve(userDetail.get('avatar'));
-        }, function(error){
-          reject(error);
+    saveUserAvatar: function(userId, imgPath) {
+        return new Promise(function(resolve, reject) {
+            new UserDetail({
+                User_id: userId
+            }).fetch().then(function(userDetail) {
+                userDetail.save({
+                    avatar: imgPath
+                }).then(function(userDetail) {
+                    resolve(userDetail.get('avatar'));
+                }, function(error) {
+                    reject(error);
+                });
+            }, function(error) {
+                reject(error);
+            });
         });
-      }, function(error){
-        reject(error);
-      });
-    });
-  },
+    },
 
 
-  /**************************************************
-   * Search Part
-   **************************************************/
-  searchUserByUsername: function(){
-    return new Promise(function(resolve, reject){
-
-    });
-  }
+    /**************************************************
+     * Search Part
+     **************************************************/
+    searchUserByUsername: function(str) {
+        return new Promise(function(resolve, reject) {
+            User
+                .collection()
+                .query(function(qb) {
+                  qb.where('username', 'like',  '%' + str + '%');
+                })
+            .fetch({
+              withRelated: ['detail']
+            })
+                .then(function(users) {
+                  resolve(users);
+                }, function(error) {
+                  reject(error);
+                });
+        });
+    }
 
 
 };

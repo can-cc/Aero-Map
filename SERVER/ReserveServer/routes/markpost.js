@@ -7,7 +7,7 @@ require('../utils/addDate');
 
 router.get('/markpost/:id', function(req, res, next) {
     var id = req.params.id;
-    MarkPostService.getMarkPointById(id).then(function(markpost) {
+    MarkPostService.getMarkPointWithUserDetailById(id).then(function(markpost) {
         res.json(markpost);
         res.end();
     }, function(error) {
@@ -20,7 +20,7 @@ router.get('/markposts', function(req, res, next) {
         longitude: req.query.longitude,
         latitude: req.query.latitude
     };
-  MarkPostService.getAreaMarkPointsRaw(coords, 5, 1)
+  MarkPostService.getAreaMarkersRaw(coords, 5, 1)
   .then(function(markposts){
     res.send(markposts.rows);
   }, function(error){

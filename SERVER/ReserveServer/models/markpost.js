@@ -3,7 +3,8 @@ var orm = require('../db').orm,
     logger = require('../logger'),
     Promise = require('bluebird'),
     Comment = require('./markpost_comment'),
-    knex = require('../db').knex;
+    User = require('./user');
+knex = require('../db').knex;
 
 var st = require('knex-postgis')(knex);
 
@@ -39,6 +40,7 @@ var MarkPost = orm.Model.extend({
     saveWithPoint: function(data) {
         var checkit = this.validate;
         var attributes = this.attributes;
+       // attributes.created_at = new Date().toString();
         var tableName = this.tableName;
         return new Promise(function(resolve, reject) {
             console.log('look this', attributes);
@@ -48,7 +50,7 @@ var MarkPost = orm.Model.extend({
                     logger.log('debug', data);
                     var pointstr = attributes.longitude + ' ' + attributes.latitude;
                     attributes.location = st.geomFromText('Point(' + pointstr + ')', 4326);
-              attributes.created_at = new Data().toString();
+                    //attributes.created_at = new Date().toString();
                     var sql = knex.insert(attributes).into(tableName).toString();
                     logger.log('debug', sql);
                     knex.raw(sql).then(function(resp) {
@@ -77,7 +79,9 @@ var MarkPost = orm.Model.extend({
         return this.hasMany(Comment);
     },
 
-
+    user: function() {
+        return this.belongsTo(User);
+    },
 
     hasTimestamps: ['created_at', 'updated_at']
 

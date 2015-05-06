@@ -112,7 +112,9 @@ var FriendService = {
     getRequests: function(userId) {
         return FriendRequest.collection()
             .query('where', 'TarUser_id', '=', userId)
-            .fetch();
+            .fetch({
+              withRelated: ['requester.detail']
+            });
     },
 
     /**********************************************

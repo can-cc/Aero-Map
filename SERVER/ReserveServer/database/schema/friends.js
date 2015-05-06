@@ -5,7 +5,7 @@ var knex = require('../../db').knex,
 var createFriends = exports.createFriends = function() {
     return knex.schema.createTable('Friends', function(table) {
         table.increments().unique();
-      table.unique(['User_id', 'Friend_id']);
+        table.unique(['User_id', 'Friend_id']);
         table.integer('User_id')
             .unsigned()
             .notNullable()
@@ -75,6 +75,7 @@ var createFriendsRequest = exports.createFriendsRequest = function() {
             .inTable('User');
         table.enu('status', [1, 2, 3])
             .defaultTo(1);
+        table.string('message');
         table.timestamps();
     });
 };
