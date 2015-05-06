@@ -18,21 +18,21 @@ var MarkPostService = {
         return knex.raw(sql);
     },
 
-  getAreaMarkersRaw: function(coordinate, distance){
-    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
-    var distancekm = distance * 1000;
-    var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
-          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
-          'and valid=true;';
+    getAreaMarkersRaw: function(coordinate, distance) {
+        var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+        var distancekm = distance * 1000;
+        var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
+            'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+            'and valid=true;';
 
-    return knex.raw(sql);
-  },
+        return knex.raw(sql);
+    },
 
     getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
 
     },
 
-  getAreaMarkPointsRawFilterByType: function(coordinate, distance, type) {
+    getAreaMarkPointsRawFilterByType: function(coordinate, distance, type) {
         var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
         var distancekm = distance * 1000;
         var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
@@ -44,9 +44,9 @@ var MarkPostService = {
     },
 
 
-  /*
-   * Bookshelf not supported
-   */
+    /*
+     * Bookshelf not supported
+     */
     getAreaMarkPointsObject: function(coordinate, distance) {
 
     },
@@ -66,22 +66,22 @@ var MarkPostService = {
         });
     },
 
-  getMarkPointWithUserDetailById: function(id) {
-    return new Promise(function(resolve, reject) {
-      logger.log('info', 'query markpost by id:', id, 'start');
-      new MarkPost({
-        id: id,
-      }).fetch({
-        withRelated: ['user.detail']
-      }).then(function(markpost) {
-        logger.log('info', 'query markpost by id:', id, 'success');
-        resolve(markpost);
-      }, function(error) {
-        logger.log('error', 'query markpost by id:', id, 'fail!');
-        reject(error);
-      });
-    });
-  },
+    getMarkPointWithUserDetailById: function(id) {
+        return new Promise(function(resolve, reject) {
+            logger.log('info', 'query markpost by id:', id, 'start');
+            new MarkPost({
+                id: id,
+            }).fetch({
+                withRelated: ['user.detail']
+            }).then(function(markpost) {
+                logger.log('info', 'query markpost by id:', id, 'success');
+                resolve(markpost);
+            }, function(error) {
+                logger.log('error', 'query markpost by id:', id, 'fail!');
+                reject(error);
+            });
+        });
+    },
 
 
     deleteMarkPointById: function(id) {
@@ -97,10 +97,10 @@ var MarkPostService = {
         return new MarkPost(data).saveWithPoint();
     },
 
-  /***********************************************************
-   * Fix(edit) Markpost only support user fix context , title,  pic
-   *  return bookshelf object
-   ***********************************************************/
+    /***********************************************************
+     * Fix(edit) Markpost only support user fix context , title,  pic
+     *  return bookshelf object
+     ***********************************************************/
     fixMarkPost: function(data) {
         return new Promise(function(resolve, reject) {
             new MarkPost({
@@ -130,7 +130,8 @@ var MarkPostService = {
     getMarkPostComment: function(markpostId) {
         //return new Promise(function(resolve, reject){
         return new Comment.Collection().fetch({
-            MarkPost_id: markpostId
+            MarkPost_id: markpostId,
+            withRelated: ['user.detail'],
         });
         //});
     },

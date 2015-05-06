@@ -20,12 +20,12 @@ router.get('/markposts', function(req, res, next) {
         longitude: req.query.longitude,
         latitude: req.query.latitude
     };
-  MarkPostService.getAreaMarkersRaw(coords, 5, 1)
-  .then(function(markposts){
-    res.send(markposts.rows);
-  }, function(error){
-    next(error);
-  });
+    MarkPostService.getAreaMarkersRaw(coords, 5, 1)
+        .then(function(markposts) {
+            res.send(markposts.rows);
+        }, function(error) {
+            next(error);
+        });
 });
 
 router.post('/markposts', function(req, res, next) {
@@ -77,8 +77,29 @@ router.post('/markpost/uploadimg', function(req, res, next) {
     }
 });
 
+router.post('/markpost/:markpostId/', function(req, res, next) {
+    if (!req.session.user) {
+        return next(new Error('not loing'));
+    }
+    var commentData = {
+        User_id: req.session.user.id,
+        MarkPost: req.params.markpostId,
+        context: req.body.context,
+    };
+    MarkPostService.saveComment(commentData).then(function(comment) {
+      res.send(comment);
+        }, function(error) {
+            next(error);
+        });
+});
 
-
-
+router.get('markpost/:markpostId/comments', function(req, res, next){
+  var markpostId = req.params.markpostId;
+  MarkPostService.getMarkPointById(markpostId).then(function(comments){
+    res.send(comments);
+  }, function(error){
+    next(error);
+  });
+});
 
 module.exports = router;

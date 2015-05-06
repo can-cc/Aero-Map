@@ -29,6 +29,7 @@ var FriendService = {
         });
     },
 
+  //todo auth
     acceptFriendRequest: function(requestId) {
         return Bookshelf.transaction(function(transaction) {
 
@@ -112,8 +113,9 @@ var FriendService = {
     getRequests: function(userId) {
         return FriendRequest.collection()
             .query('where', 'TarUser_id', '=', userId)
+        .query('where', 'status', '=', 1)
             .fetch({
-              withRelated: ['requester.detail']
+              withRelated: ['requester']
             });
     },
 
@@ -199,14 +201,33 @@ var FriendService = {
                     if (error) {
                         logger.log('error', 'delete friends relation fail', error);
                         transaction.rollback(error);
-                        return reject(error)
+                        return reject(error);
                     }
                     return resolve(true);
                 });
 
             });
         });
-    }
+    },
+
+  isFriend: function(userId, tarUserId){
+    return new Promise(function(resolve, reject){
+     new Friends({
+       User_id: userId,
+       Friends_id: tarUserId
+     }).fetch().then(function(friendsRelation){
+       logger.log('info', 'isFriends?', friendsRelation);
+       if(friendsRelation){
+         return resolve(true);
+       }else {
+         return resolve(false);
+       }
+     }, function(error){
+       reject(error);
+     }
+);
+    });
+  },
 
     // deleteFriend: function(userId, friendId) {
     //     return new Promise(function(resolve, reject) {
@@ -247,6 +268,7 @@ var FriendService = {
     //         });
     //     });
     // }
+
 
 
 };

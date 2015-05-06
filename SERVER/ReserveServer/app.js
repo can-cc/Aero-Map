@@ -16,8 +16,7 @@ var express = require('express'),
     passport = require('./auth/passport'),
     app = express(),
     captcha = require('captcha'),
-    logger = require('./logger'),
-    chatsocket = require('./socket/chat');
+    logger = require('./logger');
 
 
 
@@ -125,6 +124,10 @@ app.use(MarkPostRouter);
 app.use(FriendRouter);
 app.use(TestRouter);
 
+/****************************************************
+ * Socket
+ ****************************************************/
+var chatsocket = require('./socket/chat');
 
 /***********************************************
  * Error Trace
@@ -158,4 +161,5 @@ if (setting.https) {
     var server = http.createServer(app);
     server.listen(setting.port);
     console.log('Aero-Map App Main Server listening at http://%s:%s', setting.host, setting.port);
+  chatsocket.listen(server);
 }

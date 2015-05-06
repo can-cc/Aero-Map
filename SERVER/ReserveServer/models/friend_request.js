@@ -3,7 +3,7 @@ var orm = require('../db').orm,
     logger = require('../logger'),
     Promise = require('bluebird'),
     Friends = require('./friends'),
-    User = require('./user'),
+    UserDetail = require('./userdetail'),
     knex = require('../db').knex;
 
 
@@ -22,7 +22,7 @@ var FriendRequest = orm.Model.extend({
     },
 
   requester: function(){
-    return this.belongsTo(User, 'RequestUser_id');
+    return this.belongsTo(UserDetail, 'RequestUser_id');
   },
 
   // targeter: function(){

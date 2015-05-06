@@ -4,6 +4,18 @@ var orm = require('../db').orm,
     User = require('./user');
     MarkPost = require('./markpost');
 
+
+/**************************************************
+ *
+ * id integer
+ * "MarkPost_id"
+ * "User_id"
+ * context
+ * created_at
+ * updated_at
+ **************************************************/
+
+
 var MarkPost_Comment = orm.Model.extend({
     tableName: 'MarkPostComment',
 
