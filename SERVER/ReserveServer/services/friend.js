@@ -154,7 +154,14 @@ var FriendService = {
         var pagination = setting.Pagination.friendLoad,
             limit = pagination,
             offset = (page - 1) * pagination;
-        return Friends.collection().query('where', 'User_id', '=', userId).query('limit', limit).query('offset', offset).fetch();
+      return Friends
+        .collection()
+        .query('where', 'User_id', '=', userId)
+        .query('limit', limit)
+        .query('offset', offset)
+        .fetch({
+          withRelated: ['user.detail']
+        });
     },
 
     deleteFriend: function(userId, friendId) {

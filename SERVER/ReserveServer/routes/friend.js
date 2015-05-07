@@ -65,14 +65,28 @@ router.get('/friendservice', function(req, res, next) {
     var userId = req.query.userId,
         tarUserId = req.query.tarUserId;
     FriendService.isFriend(userId, tarUserId).then(function(resp) {
-      res.send({
-        isFriend: resp
-      });
+        res.send({
+            isFriend: resp
+        });
     }, function(error) {
-      res.send({
-        isFriend: resp
-      });
+        res.send({
+            isFriend: resp
+        });
     });
+});
+
+router.post('/user/:userId/friend/:friendId/delete', function(req, res, next) {
+    if (!req.session.user) {
+        return next(new Error('not loing'));
+    }
+    FriendService.deleteFriend(req.params.userId, req.params.friendId)
+        .then(function(resp) {
+            res.send({
+                result: resp
+            });
+        }, function(error) {
+            next(error);
+        });
 });
 
 module.exports = router;

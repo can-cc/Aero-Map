@@ -1,7 +1,7 @@
 var orm = require('../db').orm,
     checkit = require('checkit'),
     Promise = require('bluebird'),
-    User = require('./user');
+    User = require('./user'),
     MarkPost = require('./markpost');
 
 
@@ -25,16 +25,16 @@ var MarkPost_Comment = orm.Model.extend({
 
     validateSave: function() {
         return checkit({
-            context: 'minLenght:10'
+            context: 'minLenght:5'
         });
     },
 
     user: function() {
-      return this.belongTo(User);
+      return this.belongsTo(User);
     },
 
     markpost: function() {
-      return this.belongTo(MarkPost);
+      return this.belongsTo(MarkPost);
     },
 
   hasTimestamps: ['created_at', 'updated_at']

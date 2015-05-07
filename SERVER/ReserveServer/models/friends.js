@@ -3,6 +3,7 @@ var orm = require('../db').orm,
     Promise = require('bluebird'),
     bcrypt = Promise.promisifyAll(require('bcrypt')),
     UserDetail = require('./userdetail'),
+    User = require('./user'),
     UserSetting = require('./usersetting'),
     UserInfomation = require('./userinfomation');
 
@@ -18,6 +19,10 @@ var Friends = orm.Model.extend({
       User_id: 'required',
       Friend_id: 'required',
     }).run(this.attributes);
+  },
+
+  user: function(){
+    return this.belongsTo(User);
   },
 
   hasTimestamps: ['created_at', 'updated_at']

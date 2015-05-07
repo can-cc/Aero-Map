@@ -77,15 +77,16 @@ router.post('/markpost/uploadimg', function(req, res, next) {
     }
 });
 
-router.post('/markpost/:markpostId/', function(req, res, next) {
+router.post('/markpost/:markpostId/comments', function(req, res, next) {
     if (!req.session.user) {
         return next(new Error('not loing'));
     }
     var commentData = {
         User_id: req.session.user.id,
-        MarkPost: req.params.markpostId,
+        MarkPost_id: req.params.markpostId,
         context: req.body.context,
     };
+  logger.log('info', commentData);
     MarkPostService.saveComment(commentData).then(function(comment) {
       res.send(comment);
         }, function(error) {
@@ -93,9 +94,9 @@ router.post('/markpost/:markpostId/', function(req, res, next) {
         });
 });
 
-router.get('markpost/:markpostId/comments', function(req, res, next){
+router.get('/markpost/:markpostId/comments', function(req, res, next){
   var markpostId = req.params.markpostId;
-  MarkPostService.getMarkPointById(markpostId).then(function(comments){
+  MarkPostService.getMarkPostComment(markpostId).then(function(comments){
     res.send(comments);
   }, function(error){
     next(error);

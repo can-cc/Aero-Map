@@ -75,7 +75,6 @@ io.on('connection', function (socket) {
           online: false
         });
       } else {
-        console.log(io.sockets);
         io.sockets.connected[socketId].emit('receiveMessage', {
           fromUserId: userId,
           chatmessage: chatmessage,

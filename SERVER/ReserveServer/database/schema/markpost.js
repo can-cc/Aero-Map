@@ -39,21 +39,19 @@ exports.createMarkPost = function() {
             .defaultTo(true);
         table.dateTime('deadline');
         table.timestamps();
-    })
-}
+    });
+};
 
 exports.createMarkPostComment = function(callback) {
     return knex.schema.createTable('MarkPostComment', function(table) {
         table.increments();
         table.integer('MarkPost_id')
-            .unique()
             .unsigned()
             .notNullable()
             .index()
             .references('id')
             .inTable('MarkPost');
         table.integer('User_id')
-            .unique()
             .unsigned()
             .notNullable()
             .references('id')

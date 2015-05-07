@@ -129,7 +129,7 @@ var MarkPostService = {
 
     getMarkPostComment: function(markpostId) {
         //return new Promise(function(resolve, reject){
-        return new Comment.Collection().fetch({
+        return  Comment.collection().fetch({
             MarkPost_id: markpostId,
             withRelated: ['user.detail'],
         });

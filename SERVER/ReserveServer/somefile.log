@@ -1528,3 +1528,145 @@
 {"level":"info","message":"current env =   development","timestamp":"2015-05-06T16:10:30.896Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-06T16:11:41.742Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-06T16:12:36.778Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:15:30.074Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:15:30.262Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:17:12.672Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:17:12.897Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:17:49.042Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:17:49.191Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:18:02.943Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:18:03.085Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:19:59.914Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:20:00.119Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:20:10.386Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:20:10.554Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:20:19.221Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:20:19.324Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-06T16:20:38.656Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-06T16:20:38.746Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:32:05.263Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T02:32:10.946Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T02:32:11.502Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T02:34:12.095Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T02:34:12.287Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T02:35:20.824Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T02:35:20.979Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:42:01.612Z"}
+{"level":"error","message":"column \"MarkPost\" of relation \"MarkPostComment\" does not exist","timestamp":"2015-05-07T02:48:19.920Z"}
+{"name":"error","length":128,"severity":"ERROR","code":"42703","position":"32","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-05-07T02:48:19.927Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:50:15.691Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:50:28.714Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:50:34.694Z"}
+{"level":"error","message":"column \"MarkPost\" of relation \"MarkPostComment\" does not exist","timestamp":"2015-05-07T02:50:37.211Z"}
+{"name":"error","length":128,"severity":"ERROR","code":"42703","position":"32","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-05-07T02:50:37.216Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:56:44.758Z"}
+{"User_id":2,"MarkPost":"1","context":"hihihihihihihi","level":"info","message":"","timestamp":"2015-05-07T02:56:47.359Z"}
+{"level":"error","message":"column \"MarkPost\" of relation \"MarkPostComment\" does not exist","timestamp":"2015-05-07T02:56:47.445Z"}
+{"name":"error","length":128,"severity":"ERROR","code":"42703","position":"32","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-05-07T02:56:47.451Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:59:24.764Z"}
+{"User_id":2,"MarkPost":"1","context":"hihihihihihihi","level":"info","message":"","timestamp":"2015-05-07T02:59:26.904Z"}
+{"level":"error","message":"column \"MarkPost\" of relation \"MarkPostComment\" does not exist","timestamp":"2015-05-07T02:59:27.001Z"}
+{"name":"error","length":128,"severity":"ERROR","code":"42703","position":"32","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-05-07T02:59:27.006Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T02:59:45.847Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:00:06.828Z"}
+{"User_id":2,"MarkPost":"1","context":"hihihihihihihi","level":"info","message":"","timestamp":"2015-05-07T03:00:25.720Z"}
+{"level":"error","message":"column \"MarkPost\" of relation \"MarkPostComment\" does not exist","timestamp":"2015-05-07T03:00:25.806Z"}
+{"name":"error","length":128,"severity":"ERROR","code":"42703","position":"32","file":"parse_target.c","line":"923","routine":"checkInsertTargets","level":"error","timestamp":"2015-05-07T03:00:25.811Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:00:56.836Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:03:50.973Z"}
+{"User_id":2,"MarkPost_id":"1","context":"hihihihihihihi","level":"info","message":"","timestamp":"2015-05-07T03:04:13.831Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:08:02.984Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T03:08:10.029Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T03:08:10.198Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T03:09:14.439Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T03:09:14.564Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:10:27.029Z"}
+{"level":"error","message":"undefined is not a function","timestamp":"2015-05-07T03:10:32.282Z"}
+{"level":"error","timestamp":"2015-05-07T03:10:32.289Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:11:24.942Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:11:30.081Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T03:49:57.270Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsds","level":"info","message":"","timestamp":"2015-05-07T04:31:55.857Z"}
+{"level":"error","message":"duplicate key value violates unique constraint \"markpostcomment_markpost_id_unique\"","timestamp":"2015-05-07T04:31:55.968Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"MarkPost_id\")=(1) already exists.","schema":"public","table":"MarkPostComment","constraint":"markpostcomment_markpost_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-05-07T04:31:55.973Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsdssd","level":"info","message":"","timestamp":"2015-05-07T04:32:00.691Z"}
+{"level":"error","message":"duplicate key value violates unique constraint \"markpostcomment_markpost_id_unique\"","timestamp":"2015-05-07T04:32:00.765Z"}
+{"name":"error","length":242,"severity":"ERROR","code":"23505","detail":"Key (\"MarkPost_id\")=(1) already exists.","schema":"public","table":"MarkPostComment","constraint":"markpostcomment_markpost_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-05-07T04:32:00.771Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T04:32:51.067Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsdssd","level":"info","message":"","timestamp":"2015-05-07T04:33:25.572Z"}
+{"level":"error","message":"duplicate key value violates unique constraint \"markpostcomment_user_id_unique\"","timestamp":"2015-05-07T04:33:25.668Z"}
+{"name":"error","length":230,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\")=(2) already exists.","schema":"public","table":"MarkPostComment","constraint":"markpostcomment_user_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-05-07T04:33:25.674Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsdssd","level":"info","message":"","timestamp":"2015-05-07T04:33:27.612Z"}
+{"level":"error","message":"duplicate key value violates unique constraint \"markpostcomment_user_id_unique\"","timestamp":"2015-05-07T04:33:27.719Z"}
+{"name":"error","length":230,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\")=(2) already exists.","schema":"public","table":"MarkPostComment","constraint":"markpostcomment_user_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-05-07T04:33:27.730Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsdssd","level":"info","message":"","timestamp":"2015-05-07T04:33:35.081Z"}
+{"level":"error","message":"duplicate key value violates unique constraint \"markpostcomment_user_id_unique\"","timestamp":"2015-05-07T04:33:35.113Z"}
+{"name":"error","length":230,"severity":"ERROR","code":"23505","detail":"Key (\"User_id\")=(2) already exists.","schema":"public","table":"MarkPostComment","constraint":"markpostcomment_user_id_unique","file":"nbtinsert.c","line":"398","routine":"_bt_check_unique","level":"error","timestamp":"2015-05-07T04:33:35.124Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T04:33:56.014Z"}
+{"User_id":2,"MarkPost_id":"1","context":"sdsdssd","level":"info","message":"","timestamp":"2015-05-07T04:34:06.673Z"}
+{"level":"info","message":"","timestamp":"2015-05-07T04:39:39.922Z"}
+{"level":"info","message":"upload/imagessThuMay07201512:39:44.jpg","timestamp":"2015-05-07T04:39:44.905Z"}
+{"level":"info","message":"upload/imagessThuMay07201512:39:44.jpg","timestamp":"2015-05-07T04:39:44.982Z"}
+{"level":"info","message":"upload/imagessThuMay07201512:39:44.jpg","timestamp":"2015-05-07T04:44:32.203Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T04:53:14.549Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c397","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T04:53:14.585Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c397","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T04:53:14.594Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T04:56:55.000Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T04:56:55.073Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T04:57:40.994Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c508","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T04:57:41.027Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c508","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T04:57:41.035Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:08:43.330Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:09:52.567Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T05:24:19.286Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T05:25:04.240Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T05:25:09.329Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T05:25:23.248Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:25:24.669Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:26:08.961Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:26:23.714Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:26:45.100Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:27:15.811Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:27:23.958Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:27:57.023Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:28:13.651Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:28:29.312Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:29:11.751Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:52:36.410Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:52:52.185Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:53:57.221Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:54:24.753Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:54:25.980Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:54:46.006Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:55:40.624Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:56:11.950Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:56:18.427Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:56:23.932Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:57:39.719Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:58:00.586Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T05:58:05.921Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:10:40.114Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:10:52.042Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:11:06.098Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:12:44.057Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T06:12:55.014Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:13:15.247Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T06:13:20.967Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T06:13:27.016Z"}
+{"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-07T06:14:48.801Z"}
+{"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-07T06:14:48.948Z"}
+{"level":"info","message":"1","timestamp":"2015-05-07T06:14:49.958Z"}
+{"attributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"_previousAttributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"changed":{},"relations":{},"cid":"c16","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T06:14:50.027Z"}
+{"attributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"_previousAttributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"changed":{},"relations":{},"cid":"c16","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T06:14:50.042Z"}
+{"attributes":{"RequestUser_id":2,"TarUser_id":"1","created_at":"2015-05-07T06:14:51.055Z","updated_at":"2015-05-07T06:14:51.055Z","id":8},"_previousAttributes":{"RequestUser_id":2,"TarUser_id":"1","created_at":"2015-05-07T06:14:51.055Z","updated_at":"2015-05-07T06:14:51.055Z","id":8},"changed":{},"relations":{},"cid":"c17","_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"id":8,"level":"info","message":"create friends request success","timestamp":"2015-05-07T06:14:51.202Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T06:16:28.768Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c18","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T06:16:28.839Z"}
+{"attributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"_previousAttributes":{"User_id":2,"nickname":"abybb2","sex":"male","avatar":"upload/imagessThuMay07201512:39:44.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-07T04:39:44.925Z"},"changed":{},"relations":{},"cid":"c18","id":2,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-07T06:16:28.850Z"}
+{"attributes":{"id":5,"RequestUser_id":2,"TarUser_id":1,"status":"1","created_at":"2015-05-04T06:45:36.698Z","updated_at":"2015-05-04T06:45:36.698Z"},"_previousAttributes":{"id":5,"RequestUser_id":2,"TarUser_id":1,"status":"1","created_at":"2015-05-04T06:45:36.698Z","updated_at":"2015-05-04T06:45:36.698Z"},"changed":{},"relations":{},"cid":"c26","id":5,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"accept friend request success","timestamp":"2015-05-07T06:16:53.085Z"}
+{"User_id":2,"Friend_id":1,"level":"info","message":"friendData","timestamp":"2015-05-07T06:16:53.090Z"}
+{"level":"info","message":"1","timestamp":"2015-05-07T06:17:00.499Z"}
+{"level":"info","message":"2","timestamp":"2015-05-07T06:17:42.411Z"}
+{"level":"info","message":"1","timestamp":"2015-05-07T06:21:13.211Z"}
+{"level":"info","message":"1","timestamp":"2015-05-07T06:21:19.022Z"}
+{"level":"info","message":"1","timestamp":"2015-05-07T06:21:31.551Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-07T06:23:42.551Z"}
