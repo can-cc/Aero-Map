@@ -1,7 +1,7 @@
 <div style="width: 100%;">
     <div class="panel chat-content">
         <div ng-repeat="message in messages track by $index" class="chat-cc">
-          <div  ng-class="{chat-fself: {{message.fromUserId !== userId}}, chat-fother: {{message.fromUserId === userId}} }">
+          <div  ng-class=" {chatfself: message.self, chatmessage: !message.self}">
               <p>{{message.chatmessage}}</p>
             </div>
 

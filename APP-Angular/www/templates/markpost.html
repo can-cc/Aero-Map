@@ -1,8 +1,10 @@
-<div>
+<div class="control-main">
     <div class="row markpost-top">
       <div class="small-12 columns">
         <div class="small-3 columns">
-          <img ng-src="{{backend + '/' + markpost.user.detail.avatar}}" alt="Avatar" />
+          <a href="/#/user/{{markpost.user.id}}">
+            <img ng-src="{{backend + '/' + markpost.user.detail.avatar}}" alt="Avatar" />
+            </a>
         </div>
         <div class="small-9 columns">
           <br />
@@ -27,6 +29,13 @@
     </div>
 
     <div class="row markpost-footer">
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="small-12 centered columns">
+            <a href="/#/comment/{{markPostId}}"><div class="button expand">post comment</div></a>
+          </div>
+        </div>
+      </div>
 
     </div>
 

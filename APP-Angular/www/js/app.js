@@ -86,6 +86,11 @@ angular.module('Aero', [
                 url: '/setting',
                 templateUrl: 'templates/setting.html',
                 controller: 'SettingCtrl'
+            })
+        .state('comment', {
+              url: '/comment/:markpostId',
+              templateUrl: 'templates/comment.html',
+              controller: 'CommentCtrl'
             });
 
 

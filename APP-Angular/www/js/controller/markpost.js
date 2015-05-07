@@ -13,6 +13,7 @@ angular.module('Aero.controllers')
           $scope.backend = AeroConfig.backend;
 
             var markPostId = $stateParams.markPostId;
+          $scope.markPostId = markPostId;
             $http({
                     method: 'GET',
                     url: AeroConfig.backend + '/markpost/' + markPostId,

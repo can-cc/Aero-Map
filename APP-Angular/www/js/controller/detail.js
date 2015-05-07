@@ -25,7 +25,7 @@ angular.module('Aero.controllers')
                     method: 'POST',
                     url: AeroConfig.backend + '/user/detail',
                     data: detaildata,
-                    withCredentials: true
+                  withCredentials: true
                 }).success(function(data, status, headers, config) {
                     console.log(data);
                 }).error(function(data, status, headers, config) {

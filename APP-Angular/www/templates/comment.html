@@ -1,0 +1,52 @@
+<div class="control-main">
+  <br />
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel comment-panel">
+        <div ng-repeat="comment in comments">
+          <div class="row">
+            <div class="small-12 columns">
+
+                <div class="small-3 columns">
+                  <img ng-src="{{backend + '/' + comment.user.detail.avatar}}" class="comment-avatar">
+
+                </div>
+                <div class="small-9 columns">
+                  {{comment.context}}
+                </div>
+             </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <div class="small-3 columns">
+                <a href="/#/user/{{comment.user.id}}"><p>{{comment.user.detail.nickname}}</p></a>
+              </div>
+              <div class="small-9 columns">
+                <p class="comment-time">{{comment.created_at}}</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="comment-footer">
+  <div class="row">
+    <div class="small-12 columns">
+      <textarea placeholder="Text" ng-model="comment_text">
+      </textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="button expand" ng-click="comment()">comment</div>
+    </div>
+  </div>
+</div>
