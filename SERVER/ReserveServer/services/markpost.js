@@ -24,7 +24,7 @@ var MarkPostService = {
         var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
             'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
             'and valid=true;';
-
+        console.log(sql);
         return knex.raw(sql);
     },
 
@@ -129,7 +129,7 @@ var MarkPostService = {
 
     getMarkPostComment: function(markpostId) {
         //return new Promise(function(resolve, reject){
-        return  Comment.collection().fetch({
+        return Comment.collection().fetch({
             MarkPost_id: markpostId,
             withRelated: ['user.detail'],
         });
@@ -148,7 +148,25 @@ var MarkPostService = {
 
     },
 
+    getTimeLine: function() {
+        return MarkPost.collection().fetch();
+    },
 
+  /***********************************************************
+   * Fix(edit) Markpost only support user fix context , title,  pic
+   *  return bookshelf object
+   ***********************************************************/
+    getPlaceUser: function() {
+
+    },
+
+  /***********************************************************
+   * Fix(edit) Markpost only support user fix context , title,  pic
+   *  return bookshelf object
+   ***********************************************************/
+    getPlaceMarkpost: function() {
+
+    }
 
 
 };

@@ -115,6 +115,7 @@ module.exports = app;
 var UserRouter = require('./routes/user');
 var MarkPostRouter = require('./routes/markpost');
 var FriendRouter = require('./routes/friend');
+var ApiRouter = require('./routes/api');
 
 //only for development test
 var TestRouter = require('./routes/test');
@@ -122,6 +123,7 @@ var TestRouter = require('./routes/test');
 app.use(UserRouter);
 app.use(MarkPostRouter);
 app.use(FriendRouter);
+app.use(ApiRouter);
 app.use(TestRouter);
 
 /****************************************************

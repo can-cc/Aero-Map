@@ -15,8 +15,8 @@ angular.module('Aero.controllers')
             AeroConfig) {
             angular.extend($scope, {
                 center: {
-                    // lat: 30.505,
-                    // lng: 114.2549,
+                    //lat: 30.450,
+                    //lng: 114.26,
                     zoom: 13,
                     autoDiscover: true
                 },
@@ -62,7 +62,7 @@ angular.module('Aero.controllers')
                       lat: parseFloat(data[i].latitude),
                       compileMessage: true,
                       getMessageScope: function () { return $scope; },
-                      message: '<div ng-include src="\'/templates/marker.html\'" onload="i = '+i+'"></div>'
+                      message: '<div ng-include src="\'templates/marker.html\'" onload="i = '+i+'"></div>'
                     };
                   }
                     })

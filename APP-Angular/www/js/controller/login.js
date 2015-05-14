@@ -4,7 +4,8 @@ angular.module('Aero.controllers')
         $scope.login = function() {
           $http.post(AeroConfig.backend + '/login', {
                     username: $scope.username,
-                    password: $scope.password
+            password: $scope.password,
+            withCredentials: true
                 })
                 .success(function(data, status, headers, config) {
                     if (data.error) {
