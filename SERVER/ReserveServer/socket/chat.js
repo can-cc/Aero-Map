@@ -32,42 +32,33 @@ io.set('authorization', function(handshakeData, callback) {
 
 
 io.on('connection', function (socket) {
-  console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+
   var user = socket.request.session.user;
-  console.log(user);
+
   redisdb.hset(['SocketUserId:' + user.id, 'socketId', socket.id], redis.print);
-  console.log(socket.id);
-
   socket.on('checkOnline', function(data){
-    console.log( data );
-
     redisdb.hget(['SocketUserId:' + data.userId, 'socketId'], function(error, socketId){
-      console.log('haha');
       if(!socketId){
         socket.emit('checkOnline', {
           userId: data.userId,
           online: false
         });
       }
-      console.log('checkonline', socketId);
     });
   });
 
-  socket.emit('fuck', {ss: 'let you bb'});
 
   socket.emit('news', { hello: user });
   socket.on('news', function (data) {
-    onsole.log(data);
+    console.log(data);
   });
 
 
   socket.on('receiveMessage', function(data){
-    console.log('BIBIBIBIBIBIBIBI');
     var tarUserId = data.tarUserId,
         userId = user.id,
         chatmessage = data.chatmessage,
         time = data.time;
-    console.log(data);
     redisdb.hget(['SocketUserId:' + tarUserId, 'socketId'], function(error, socketId){
       if(!socketId){
         console.log(socketId);
@@ -80,9 +71,16 @@ io.on('connection', function (socket) {
           chatmessage: chatmessage,
           time: time
         });
+        redisdb.hset(['UserChatHash:' + user.id, tarUserId, chatmessage], redis.print);
+        redisdb.hset(['UserChatHash:' + tarUserId, user.id, chatmessage], redis.print);
       }
     });
+  });
 
+  socket.on('receiveChatHash', function(data){
+    redisdb.hgetall(['UserChatHash:' + user.id], function(error, resp){
+      socket.emit('receiveChatHash', resp);
+    });
   });
 
 });

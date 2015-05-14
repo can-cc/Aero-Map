@@ -206,51 +206,51 @@ router.put('/user/:id/detail', function(req, res, next) {
   });
 });
 
-/*************************************************
- *User Infomation Router
- *************************************************/
-router.get('/user/:id/info', function(req, res, next) {
+// /*************************************************
+//  *User Infomation Router
+//  *************************************************/
+// router.get('/user/:id/info', function(req, res, next) {
 
-});
+// });
 
-router.post('/user/info', function(req, res, next) {
+// router.post('/user/info', function(req, res, next) {
 
-});
+// });
 
-router.put('/user/:id/info', function(req, res, next) {
+// router.put('/user/:id/info', function(req, res, next) {
 
-});
+// });
 
-/*************************************************
- *User Setting Router
- *************************************************/
+// /*************************************************
+//  *User Setting Router
+//  *************************************************/
 
-router.get('/user/:id/setting', function(req, res, next) {
+// router.get('/user/:id/setting', function(req, res, next) {
 
-});
+// });
 
-router.put('/user/:id/setting', function(req, res, next) {
+// router.put('/user/:id/setting', function(req, res, next) {
 
-});
+// });
 
-router.post('/user/setting', function(req, res, next) {
+// router.post('/user/setting', function(req, res, next) {
 
-});
+// });
 
-/*************************************************
- *User Friends router
- *************************************************/
-router.get('/user/:id/friends', function(req, res, next) {
+// /*************************************************
+//  *User Friends router
+//  *************************************************/
+// router.get('/user/:id/friends', function(req, res, next) {
 
-});
+// });
 
-router.post('/user/friends', function(req, res, next) {
+// router.post('/user/friends', function(req, res, next) {
 
-});
+// });
 
-router.delete('/user/:id/friends/:friendId', function(req, res, next) {
+// router.delete('/user/:id/friends/:friendId', function(req, res, next) {
 
-});
+// });
 
 
 
