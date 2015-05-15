@@ -5,7 +5,8 @@ var orm = require('../db').orm,
     UserDetail = require('./userdetail'),
     UserSetting = require('./usersetting'),
     UserLimit = require('./userlimit'),
-    UserInfomation = require('./userinfomation');
+    UserInfomation = require('./userinfomation'),
+    MarkPost = require('./markpost');
 
 
 /****************************************************
@@ -52,6 +53,10 @@ var User = orm.Model.extend({
     infomation: function() {
         return this.hasOne(UserInfomation);
     },
+
+  markposts: function(){
+    return this.hasMany(MarkPost);
+  },
 
   /****************************************************
    * @deprecated relation!

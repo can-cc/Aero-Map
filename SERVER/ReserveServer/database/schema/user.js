@@ -134,6 +134,22 @@ exports.createUserLimit = function() {
     });
 };
 
+
+exports.createTrace = function() {
+  return knex.schema.createTable('UserTrace', function(table) {
+    table.integer('User_id').unique().primary();
+    table.specificType('location', 'GEOGRAPHY(POINT,4326)')
+      .index()
+      .notNullable();
+    table.decimal('longitude', 12, 8)
+      .notNullable();
+    table.decimal('latitude', 12, 8)
+      .notNullable();
+    table.decimal('accuracy');
+  });
+};
+
+
 exports.drop_all_tables = function(callback) {
     async.series([
 
@@ -181,7 +197,16 @@ exports.drop_all_tables = function(callback) {
                 winston.error('drop User table error', JSON.stringify(error));
                 next(new Error(), false);
             });
-        }
+        },
+      function(next) {
+        knex.schema.dropTableIfExists('UserTrace').then(function(success) {
+          winston.info('drop UserTrace table success', JSON.stringify(success));
+          next(null, true);
+        }, function(error) {
+          winston.error('drop UserTrace table error', JSON.stringify(error));
+          next(new Error(), false);
+        });
+      }
 
     ], function(err, result) {
         winston.info('error', err);
@@ -251,7 +276,18 @@ exports.create_all_tables = function(callback) {
                     winston.log('error', 'create UserLimit table error', JSON.stringify(error));
                     call(new Error('create  UserLimit table error'), false);
                 });
-        }
+        },
+      function(call) {
+        exports.createUserLimit().then(
+          function(success) {
+            winston.log('info', 'create UserTrace table success', success);
+            call(null, true);
+          },
+          function(error) {
+            winston.log('error', 'create UserTrace table error', JSON.stringify(error));
+            call(new Error('create  UserTrace table error'), false);
+          });
+      }
 
 
     ], function(err, results) {

@@ -1,0 +1,16 @@
+<div class="control-main">
+  <div ng-repeat="markpost in markposts">
+    <div class="panel">
+      <div class="row">
+        <div class="columns sm-3">
+          <img ng-src="{{backend + '/' + markpost.user.detail.avatar}}" class="popup">
+          <a>{{markpost.user.detail.nickname}}</a>
+        </div>
+        <div class="columns sm-9">
+          {{markpost.context}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

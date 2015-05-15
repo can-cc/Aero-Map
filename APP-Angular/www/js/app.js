@@ -27,6 +27,11 @@ angular.module('Aero', [
                 templateUrl: 'templates/register.html',
                 controller: 'RegCtrl'
             })
+        .state('message', {
+          url: '/message',
+          templateUrl: 'templates/message.html',
+          controller: 'MessageCtrl'
+        })
             .state('detail', {
                 url: '/detail',
                 templateUrl: 'templates/user_detail.html',

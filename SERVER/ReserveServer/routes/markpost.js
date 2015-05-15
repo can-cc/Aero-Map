@@ -1,6 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     MarkPostService = require('../services/markpost'),
+    UserService = require('../services/user'),
     logger = require('../logger');
 
 require('../utils/addDate');
@@ -20,7 +21,7 @@ router.get('/markposts', function(req, res, next) {
         longitude: req.query.longitude,
         latitude: req.query.latitude
     };
-    MarkPostService.getAreaMarkersRaw(coords, 5, 1)
+    MarkPostService.getAreaMarkersRaw(coords, 5)
         .then(function(markposts) {
             res.send(markposts.rows);
         }, function(error) {
@@ -100,6 +101,19 @@ router.get('/markpost/:markpostId/comments', function(req, res, next){
     res.send(comments);
   }, function(error){
     next(error);
+  });
+});
+
+router.get('/user/:userId/markposts', function(req, res, next){
+  var userId = req.params.userId;
+  UserService.getUser(userId, function(error, user){
+    return user.fetch({
+      withRelated: ['markposts', 'detail']
+    }).then(function(user_markposts_detail){
+      res.send(user_markposts_detail);
+    }, function(error){
+      next(error);
+    });
   });
 });
 
