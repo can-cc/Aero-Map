@@ -106,6 +106,7 @@ app.use(captcha({
 })); // captcha params
 app.use('/templates', express.static('templates'));
 app.use('/upload', express.static('upload'));
+app.use('/app2', express.static('../../APP-Angular/www'));
 module.exports = app;
 
 /***********************************************
@@ -115,6 +116,7 @@ module.exports = app;
 var UserRouter = require('./routes/user');
 var MarkPostRouter = require('./routes/markpost');
 var FriendRouter = require('./routes/friend');
+var ManagerRouter = require('./routes/manager');
 var ApiRouter = require('./routes/api');
 
 //only for development test
@@ -123,6 +125,7 @@ var TestRouter = require('./routes/test');
 app.use(UserRouter);
 app.use(MarkPostRouter);
 app.use(FriendRouter);
+app.use(ManagerRouter);
 app.use(ApiRouter);
 app.use(TestRouter);
 

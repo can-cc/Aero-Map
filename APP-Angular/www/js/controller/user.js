@@ -40,5 +40,9 @@ angular.module('Aero.controllers')
                   console.log('error', data);
                 });
             };
+
+          $scope.allpost =function(userId) {
+          window.location.hash = '#user/' + userId + '/markposts';
+          };
         }
     ]);

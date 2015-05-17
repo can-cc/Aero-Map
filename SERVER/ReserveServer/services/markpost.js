@@ -1,5 +1,6 @@
 var logger = require('../logger'),
     MarkPost = require('../models/markpost'),
+    User = require('../models/user'),
     Comment = require('../models/markpost_comment'),
     Promise = require('bluebird'),
     knex = require('../db').knex;
@@ -17,6 +18,30 @@ var MarkPostService = {
 
         return knex.raw(sql);
     },
+
+  //and deadline<now();
+  getAreaMarkPointsRawByTime: function(coordinate, distance) {
+    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+    var distancekm = distance * 1000;
+    var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
+          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+          'and valid=true and deadline>now();';
+
+    return knex.raw(sql);
+  },
+
+  // and "MarkPost"."User_id" in (select "Friends"."Friend_id" FROM "Friends" where "Friends"."User_id" = 2 );
+  getAreaMarkPointsRawByFriends: function(coordinate, distance, userId) {
+    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+    var distancekm = distance * 1000;
+    var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
+          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+          'and valid=true and deadline>now()  and "MarkPost"."User_id" in ' +
+          '(select "Friends"."Friend_id" FROM "Friends" where "Friends"."User_id" = '
+          + userId + ' );';
+
+    return knex.raw(sql);
+  },
 
     getAreaMarkersRaw: function(coordinate, distance) {
         var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
@@ -55,7 +80,7 @@ var MarkPostService = {
         return new Promise(function(resolve, reject) {
             logger.log('info', 'query markpost by id:', id, 'start');
             new MarkPost({
-                id: id,
+                id: id
             }).fetch().then(function(markpost) {
                 logger.log('info', 'query markpost by id:', id, 'success');
                 resolve(markpost);
@@ -70,7 +95,7 @@ var MarkPostService = {
         return new Promise(function(resolve, reject) {
             logger.log('info', 'query markpost by id:', id, 'start');
             new MarkPost({
-                id: id,
+                id: id
             }).fetch({
                 withRelated: ['user.detail']
             }).then(function(markpost) {
@@ -168,8 +193,16 @@ var MarkPostService = {
 
     },
 
-  getUserMarkpost: function(){
-
+  getUserMarkpost: function(userId,  callback){
+    new User({
+      id: userId
+    }).fetch({
+      'withRelated': ['markposts', 'detail']
+    }).then(function(user) {
+      callback(null, user);
+    }, function(error) {
+      callback(error);
+    });
   },
 
 

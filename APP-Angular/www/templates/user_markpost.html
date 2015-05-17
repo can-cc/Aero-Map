@@ -1,17 +1,34 @@
-<div class="control-main">
 
-  <div ng-repeat="markpost in markposts">
-    <div class="panel">
+<div>
+
+
+  <div  ng-repeat="markpost in data.markposts">
+    <a href="#markpost/{{markpost.id}}">
       <div class="row">
-        <div class="columns sm-3">
-          <img ng-src="{{backend + '/' + markpost.user.detail.avatar}}" class="popup">
-          <a>{{markpost.user.detail.nickname}}</a>
+        <div class="small-12 columns panel">
+          <h2>
+            {{markpost.title}}
+          </h2>
+          <p>{{markpost.context}}</p>
         </div>
-        <div class="columns sm-9">
-          {{markpost.context}}
+      </div>
+    </a>
+
+
+  </div>
+
+  <div class="row">
+    <div class="columns small-10 small-centered">
+
+      <div ng-show="isEmpty">
+        <div class="panel empty-panel">
+          <p>
+            Not Post
+          </p>
         </div>
       </div>
     </div>
   </div>
+
 
 </div>

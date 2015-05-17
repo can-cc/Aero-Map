@@ -1,21 +1,20 @@
 <div class="control-main">
-  <ul class="no-bullet">
-    <li class="item"  ng-repeat="hash in chatHash">
-      <div >
-        <div class="panel">
-          <div class="row">
-            <div class="column sm-3">
-              From Chat
-            </div>
-            <div class="column sm-9">
-              <a href="#chat/{{hash.key}}" class="message-a"> {{hash.value}} </a>
-            </div>
-          </div>
-    </li>
-  </ul>
 
 
 
-    </div>
+  <div class="friend-list" ng-repeat="hash in chatHash">
+
+    <a href="#chat/{{hash.key}}" class="friend-item">
+      <div class="row">
+        <div class="small-3 columns">
+          <img class="friends-list-avatar" ng-src="{{backend + '/' + hash.avatar}}" />
+        </div>
+        <div class="small-9 columns">
+          <h3 class="friends-nickname">{{hash.value}}</h3>
+        </div>
+      </div>
+    </a>
   </div>
+
+
 </div>

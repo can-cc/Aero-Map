@@ -7,6 +7,7 @@ var express = require('express'),
 require('../utils/addDate');
 
 router.get('/markpost/:id', function(req, res, next) {
+  console.log('hah');
     var id = req.params.id;
     MarkPostService.getMarkPointWithUserDetailById(id).then(function(markpost) {
         res.json(markpost);

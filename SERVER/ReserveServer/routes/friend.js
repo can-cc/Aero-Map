@@ -89,4 +89,26 @@ router.post('/user/:userId/friend/:friendId/delete', function(req, res, next) {
         });
 });
 
+
+router.post('/friend/reject', function(req, res, next) {
+  if (!req.session.user) {
+    return next(new Error('not login'));
+  }
+  var userId = req.session.user.id,
+     requestId = req.body.requestId;
+  var checkAuth = function(userId, requestId){
+    return true;
+  };
+  if(checkAuth(userId, requestId)){
+    console.log('true');
+  }
+  FriendService.rejectFriendRequest(requestId).then(function(resp){
+    res.send({
+      result: resp
+    });
+  }, function(error){
+    next(error);
+  });
+});
+
 module.exports = router;

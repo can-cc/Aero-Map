@@ -3,8 +3,8 @@ var orm = require('../db').orm,
     logger = require('../logger'),
     Promise = require('bluebird'),
     Comment = require('./markpost_comment'),
-    User = require('./user');
-knex = require('../db').knex;
+    User = require('./user'),
+    knex = require('../db').knex;
 
 var st = require('knex-postgis')(knex);
 
@@ -80,7 +80,7 @@ var MarkPost = orm.Model.extend({
     },
 
     user: function() {
-        return this.belongsTo(User);
+      return this.belongsTo(User, 'User_id');
     },
 
     hasTimestamps: ['created_at', 'updated_at']

@@ -1,0 +1,29 @@
+body {
+   background: #fafafa;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navigation {
+   weight: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: #333333;
+   color: #FFFFFF;
+}
+
+.navigation li {
+   display: inline;
+}
+
+.navigation ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+} 
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+}

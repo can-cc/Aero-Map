@@ -22,6 +22,10 @@ angular.module('Aero.controllers')
               console.log('debug', data);
             });
 
+          $scope.chat = function(frienduserId){
+            window.location.hash = '#chat/' + frienduserId;
+          };
+
           $scope.delete = function(friendId){
             $http({
               method: 'POST',

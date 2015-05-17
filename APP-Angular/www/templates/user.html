@@ -1,46 +1,71 @@
 <div>
-    <from>
 
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="small-4 columns">
-                    <img ng-src="{{backend + '/' + userdetail.avatar}}" alt="Avatar" class="user-avatar"/>
-                </div>
-                <div class="small-6 columns">
-                    <br />
-                    <a href="/#/user/{{userdetail.User_id}}">{{userdetail.nickname}}</a>
-                </div>
+
+      <div class="user-item-header" >
+
+        <a href="#/user/{{userdetail.User_id}}" class="friend-item">
+          <div class="row">
+            <div class="small-3 columns">
+              <img class="friends-list-avatar" ng-src="{{backend + '/' + userdetail.avatar}}" />
             </div>
-        </div>
-        <br />
+            <div class="small-9 columns">
+              <h3 class="friends-nickname">{{userdetail.nickname}}</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
         <div class="row">
             <div class="small-12 columns user-self-d">
                 <lable class="text-p">self_description</lable>
-                <div class="panel">
+                <div class="panel sd-panel">
                     {{userdetail.self_description}}
                 </div>
             </div>
         </div>
 
+
+
         <div class="row">
+          <div class="small-12 columns small-centered">
+            <ul class="vcard">
+<div class="row">
+  <div class="columns small-6"><strong>Interest</strong></div>
+  <div class="columns small-6">{{userdetail.interest}}</div>
+  <div class="columns small-6"><strong>qq</strong></div>
+  <div class="columns small-6">{{userdetail.qq}}</div>
+  <div class="columns small-6"><strong>public_email</strong></div>
+  <div class="columns small-6">{{userdetail.public_email}}</div>
+</div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row user-list-button">
           <div class="small-12 columns">
             <div class="small-12 columns">
-              <div class="button expand" ng-click="request()">
+              <div class="button expand radius info" ng-click="request()">
                 Request Friend
               </div>
             </div>
             <div class="small-12 columns" ng-click="dontsee()">
-              <div class="button expand">
+              <div class="button expand radius">
                 Follow him
               </div>
             </div>
+            <div class="small-12 columns" ng-click="allpost(userdetail.User_id)">
+              <div class="button expand radius">
+                All Posts
+              </div>
+            </div>
             <div class="small-12 columns" ng-click="follow()">
-              <div class="button expand">
+              <div class="button expand radius alert">
                 Don't see him
               </div>
             </div>
           </div>
         </div>
 
-    </from>
+
 </div>

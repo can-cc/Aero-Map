@@ -15,7 +15,7 @@ var UserService = {
     getUser: function(userId, callback) {
         new User({
             id: userId
-        }).fetch(function(user) {
+        }).fetch().then(function(user) {
             callback(null, user);
         }, function(error) {
             callback(error);

@@ -44,15 +44,15 @@ router.get('/api/place/user', function(req, res, next){
 router.get('/api/user/:userId/markposts', function(req, res, next){
   var userId = req.params.userId;
   console.log(userId);
-  UserService.getUser(userId, function(error, user){
-    return user.fetch({
-      withRelated: ['markposts', 'detail']
-    }).then(function(user_markposts_detail){
-      res.send(user_markposts_detail);
-      console.log(user_markposts_detail);
-    }, function(error){
-      next(error);
-    });
+  MarkPostService.getUserMarkpost(userId, function(error, userWithMarkpost){
+    if(error){return next(error)}
+    if(userWithMarkpost){
+      res.send(userWithMarkpost);
+    } else {
+      res.status(404).send({
+        error: 'not found!'
+      });
+    }
   });
 });
 

@@ -8,7 +8,8 @@ angular.module('Aero.controllers')
       $http,
       AeroConfig,
       $stateParams){
-
+      
+      $scope.backend = AeroConfig.backend;
       var userId = $stateParams.userId;
       $http({
         method: 'GET',
@@ -16,7 +17,10 @@ angular.module('Aero.controllers')
         withCredentials: true
       }).success(function(data, status, headers, config){
         console.log('debug', data);
-        $scope.markposts = data;
+        if(data.markposts.length === 0){
+          $scope.isEmpty = true;
+        }
+        $scope.data = data;
       }).error(function(data, status, headers, config){
         console.log('error', data);
       });

@@ -22,7 +22,7 @@ var UserDetail = orm.Model.extend({
     },
 
     user: function() {
-        return this.belongTo(User);
+        return this.belongsTo(User);
     },
 
     hasTimestamps: ['created_at', 'updated_at']

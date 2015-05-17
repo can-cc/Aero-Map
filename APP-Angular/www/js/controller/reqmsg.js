@@ -24,19 +24,33 @@ angular.module('Aero.controllers')
             $scope.accept = function(requestId) {
                 $http({
                     method: 'POST',
-                  url: AeroConfig.backend + '/friend/accept',
-                  data:{
-                    requestId: requestId
-                  },
-                  withCredentials: true,
-                }).success(function(data, status, headers, config){
-                  console.log('debug', data);
-                }).error(function(data, status, headers, config){
-                  console.log('debug', data);
-                }
-);
+                    url: AeroConfig.backend + '/friend/accept',
+                    data: {
+                        requestId: requestId
+                    },
+                    withCredentials: true,
+                }).success(function(data, status, headers, config) {
+                    console.log('debug', data);
+                }).error(function(data, status, headers, config) {
+                    console.log('debug', data);
+                });
             };
 
+          $scope.reject = function(requestId, index) {
+                $http({
+                    method: 'POST',
+                    url: AeroConfig.backend + '/friend/reject',
+                    data: {
+                        requestId: requestId
+                    },
+                    withCredentials: true,
+                }).success(function(data, status, headers, config) {
+                  $scope.requests.splice(index, 1);
+                    console.log('debug', data);
+                }).error(function(data, status, headers, config) {
+                    console.log('debug', data);
+                });
+            };
 
         }
     ]);

@@ -1,8 +1,10 @@
-body, html {
+body,
+html {
   height: 100%;
   width: 100%; }
 
-.off-canvas-wrap, .inner-wrap {
+.off-canvas-wrap,
+.inner-wrap {
   height: 100%;
   width: 100%; }
 
@@ -13,7 +15,7 @@ body, html {
   color: #FFFFFF;
   position: absolute;
   display: block;
-  top: 18%;
+  top: 25%;
   margin-top: -0.5rem;
   left: 18.5%;
   transform: translate3d(0, 0, 0); }
@@ -24,7 +26,7 @@ body, html {
   color: #FFFFFF;
   position: absolute;
   display: block;
-  top: 18%;
+  top: 25%;
   margin-top: -0.5rem;
   left: 19%;
   transform: translate3d(0, 0, 0); }
@@ -113,6 +115,7 @@ body, html {
 .post-day p {
   display: inline;
   width: auto; }
+
 .post-day input[type] {
   display: inline; }
 
@@ -150,6 +153,7 @@ body, html {
   width: 70px;
   height: 60px;
   border-radius: 20px; }
+
 .markpost-top a {
   display: inline;
   font-size: 20px; }
@@ -314,7 +318,8 @@ body, html {
   padding-right: 1px;
   padding-left: 1px; }
 
-.card, .aero-list-inset {
+.card,
+.aero-list-inset {
   overflow: hidden;
   margin: 20px 10px;
   border-radius: 2px;
@@ -336,26 +341,42 @@ body, html {
   margin-left: 0;
   margin-right: 0; }
 
-.card .item:first-child, .aero-list-inset .item:first-child, .padding > .aero-list .item:first-child {
+.card .item:first-child,
+.aero-list-inset .item:first-child,
+.padding > .aero-list .item:first-child {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px; }
-  .card .item:first-child .item-content, .aero-list-inset .item:first-child .item-content, .padding > .aero-list .item:first-child .item-content {
+  .card .item:first-child .item-content,
+  .aero-list-inset .item:first-child .item-content,
+  .padding > .aero-list .item:first-child .item-content {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px; }
-.card .item:last-child, .aero-list-inset .item:last-child, .padding > .aero-list .item:last-child {
+
+.card .item:last-child,
+.aero-list-inset .item:last-child,
+.padding > .aero-list .item:last-child {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px; }
-  .card .item:last-child .item-content, .aero-list-inset .item:last-child .item-content, .padding > .aero-list .item:last-child .item-content {
+  .card .item:last-child .item-content,
+  .aero-list-inset .item:last-child .item-content,
+  .padding > .aero-list .item:last-child .item-content {
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px; }
 
-.card .item:last-child, .aero-list-inset .item:last-child {
+.card .item:last-child,
+.aero-list-inset .item:last-child {
   margin-bottom: -1px; }
 
-.card .item, .aero-list-inset .item, .padding > .aero-list .item, .padding-horizontal > .aero-list .item {
+.card .item,
+.aero-list-inset .item,
+.padding > .aero-list .item,
+.padding-horizontal > .aero-list .item {
   margin-right: 0;
   margin-left: 0; }
-  .card .item.item-input input, .aero-list-inset .item.item-input input, .padding > .aero-list .item.item-input input, .padding-horizontal > .aero-list .item.item-input input {
+  .card .item.item-input input,
+  .aero-list-inset .item.item-input input,
+  .padding > .aero-list .item.item-input input,
+  .padding-horizontal > .aero-list .item.item-input input {
     padding-right: 44px; }
 
 .padding-left > .aero-list .item {
@@ -363,3 +384,70 @@ body, html {
 
 .padding-right > .aero-list .item {
   margin-right: 0; }
+
+.friend-list {
+  margin: 0;
+  border-bottom: solid 1.5px #bbbbbb;
+  border-color: #bbbbbb #bbbbbb; }
+
+.friends-list-avatar {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px; }
+
+.friends-item {
+  display: bolck;
+  overflow: hidden;
+  height: 100%; }
+  .friends-item .row {
+    background-color: #777777; }
+
+.friends-item:active > * {
+  background-color: #777777; }
+
+.friends-nickname {
+  position: relative;
+  top: 10px;
+  left: -10px;
+  vertical-align: middle;
+  font-family: GoodDog;
+  font-size: 29px;
+  font-width: bold;
+  color: #555555; }
+
+.upload-img {
+  width: 120px;
+  height: 120px; }
+
+.reqmsg-btn {
+  position: relative;
+  top: 21px;
+  margin: 0;
+  padding: 5px 5px; }
+
+.user-item-header {
+  margin: 0; }
+
+.sd-panel {
+  border-radius: 13px; }
+
+.user-list-button .button {
+  margin-button: 0;
+  padding: 10px 10px; }
+
+.vcard {
+  width: 100%; }
+
+.empty-panel {
+  border-radius: 16px;
+  height: 60%; }
+  .empty-panel p {
+    position: relative;
+    vertical-align: middle;
+    left: 25%;
+    top: 40%;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: ChunkFive; }

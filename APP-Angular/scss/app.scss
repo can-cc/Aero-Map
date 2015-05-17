@@ -17,7 +17,7 @@ html {
     color: #FFFFFF;
     position: absolute;
     display: block;
-    top: 18%;
+    top: 25%;
     margin-top: -0.5rem;
     left: 18.5%;
     transform: translate3d(0, 0, 0);
@@ -29,7 +29,7 @@ html {
     color: #FFFFFF;
     position: absolute;
     display: block;
-    top: 18%;
+    top: 25%;
     margin-top: -0.5rem;
     left: 19%;
     transform: translate3d(0, 0, 0);
@@ -1240,3 +1240,97 @@ $ios-statusbar-height:           20px !default;
 .padding-right > .aero-list .item {
   margin-right: 0;
 }
+
+.friend-list {
+  margin: 0;
+  border: {
+  bottom:  solid 1.5px #bbbbbb;
+  color: #bbbbbb #bbbbbb;
+  }
+  }
+
+
+.friends-list-avatar {
+  position: relative;
+  margin: {
+  top: 10px;
+  bottom: 10px;
+  }
+    width: 50px;
+    height: 50px;
+
+  }
+
+.friends-item {
+  display: bolck;
+  overflow: hidden;
+  height: 100%;
+ .row{
+    background-color: #777777;
+    }
+  }
+
+.friends-item:active > *{
+
+    background-color: #777777;
+  }
+.friends-nickname {
+  position: relative;
+  top: 10px;
+  left: -10px;
+  vertical-align: middle;
+  font: {
+  family: GoodDog;
+  size: 29px;
+  width: bold;
+  }
+  color: #555555;
+  }
+
+.upload-img {
+  width: 120px;
+height: 120px;
+  }
+
+.reqmsg-btn {
+  position: relative;
+  top: 21px;
+  margin: 0;
+padding: 5px 5px;
+  }
+
+.user-item-header {
+  margin: 0;
+
+  }
+
+.sd-panel {
+  border-radius: 13px;
+  }
+
+
+.user-list-button .button{
+  margin: {
+  button:0;
+  }
+  padding: 10px 10px;
+  }
+
+.vcard {
+  width: 100%;
+  }
+
+
+.empty-panel {
+    border-radius: 16px;
+height: 60%;
+    p {
+      position: relative;
+      vertical-align: middle;
+      left: 25%;
+      top: 40%;
+      font-weight: 900;
+      font-size: 30px;
+font-family: ChunkFive;
+      }
+  }

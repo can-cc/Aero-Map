@@ -1,20 +1,28 @@
 <div>
-  <div class="row" ng-repeat="request in requests">
-    <div class="row">
-      <div class="small-12 columns">
+
+
+
+  <div class="friend-list" ng-repeat="request in requests">
+
+    <a  class="friend-item">
+      <div class="row">
         <div class="small-3 columns">
-          <img ng-src="{{backend + '/' + request.requester.avatar}}" alt="avatar"/>
+          <img class="friends-list-avatar" ng-src="{{backend + '/' + request.requester.avatar}}" />
         </div>
         <div class="small-3 columns">
-          <p>{{request.requester.nickname}}</p>
+          <h3 class="friends-nickname">{{request.requester.nickname}}</h3>
+
         </div>
         <div class="small-3 columns">
-          <div class="button" ng-click="accept(request.id)">accept</div>
+
+          <div class="button round success reqmsg-btn" ng-click="accept(request.id, $index)">accept</div>
         </div>
         <div class="small-3 columns">
-          <div class="button" ng-click="reject()">reject</div>
+
+          <div class="button round secondary reqmsg-btn" ng-click="reject(request.id, $index)">reject</div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
+
 </div>
