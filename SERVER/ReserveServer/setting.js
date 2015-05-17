@@ -20,8 +20,8 @@ var AeroMapSetting = {
             database: 'Aero-Map-Development',
             host: 'localhost',
             port: 'default',
-            username: 'Aero',
-            passwd: 'aero',
+            username: 'AeroAdmin',
+            passwd: 'aero123',
             charset: 'UTF-8'
         }
     },

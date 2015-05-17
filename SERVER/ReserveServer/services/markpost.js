@@ -166,7 +166,11 @@ var MarkPostService = {
    ***********************************************************/
     getPlaceMarkpost: function() {
 
-    }
+    },
+
+  getUserMarkpost: function(){
+
+  },
 
 
 };

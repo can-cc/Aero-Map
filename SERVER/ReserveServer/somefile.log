@@ -2000,6 +2000,10 @@
 {"attributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"_previousAttributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"changed":{},"relations":{},"cid":"c72","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-13T17:36:06.145Z"}
 {"attributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"_previousAttributes":{"User_id":1,"nickname":"tyanbb2","sex":"male","avatar":"upload/imagesdlWedMay06201522:30:50.jpg","self_description":"good man!!!!!!!","city":1,"school":1,"interest":"fuck","public_email":"ss@email.com","photo_number":"13026184346","qq":"1111111","created_at":"2015-05-04T05:44:25.799Z","updated_at":"2015-05-06T14:30:50.622Z"},"changed":{},"relations":{},"cid":"c72","id":1,"_events":{"saving":[{"ctx":{"$ref":"$"}}]},"_knex":null,"level":"info","message":"","timestamp":"2015-05-13T17:36:06.159Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-13T17:39:02.854Z"}
+<<<<<<< HEAD
+{"level":"info","message":"current env =   development","timestamp":"2015-05-14T13:21:46.403Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-14T18:15:42.119Z"}
+=======
 {"level":"info","message":"current env =   development","timestamp":"2015-05-14T15:06:10.026Z"}
 {"username":"tyan","password":"12345678","email":"crystal.tyan@gmail.com","level":"info","message":"","timestamp":"2015-05-14T15:39:46.058Z"}
 {"level":"error","message":"not Login","timestamp":"2015-05-14T15:40:10.700Z"}
@@ -2117,3 +2121,20 @@
 {"level":"info","message":"current env =   development","timestamp":"2015-05-14T18:05:41.262Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-14T18:09:49.426Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-14T18:12:55.818Z"}
+>>>>>>> 7983d4f1e16dad854f660456ab25588b1034c5b5
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:07:42.074Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:08:20.857Z"}
+{"level":"error","message":"role \"Aero\" does not exist","timestamp":"2015-05-15T18:08:21.127Z"}
+{"name":"error","length":89,"severity":"FATAL","code":"28000","file":"miscinit.c","line":"433","routine":"InitializeSessionUserId","level":"error","timestamp":"2015-05-15T18:08:21.133Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:08:59.316Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:09:25.770Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:10:42.526Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:11:08.546Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:11:53.509Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:12:25.621Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:12:36.692Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:25:32.618Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:26:30.891Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:28:03.138Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:28:51.777Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-15T18:30:42.788Z"}
