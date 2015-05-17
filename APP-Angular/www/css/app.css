@@ -275,7 +275,12 @@ body, html {
   color: #666666; }
 
 .friend-col {
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
+
+.friend-col > * {
+  padding: 0;
+  margin: 0; }
 
 .friend-operation {
   padding: 15px; }
@@ -284,3 +289,77 @@ body, html {
   position: relative;
   z-index: 1;
   text-align: right; }
+
+/**********************************************/
+.aero-list {
+  position: relative;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0;
+  margin-bottom: 20px; }
+
+.aero-list:last-child {
+  margin-bottom: 0px; }
+  .aero-list:last-child.card {
+    margin-bottom: 40px; }
+
+.aero-list-header {
+  margin-top: 20px;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: #222;
+  font-weight: bold; }
+
+.card.aero-list .aero-list-item {
+  padding-right: 1px;
+  padding-left: 1px; }
+
+.card, .aero-list-inset {
+  overflow: hidden;
+  margin: 20px 10px;
+  border-radius: 2px;
+  background-color: #fff; }
+
+.card {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .card .item {
+    border-left: 0;
+    border-right: 0; }
+  .card .item:first-child {
+    border-top: 0; }
+  .card .item:last-child {
+    border-bottom: 0; }
+
+.padding .card, .padding .aero-list-inset {
+  margin-left: 0;
+  margin-right: 0; }
+
+.card .item:first-child, .aero-list-inset .item:first-child, .padding > .aero-list .item:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px; }
+  .card .item:first-child .item-content, .aero-list-inset .item:first-child .item-content, .padding > .aero-list .item:first-child .item-content {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; }
+.card .item:last-child, .aero-list-inset .item:last-child, .padding > .aero-list .item:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px; }
+  .card .item:last-child .item-content, .aero-list-inset .item:last-child .item-content, .padding > .aero-list .item:last-child .item-content {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px; }
+
+.card .item:last-child, .aero-list-inset .item:last-child {
+  margin-bottom: -1px; }
+
+.card .item, .aero-list-inset .item, .padding > .aero-list .item, .padding-horizontal > .aero-list .item {
+  margin-right: 0;
+  margin-left: 0; }
+  .card .item.item-input input, .aero-list-inset .item.item-input input, .padding > .aero-list .item.item-input input, .padding-horizontal > .aero-list .item.item-input input {
+    padding-right: 44px; }
+
+.padding-left > .aero-list .item {
+  margin-left: 0; }
+
+.padding-right > .aero-list .item {
+  margin-right: 0; }

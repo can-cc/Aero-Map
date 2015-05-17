@@ -17,7 +17,7 @@ angular.module('Aero.controllers')
             AeroConfig) {
 
             $scope.chatHash = [];
-
+          chatsocket.removeAllListeners();
             chatsocket.on('receiveMessage', function(data) {
                 messages.addChat(data.fromUserId, data);
             });

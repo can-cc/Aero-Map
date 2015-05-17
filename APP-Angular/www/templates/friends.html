@@ -1,16 +1,22 @@
 <div class="control-main">
     <br/>
-    <div ng-repeat="friend in friends">
-        <div class="row panel friend-col">
-            <div class="small-12 columns">
+
+
+
+    <ul class="no-bullet">
+      <div class="row">
+        <div class="small-11 small-centered columns">
+          <li ng-repeat="friend in friends">
+            <div class="row panel friend-col">
+              <div class="small-12 columns">
                 <div class="small-4 columns">
-                    <img class="user-avatar" ng-src="{{backend + '/' + friend.user.detail.avatar}}" />
-                    <p>{{friend.user.detail.nickname}}</p>
+                  <img class="user-avatar" ng-src="{{backend + '/' + friend.user.detail.avatar}}" />
+                  <p>{{friend.user.detail.nickname}}</p>
                 </div>
 
                 <div class="small-3 columns">
                   <br />
-                    <div class="button friend-operation" ng-click="delete(friend.Friend_id)">delete</div>
+                  <div class="button friend-operation" ng-click="delete(friend.Friend_id)">delete</div>
                 </div>
                 <div class="small-3 columns">
                   <br />
@@ -20,8 +26,14 @@
 
                 </div>
 
+              </div>
             </div>
+          </li>
+
         </div>
-    </div>
+      </div>
+
+
+    </ul>
 
 </div>

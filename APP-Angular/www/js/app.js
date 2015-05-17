@@ -27,11 +27,11 @@ angular.module('Aero', [
                 templateUrl: 'templates/register.html',
                 controller: 'RegCtrl'
             })
-        .state('message', {
-          url: '/message',
-          templateUrl: 'templates/message.html',
-          controller: 'MessageCtrl'
-        })
+            .state('message', {
+                url: '/message',
+                templateUrl: 'templates/message.html',
+                controller: 'MessageCtrl'
+            })
             .state('detail', {
                 url: '/detail',
                 templateUrl: 'templates/user_detail.html',
@@ -77,6 +77,11 @@ angular.module('Aero', [
                 templateUrl: 'templates/user.html',
                 controller: 'UserCtrl'
             })
+            .state('usermarkposts', {
+                url: '/user/:userId/markposts',
+                templateUrl: 'templates/user_markpost.html',
+                controller: 'UserMarkpostCtrl'
+            })
             .state('reqmsg', {
                 url: '/reqmsg',
                 templateUrl: 'templates/reqmsg.html',
@@ -92,10 +97,10 @@ angular.module('Aero', [
                 templateUrl: 'templates/setting.html',
                 controller: 'SettingCtrl'
             })
-        .state('comment', {
-              url: '/comment/:markpostId',
-              templateUrl: 'templates/comment.html',
-              controller: 'CommentCtrl'
+            .state('comment', {
+                url: '/comment/:markpostId',
+                templateUrl: 'templates/comment.html',
+                controller: 'CommentCtrl'
             });
 
 
