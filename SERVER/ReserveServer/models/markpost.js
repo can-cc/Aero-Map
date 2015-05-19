@@ -3,7 +3,6 @@ var orm = require('../db').orm,
     logger = require('../logger'),
     Promise = require('bluebird'),
     Comment = require('./markpost_comment'),
-    User = require('./user'),
     knex = require('../db').knex;
 
 var st = require('knex-postgis')(knex);
@@ -40,7 +39,7 @@ var MarkPost = orm.Model.extend({
     saveWithPoint: function(data) {
         var checkit = this.validate;
         var attributes = this.attributes;
-       // attributes.created_at = new Date().toString();
+        // attributes.created_at = new Date().toString();
         var tableName = this.tableName;
         return new Promise(function(resolve, reject) {
             console.log('look this', attributes);
@@ -80,8 +79,14 @@ var MarkPost = orm.Model.extend({
     },
 
     user: function() {
-      return this.belongsTo(User, 'User_id');
+      //wtf circle model
+      var User = require('./user');
+      return this.belongsTo(User);
     },
+
+  users: function() {
+    return this.belongsTo(User);
+  },
 
     hasTimestamps: ['created_at', 'updated_at']
 
