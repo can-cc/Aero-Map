@@ -1,0 +1,27 @@
+<div class="control-main">
+    <br/>
+    <div ng-repeat="friend in friends">
+        <div class="row panel friend-col">
+            <div class="small-12 columns">
+                <div class="small-4 columns">
+                    <img class="user-avatar" ng-src="{{backend + '/' + friend.user.detail.avatar}}" />
+                    <p>{{friend.user.detail.nickname}}</p>
+                </div>
+
+                <div class="small-3 columns">
+                  <br />
+                    <div class="button friend-operation" ng-click="delete(friend.Friend_id)">delete</div>
+                </div>
+                <div class="small-3 columns">
+                  <br />
+                  <a href="#chat/{{friend.Friend_id}}">
+                    <div class="button friend-operation">chat</div>
+                  </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

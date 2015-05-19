@@ -37,8 +37,8 @@ var MarkPostService = {
     var sql = 'SELECT * FROM "MarkPost" WHERE ST_DWithin(' +
           'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
           'and valid=true and deadline>now()  and "MarkPost"."User_id" in ' +
-          '(select "Friends"."Friend_id" FROM "Friends" where "Friends"."User_id" = '
-          + userId + ' );';
+          '(select "Friends"."Friend_id" FROM "Friends" where "Friends"."User_id" = ' +
+          userId + ' );';
 
     return knex.raw(sql);
   },
@@ -52,6 +52,30 @@ var MarkPostService = {
         console.log(sql);
         return knex.raw(sql);
     },
+
+
+  getAreaMarkersRawByTime: function(coordinate, distance) {
+    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+    var distancekm = distance * 1000;
+    var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
+          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+          'and valid=true and deadline>now();';
+    console.log(sql);
+    return knex.raw(sql);
+  },
+
+
+  getAreaMarkersRawByFriends: function(coordinate, distance, userId) {
+    var pointstr = coordinate.longitude + ' ' + coordinate.latitude;
+    var distancekm = distance * 1000;
+    var sql = 'SELECT * FROM "MarkPost", "UserDetail"  WHERE "MarkPost"."User_id" = "UserDetail"."User_id"   AND ST_DWithin(' +
+          'location,  ST_GeographyFromText(\'SRID=4326;POINT(' + pointstr + ')\'), ' + distancekm + ')' +
+          'and valid=true and deadline>now()  and "MarkPost"."User_id" in ' +
+          '(select "Friends"."Friend_id" FROM "Friends" where "Friends"."User_id" = ' +
+          userId + ' );';
+    console.log(sql);
+    return knex.raw(sql);
+  },
 
     getAreaMarkPointsRawFilterByFriend: function(coordinate, userId) {
 

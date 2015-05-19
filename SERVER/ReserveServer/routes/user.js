@@ -74,6 +74,18 @@ router.post('/loginbypp', function (req, res, next) {
     res.json({ state: req.isAuthenticated() });
   })(req, res, next);
 });
+
+router.post('/user/changepassword', function(req, res, next){
+  if(!req.session.user){
+    return next(new Error('not Login'));
+  }
+  var oldPassword = req.body.oldPassword,
+      newPassword = req.body.newPassword;
+  UserService.changePassword(req.session.user.id, oldPassword, newPassword, function(error, user){
+    if(error) return next(error);
+    res.send(user.omit('password'));
+  });
+});
 /****************************************************
  * @Sign in
  ****************************************************/

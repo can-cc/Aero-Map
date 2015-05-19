@@ -22,6 +22,36 @@ var UserService = {
         });
     },
 
+  changePassword: function(userId, password, oldPassword, newPassword, callback){
+    new User({
+      id: userId
+    }).fetch({
+      require: true
+    }).then(function(user) {
+      bcrypt.compare(password, oldPassword, function(err, res) {
+        if (err) return callback(err);
+        ///
+        bcrypt.genSalt(11, function(err, salt) {
+          bcrypt.hash(newPassword, salt, function(err, hash) {
+            //data.password = hash
+            user.save({
+              password: hash
+            }).then(function(user) {
+              logger.log('debug', user);
+              callback(null, user);
+            }, function(error) {
+              logger.log('error', error);
+              callback(error);
+            });
+          });
+        });
+
+      });
+    }, function(err) {
+      callback(err);
+    });
+  },
+
     getUserDetail: function(userId) {
         return new Promise(function(resolve, reject) {
             new UserDetail({

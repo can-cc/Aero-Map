@@ -10,9 +10,8 @@ require {
 
 #============= httpd_t ==============
 
-#!!!! This avc can be allowed using the boolean 'httpd_can_network_connect'
+#!!!! This avc is allowed in the current policy
 allow httpd_t ntop_port_t:tcp_socket name_connect;
 
-#!!!! This avc can be allowed using one of the these booleans:
-#     nis_enabled, httpd_can_network_connect
+#!!!! This avc is allowed in the current policy
 allow httpd_t unreserved_port_t:tcp_socket name_connect;

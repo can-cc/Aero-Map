@@ -2723,3 +2723,36 @@
 {"level":"info","message":"query markpost by id: 1 start","timestamp":"2015-05-18T17:29:37.773Z"}
 {"level":"info","message":"query markpost by id: 1 success","timestamp":"2015-05-18T17:29:37.975Z"}
 {"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:14:04.143Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:47:23.952Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:48:00.263Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:56:47.282Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:58:17.054Z"}
+{"level":"error","message":"用户 \"Aero\" Password 认证失败","timestamp":"2015-05-19T16:59:26.101Z"}
+{"name":"error","length":89,"severity":"致命错误","code":"28P01","file":"auth.c","line":"304","routine":"auth_failed","level":"error","timestamp":"2015-05-19T16:59:26.104Z"}
+{"level":"error","message":"用户 \"Aero\" Password 认证失败","timestamp":"2015-05-19T16:59:30.043Z"}
+{"name":"error","length":89,"severity":"致命错误","code":"28P01","file":"auth.c","line":"304","routine":"auth_failed","level":"error","timestamp":"2015-05-19T16:59:30.046Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T16:59:52.437Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:01:13.399Z"}
+{"level":"info","message":"query markpost by id: 6 start","timestamp":"2015-05-19T17:01:46.014Z"}
+{"level":"info","message":"query markpost by id: 6 success","timestamp":"2015-05-19T17:01:46.156Z"}
+{"level":"error","message":"not loing","timestamp":"2015-05-19T17:01:53.111Z"}
+{"level":"error","timestamp":"2015-05-19T17:01:53.116Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:00.193Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:04.722Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:06.441Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:09.776Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:12.907Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:15.102Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:19.308Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:22.754Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:25.986Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:02:28.166Z"}
+{"level":"info","message":"1","timestamp":"2015-05-19T17:02:45.461Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:10:59.396Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:11:31.534Z"}
+{"level":"error","message":"undefined is not a function","timestamp":"2015-05-19T17:11:40.174Z"}
+{"level":"error","timestamp":"2015-05-19T17:11:40.193Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:13:02.677Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:14:39.344Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:14:49.376Z"}
+{"level":"info","message":"current env =   development","timestamp":"2015-05-19T17:15:15.241Z"}

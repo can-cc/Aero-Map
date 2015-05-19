@@ -30,6 +30,32 @@ router.get('/markposts', function(req, res, next) {
         });
 });
 
+router.get('/friendsmarkposts', function(req, res, next) {
+  var coords = {
+    longitude: req.query.longitude,
+    latitude: req.query.latitude
+  };
+  MarkPostService.getAreaMarkersRawByFriends(coords, 5, req.session.user.id)
+    .then(function(markposts) {
+      res.send(markposts.rows);
+    }, function(error) {
+      next(error);
+    });
+});
+
+router.get('/timemarkposts', function(req, res, next) {
+  var coords = {
+    longitude: req.query.longitude,
+    latitude: req.query.latitude
+  };
+  MarkPostService.getAreaMarkersRawByTime(coords, 5)
+    .then(function(markposts) {
+      res.send(markposts.rows);
+    }, function(error) {
+      next(error);
+    });
+});
+
 router.post('/markposts', function(req, res, next) {
     if (!req.session.user) {
         return res.send({

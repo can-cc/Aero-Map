@@ -47,6 +47,16 @@ angular.module('Aero', [
                 templateUrl: 'templates/map.html',
                 controller: 'MapCtrl'
             })
+        .state('timemap', {
+          url: '/timemap',
+          templateUrl: 'templates/timemap.html',
+          controller: 'TimeMapCtrl'
+        })
+        .state('friendsmap', {
+          url: '/friendsmap',
+          templateUrl: 'templates/friendsmap.html',
+          controller: 'FriendsMapCtrl'
+        })
             .state('post', {
                 url: '/post',
                 templateUrl: 'templates/post.html',
@@ -87,6 +97,11 @@ angular.module('Aero', [
                 templateUrl: 'templates/reqmsg.html',
                 controller: 'ReqMsgCtrl'
             })
+        .state('changepassword', {
+          url: '/changepassword',
+          templateUrl: 'templates/changepassword.html',
+          controller: 'ChangePasswordCtrl'
+        })
             .state('chat', {
                 url: '/chat/:userId',
                 templateUrl: 'templates/chat.html',

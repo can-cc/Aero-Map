@@ -1,0 +1,16 @@
+<div style="width: 100%;">
+    <div class="panel chat-content">
+        <div ng-repeat="message in messages track by $index" class="chat-cc">
+          <div  ng-class=" {chatfself: message.self, chatmessage: !message.self}">
+              <p>{{message.chatmessage}}</p>
+            </div>
+
+        </div>
+
+    </div>
+    <br />
+    <div class="chat-footer">
+        <input class="chat-input" ng-model="chatmessage" />
+        <div class="button" ng-click="send()">Send</div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<!-- <!doctype html> -->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="bower_components/ng-img-crop/compile/unminified/ng-img-crop.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/foundation.css">
+        <link href="bower_components/foundation-icon-fonts/foundation-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/app.css">
+
+
+        <title>Aero-Map</title>
+    </head>
+    <body ng-app="Aero">
+
+       <div class="off-canvas-wrap" data-offcanvas>
+        <div class="inner-wrap">
+            <nav class="tab-bar">
+                <section class="left-small"> <a class="left-off-canvas-toggle" href="#"><span><i class="fi-map menu-font-icon-left"></i></span></a> </section>
+                <section class="middle tab-bar-section">
+                    <h1 class="title">Aero-Map</h1> </section>
+                <section class="right-small"> <a class="right-off-canvas-toggle" href="#"><span><i class="fi-results-demographics menu-font-icon-right"></i></span></a> </section>
+            </nav>
+            <aside class="left-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li>
+                        <label>Foundation</label>
+                    </li>
+                    <li><a href="#map">Map</a>
+                    </li>
+                </ul>
+            </aside>
+            <aside class="right-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li>
+                        <label>Users</label>
+                    </li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#register">Sign in</a></li>
+                    <li><a href="#detail">Detail</a></li>
+                    <li><a href="#avatar">Avatar</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#message">Message</a></li>
+                    <li><a href="#friends">Friends</a></li>
+                    <li><a href="#reqmsg">Friend Request</a></li>
+                    <!-- <li><a href="#"><div ng-controller="MessageCtrl">{{bb}}</div></a> -->
+                    <li><a href="#"><div></div></a>
+                    </li>
+                </ul>
+            </aside>
+            <section class="main-section am-main">
+                <div class="am-map" id="am-map"></div>
+                <div class="am-context" ui-view>
+
+                </div>
+
+
+            </section>
+            <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+
+
+      <script src="cordova.js"></script>
+
+      <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+      <script src="bower_components/foundation/js/vendor/fastclick.js"></script>
+      <script src="bower_components/foundation/js/vendor/jquery.js"></script>
+      <script src="bower_components/foundation/js/vendor/jquery.cookie.js"></script>
+      <script src="bower_components/foundation/js/vendor/placeholder.js"></script>
+      <script src="bower_components/foundation/js/foundation.min.js"></script>
+
+      <!-- <script src="js/main.js"></script> -->
+
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+      <script src="bower_components/ng-img-crop/compile/unminified/ng-img-crop.js"></script>
+      <script src="bower_components/leaflet/dist/leaflet.js"></script>
+      <script src="bower_components/angular-foundation/mm-foundation.js"></script>
+      <script src="bower_components/ngstorage/ngStorage.js"></script>
+      <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/socket.io-client/socket.io.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <link href="bower_components/leaflet/dist/leaflet.css" rel="stylesheet" />
+
+
+      <script src="js/app.js"></script>
+      <script src="js/config.js"></script>
+      <script src="js/controller/controllers.js"></script>
+
+      <script src="js/factory/chatsocket.js"></script>
+      <script src="js/factory/message.js"></script>
+
+      <script src="js/controller/register.js"></script>
+      <script src="js/controller/login.js"></script>
+      <script src="js/controller/map.js"></script>
+      <script src="js/controller/post.js"></script>
+      <script src="js/controller/marker.js"></script>
+      <script src="js/controller/markpost.js"></script>
+      <script src="js/controller/detail.js"></script>
+      <script src="js/controller/avatar.js"></script>
+      <script src="js/controller/profile.js"></script>
+      <script src="js/controller/searchuser.js"></script>
+      <script src="js/controller/user.js"></script>
+      <script src="js/controller/reqmsg.js"></script>
+      <script src="js/controller/friends.js"></script>
+      <script src="js/controller/chat.js"></script>
+      <script src="js/controller/message.js"></script>
+      <script src="js/controller/comment.js"></script>
+
+    </body>
+</html>
