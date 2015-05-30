@@ -151,7 +151,6 @@ if (app.get('env') === 'development') {
     });
 }
 
-
 /***********************************************
  * Run
  * Choose https or http by setting.https(boolean)
